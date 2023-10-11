@@ -28,6 +28,7 @@ import Level_5 from "./Components/Pages/Tresure/Level_5";
 import SocialLinks from "./Components/Pages/SocialLinks/SocialLinks";
 import SignUp2 from "./Components/Pages/Registration/SignUp2";
 import EditiorHome from "./Components/Pages/Editior/EditiorHome";
+import UserDash from "./Components/Pages/Admin/User/UserDash";
 
 export const UserContext = createContext();
 
@@ -113,6 +114,7 @@ function App() {
               <Route path="/TresureHunt/TresureHunt4" element={<Level_4 />} className={isFinialCall?"":"d-none"} />
               <Route path="/TresureHunt/TresureHunt5" element={<Level_5 />} className={isFinialCall?"":"d-none"} />
               <Route exact path="/CodingRound" element={<EditiorHome />} className={isFinialCall?"":"d-none"} />
+              <Route exact path="/UserDash" element={<UserDash/>} />
            
             </Routes>
 

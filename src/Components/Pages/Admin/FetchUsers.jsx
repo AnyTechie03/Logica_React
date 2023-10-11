@@ -1,54 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import { tableCellClasses  } from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TablePagination from "@mui/material/TablePagination";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
-import { styled } from '@mui/material/styles';
-import CheckIcon from '@mui/icons-material/Check';
-import ClearIcon from '@mui/icons-material/Clear';
+
 
 import "./FetchUser.css";
 
 export default function FetchUsers({isFinialCall, setFinialCall}) {
-  
   const [UserList, setList] = useState([]);
-  const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
- 
-  const StyledTableCell = styled(TableCell)(({ theme }) => ({
-    [`&.${tableCellClasses.head}`]: {
-      backgroundColor: theme.palette.common.black,
-      color: theme.palette.common.white,
-      fontSize:18,
-      
-    },
-    [`&.${tableCellClasses.body}`]: {
-      fontSize: 16,   
-      color: theme.palette.common.white,
-    },
-  }));
-
-  const StyledTableRow = styled(TableRow)(({ theme }) => ({
-   backgroundColor:theme.palette.grey.A700,
-   color: theme.palette.common.white,
-  }));
-  
-
-  const handleChangePage = (event, newPage) => {
-    setPage(newPage);
-  };
-
-  const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(+event.target.value);
-    setPage(0);
-  };
-
+  const [uCount, setUcount] = useState(0);
+  const [isL1Count, setL1count] = useState(0);
+  const [isL2Count, setL2count] = useState(0);
+  const [isL3Count, setL3count] = useState(0);
   useEffect(() => {
     fetch("https://logicabackend.onrender.com/fetchUser", {
       method: "GET",
@@ -56,69 +17,124 @@ export default function FetchUsers({isFinialCall, setFinialCall}) {
       .then((res) => res.json())
       .then((data) => {
         setList(data.data);
-        console.log("Before set",isFinialCall)
-        console.log("Before set",setFinialCall)
-        
-        console.log("After set",setFinialCall)
-        console.log("After set",isFinialCall)
+        if (UserList) {
+          count = UserList.length
+          // Count for each level
+          const Level_1Count = UserList.filter((user) => user.Level_1).length;
+          const Level_2Count = UserList.filter((user) => user.Level_2).length;
+          const Level_3Count = UserList.filter((user) => user.Level_3).length;
 
-        // console.log(data.length, "UserData");
+          // Update the state variables
+          setL1count(Level_1Count);
+          setL2count(Level_2Count);
+          setL3count(Level_3Count);
+          setUcount(count);
+
+        } else {
+          setUcount(0);
+          setL1count(0);
+          setL2count(0);
+          setL3count(0);
+        }
+
+
       });
   }, []);
 
   return (
-    <div className="UserListContainer">
-      <div className="ListTitle mx-auto">
-      <h1>Participants Details</h1>
+    <>
+      <div className='body'>
+
+        <div className='container col'>
+
+          <div className='dashboard row'>
+
+
+
+
+            <div className='col-md-12 d1 d-flex g-3'>
+
+              <div className='col-md-6 d1c1'>
+                <h4>Dashboard</h4>
+
+                <div className='row'>
+                  <div className='col-md-6'>
+                    <div className='card c1'>
+                      <div className='card-body cb'>
+                        <Link to='/UserDash' >
+
+                          <h2 className='btn'>
+
+                            User's <span>{" " + uCount}</span>
+                          </h2>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='col-md-6'>
+                    <div className='card c1'>
+                      <div className='card-body'>
+                        <Link to='/Quiz'>
+
+                          <h2 className='btn '>
+
+                            Quiz <span> {isL1Count}</span>
+                          </h2>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className='row'>
+                  <div className='col-md-6'>
+                    <div className='card c1'>
+                      <div className='card-body'>
+                        <Link to='/TresureHunt'>
+                          <h2 className='btn'>
+                            Tresure Hunt <span>{" " + isL2Count}</span>
+                          </h2>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='col-md-6'>
+                    <div className='card c1'>
+                      <div className='card-body'>
+                        <Link to='/CodingRound'>
+                          <h2 className='btn '>
+
+                            Coding Round <span> {isL3Count}</span>
+                          </h2>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className='col-md-6 d2 disabled'>
+
+                <div className='card c2'>
+                  <div className='card-body'>
+                    <h2 className='btn ' onClick={()=>setFinialCall(!isFinialCall)}>
+
+{isFinialCall? <><Span className='text-success'>Start The Game</Span></>:<><span className="text-danger">Stop The Game</span></>}
+                    </h2>
+
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
       </div>
-      <input type="button"  value="settrue"onClick={()=>setFinialCall(true)}/>
-      <Paper sx={{ width: "100%" }}>
-        <TableContainer sx={{ maxHeight: 500 }}>
-          <Table stickyHeader aria-label="Participants Details">
-            <TableHead>
-              <StyledTableRow>
-                <StyledTableCell>Team Name</StyledTableCell>
-                <StyledTableCell align="left">Team Email</StyledTableCell>
-                <StyledTableCell align="left">Round 1 Selected</StyledTableCell>
-                <StyledTableCell align="left">Round 1 Score</StyledTableCell>
-                <StyledTableCell align="left">Round 2 Selected</StyledTableCell>
-                <StyledTableCell align="left">Round 2 Score</StyledTableCell>
-                <StyledTableCell align="left">Round 3 Selected</StyledTableCell>
-                <StyledTableCell align="left">Round 3 Score</StyledTableCell>
-              </StyledTableRow>
-            </TableHead>
-            <TableBody>
-              {UserList
-              .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-              .map((i) => {
-                return (
-                  <StyledTableRow>
-                    <StyledTableCell>{i.teamName}</StyledTableCell>
-                    <StyledTableCell>{i.email}</StyledTableCell>
-                    <StyledTableCell align = 'center'>{i.Level_1 ? <CheckIcon/> : <ClearIcon/>}</StyledTableCell>
-                    <StyledTableCell align = 'center'>{i.Level_1_Score}</StyledTableCell>
-                    <StyledTableCell  align = 'center'>{i.Level_2 ? <CheckIcon/> : <ClearIcon/>}</StyledTableCell>
-                    <StyledTableCell align = 'center'>{i.Level_2_Score}</StyledTableCell>
-                    <StyledTableCell  align = 'center'>{i.Level_3 ? <CheckIcon/> : <ClearIcon/>}</StyledTableCell>
-                    <StyledTableCell align="center">{i.Level_3_Score}</StyledTableCell>
-                  </StyledTableRow>
-                );
-              })}
-            </TableBody>
-          </Table>
-        </TableContainer>
-        <TablePagination
-        className="Pagination"
-        // style={{color:'white'}}
-        rowsPerPageOptions={[10, 25, 100]}
-        component="div"
-        count={UserList.length}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        onPageChange={handleChangePage}
-        onRowsPerPageChange={handleChangeRowsPerPage}
-      />
-      </Paper>
-    </div>
+    </>
   );
 }

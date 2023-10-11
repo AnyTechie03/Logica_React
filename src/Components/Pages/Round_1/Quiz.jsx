@@ -140,7 +140,7 @@ function Quiz() {
                           />
                          
                           <label className='text-prim' htmlFor={`option${optionIndex}-option`}>{option}</label>
-                                    
+                          <div className={`check ${selectedOptions[currentQuestionIndex]== optionIndex ? 'checked':''}`}></div>
                         </li>
                       ))}
                     </ul>

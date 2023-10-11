@@ -47,7 +47,7 @@ const Nav = ({ isProfileClicked, setProfileClicked, setEditProfile, setTeamInfoP
     fetchUserType();
   }, [isUserVerified]);
 
-  console.log(UserType);
+  const RenderMenu = () => {
 
   var navItems;
   switch (UserType) {
@@ -78,33 +78,7 @@ const Nav = ({ isProfileClicked, setProfileClicked, setEditProfile, setTeamInfoP
       break;
 
   }
-  const toggleMenu = () => {
-    setMenuClicked(!isMenuClicked); // Toggle the menu state
-    setEditProfile(false);
-    setProfileClicked(false); // Toggle the Profile state
-  };
-  const toggleProfile = () => {
-    setProfileClicked(!isProfileClicked); // Toggle the Profile state
-    setEditProfile(false);
-    setMenuClicked(!isMenuClicked);
-  };
-  const navbtnToggle = () => {
-    setMenuClicked(false);
-    setProfileClicked(false);
-    setEditProfile(false);
-  }
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
-  const handleClick = (e) => {
 
-    Logout();
-    navigate("/login ");
-    toggleMenu();
-  };
   if (navItems == "INVISIBLE" || state) {
 
     return <>
@@ -176,7 +150,6 @@ const Nav = ({ isProfileClicked, setProfileClicked, setEditProfile, setTeamInfoP
           <div className="Toastify"></div>
         </div>
       </div>
-
     </>;
   }
   return (
@@ -266,6 +239,40 @@ const Nav = ({ isProfileClicked, setProfileClicked, setEditProfile, setTeamInfoP
 
     </div>
   );
+}
+  const toggleMenu = () => {
+    setMenuClicked(!isMenuClicked); // Toggle the menu state
+    setEditProfile(false);
+    setProfileClicked(false); // Toggle the Profile state
+  };
+  const toggleProfile = () => {
+    setProfileClicked(!isProfileClicked); // Toggle the Profile state
+    setEditProfile(false);
+    setMenuClicked(!isMenuClicked);
+  };
+  const navbtnToggle = () => {
+    setMenuClicked(false);
+    setProfileClicked(false);
+    setEditProfile(false);
+  }
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+  const handleClick = (e) => {
+
+    Logout();
+    navigate("/login ");
+    toggleMenu();
+  };
+ return(
+<>
+
+<RenderMenu/>
+</>
+ );
 };
 
 export default Nav;
