@@ -25,7 +25,6 @@ import Level_2 from "./Components/Pages/Tresure/Level_2";
 import Level_3 from "./Components/Pages/Tresure/Level_3";
 import Level_4 from "./Components/Pages/Tresure/Level_4";
 import Level_5 from "./Components/Pages/Tresure/Level_5";
-// import Quiz from './Components/Pages/Quiz/Quiz'
 import SocialLinks from "./Components/Pages/SocialLinks/SocialLinks";
 import SignUp2 from "./Components/Pages/Registration/SignUp2";
 import EditiorHome from "./Components/Pages/Editior/EditiorHome";
