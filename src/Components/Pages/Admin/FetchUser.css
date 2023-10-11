@@ -23,9 +23,9 @@
     margin: auto;
     padding: 5rem;
     width     : 100mvh;
-    /* background: linear-gradient(to bottom right, #78009cdb, #3A0CA3, #4361EE, #d08aff); */
+    background: linear-gradient(to bottom right, #78009cdb, #3A0CA3, #4361EE, #d08aff);
 /* background-color: #df0073; */
-background-image: url('../../Assets/Images/scattered-forcefields.svg');
+/* background-image: url('../../Assets/Images/scattered-forcefields.svg'); */
 }
 
 .d1 {
