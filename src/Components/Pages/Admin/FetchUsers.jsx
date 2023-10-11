@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./FetchUser.css";
-import { Link } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 export default function FetchUsers({ isFinialCall, setFinialCall }) {
   const [UserList, setList] = useState([]);
