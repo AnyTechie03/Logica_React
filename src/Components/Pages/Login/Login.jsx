@@ -158,11 +158,12 @@ const Login = ({ isUserVerified,
         if(state){
             notify("User Logged In")
             navigate('/')
+            console.error("Unauthorized Access Denied");
+            notify("Unauthorized Access Denied", "error");
         }
         else if (res.status===401) {
           console.log("Status 401",res);
-          console.error("Unauthorized Access Denied");
-          notify("Unauthorized Access Denied", "error");
+        
         }
      
     };

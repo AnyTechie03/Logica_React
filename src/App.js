@@ -42,6 +42,7 @@ function App() {
   const [UserData, setUserData] = useState({});
   const [isFinialCall, setFinialCall] = useState(false);
   // const [isLoggedin,setLoggedin] = useState(false)
+  const [isTeamMember,setTeamMembers] = useState(false)
 
   useEffect(() => {
     // Simulate app loading with a delay of 4.4 seconds
@@ -91,7 +92,7 @@ function App() {
                   />
                 }
               />
-              <Route exact path="/register" element={<SignUp2 />} />
+              <Route exact path="/register" element={<SignUp2 isTeamMember={isTeamMember} setTeamMembers={setTeamMembers}/>} />
               <Route exact path="*" element={<PageNotFound />} />
               <Route
                 exact

@@ -9,7 +9,9 @@ import RegStep3 from "./RegStep/RegStep3";
 import RegStep4 from "./RegStep/RegStep4";
 import RegStep5 from "./RegStep/RegStep5";
 
-function SignUp2() {
+function SignUp2({
+  isTeamMember, setTeamMembers
+}) {
   const navigate = useNavigate();
 
   const [step, setStep] = useState(1);
@@ -31,15 +33,15 @@ function SignUp2() {
     state: "",
     password: "",
     cpassword: "",
-    tfirstName1: "",
-    tlastName1: "",
-    tfirstName2: "",
-    tlastName2: "",
-    tfirstName3: "",
-    tlastName3: "",
+    firstName1: "",
+    lastName1: "",
+    firstName2: "",
+    lastName2: "",
+    firstName3: "",
+    lastName3: "",
     emailVerificationToken: '',
   });
-  
+
   const validate = () => {
     switch (step) {
       case 1: {
@@ -86,10 +88,10 @@ function SignUp2() {
       }
       case 2: {
 
-        if (values.tfirstName1.length > 0) {
+        if (values.firstName1.length > 0) {
           if (
-            values.tfirstName1.length < 1 ||
-            values.tlastName1.length < 3
+            values.firstName1.length < 1 ||
+            values.lastName1.length < 3
           ) {
             notifyToast("Team Member Name is invalid", "error");
             return false;
@@ -201,12 +203,12 @@ function SignUp2() {
       state: values.state,
       password: values.password,
       cpassword: values.cpassword,
-      firstName1: values.tfirstName1,
-      lastName1: values.tlastName1,
-      firstName2: values.tfirstName2,
-      lastName2: values.tlastName2,
-      firstName3: values.tfirstName3,
-      lastName3: values.tlastName3,
+      firstName1: values.firstName1,
+      lastName1: values.lastName1,
+      firstName2: values.firstName2,
+      lastName2: values.lastName2,
+      firstName3: values.firstName3,
+      lastName3: values.lastName3,
     };
 
     try {
@@ -252,6 +254,8 @@ function SignUp2() {
           <RegStep2
             values={values}
             handleChange={handleChange}
+            isTeamMember={isTeamMember}
+            setTeamMembers={setTeamMembers}
           />
         );
 
@@ -279,25 +283,25 @@ function SignUp2() {
             <div className="RegStep"><h3 className="st">Team Registration</h3>{StepRender()}
 
               <div className="stepButtons">
-          <div className="row">
+                <div className="row">
 
-                <input
-                  value={"<< Back"}
-                  type="button"
-                  className="btn button-left col-5"
-                  disabled={step === 1}
-                  onClick={handlePrev}
-                />
-
-
-                <input
-                  value={step === 5 ? "Sign Up >>" : "Next >>"}
-                  type="button"
-                  className="btn Nbtn button-right col-5"
-                  disabled={step === 5}
-                  onClick={handleNext}
+                  <input
+                    value={"<< Back"}
+                    type="button"
+                    className="btn button-left col-5"
+                    disabled={step === 1}
+                    onClick={handlePrev}
                   />
-                  </div>
+
+
+                  <input
+                    value={step === 5 ? "Sign Up >>" : "Next >>"}
+                    type="button"
+                    className="btn button-right col-5"
+                    disabled={step === 5}
+                    onClick={handleNext}
+                  />
+                </div>
 
 
               </div>
