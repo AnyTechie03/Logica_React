@@ -90,7 +90,7 @@ const Nav = ({ isProfileClicked, setProfileClicked, setEditProfile, setTeamInfoP
   };
   const navbtnToggle =()=>{
     setMenuClicked(false);
-    setProfileClicked(false); // Toggle the Profile state
+    setProfileClicked(false);
     setEditProfile(false);
   }
   const scrollToTop = () => {
@@ -116,9 +116,9 @@ const Nav = ({ isProfileClicked, setProfileClicked, setEditProfile, setTeamInfoP
           </div>
         </Link>
         <div className="menu-button">
-          <i className="fa fa-bars" aria-hidden="true" onClick={() => toggleMenu()}></i>
-          <div className={isMenuClicked ? "active navbar-items" : "navbar-items"}>
-            <i className="fa-solid fa-xmark" onClick={() => toggleMenu()}></i>
+      <i className="fa fa-bars" aria-hidden="true" onClick={() => toggleMenu()}></i>
+        <div className={isMenuClicked ? "active navbar-items" : "navbar-items"}>
+          <i className="fa-solid fa-xmark" onClick={() => toggleMenu()}></i>
 
             <Link to="/" className="docs-creator" onClick={() => {scrollToTop(); navbtnToggle()} }>
               Home
@@ -151,7 +151,7 @@ const Nav = ({ isProfileClicked, setProfileClicked, setEditProfile, setTeamInfoP
           <Link to="/" className="docs-creator" onClick={() => scrollToTop()}>
             Home
           </Link>
-          <a href="/#About" className="docs-creator" onClick={navbtnToggle()}>
+          <a href="/#About" className="docs-creator" onClick={()=>navbtnToggle()}>
             About
           </a>
           <a href="/#Events" className="docs-creator" onClick={()=>{navbtnToggle()}}>
@@ -166,8 +166,6 @@ const Nav = ({ isProfileClicked, setProfileClicked, setEditProfile, setTeamInfoP
           <a href="/#Contact" className="docs-creator" onClick={()=>{navbtnToggle()}}>
             Contact
           </a>
-
-
           <Link to="/login" className="login-signup-btn docs-creator" onClick={()=>{setMenuClicked(!isMenuClicked)}}>
             <div className="d-flex">
               Login/SignUp
