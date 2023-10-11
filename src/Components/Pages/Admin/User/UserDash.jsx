@@ -13,7 +13,7 @@ import { styled } from '@mui/material/styles';
 import CheckIcon from '@mui/icons-material/Check';
 import ClearIcon from '@mui/icons-material/Clear';
 
-const UserDash = () => {
+const UserDash = ({ isFinialCall, setFinialCall }) => {
 
     const [UserList, setList] = useState([]);
     const [page, setPage] = React.useState(0);
