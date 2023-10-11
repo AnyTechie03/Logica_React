@@ -13,7 +13,7 @@ import { initialState, reducer } from "./Components/Functions/useReducer";
 import Nav from "./Components/Pages/Nav/Nav";
 import Footer from "./Components/Pages/Footer/Footer";
 import PageNotFound from "./Components/Pages/404/PageNotFound";
-
+import CookieConsent from './Components/Functions/CookieConsent/CookieConsent'
 import Dashboard from "./Components/Pages/Dashboard/Dashboard";
 import Loading from "./Components/Pages/Loading/Loading";
 import Login from "./Components/Pages/Login/Login";
@@ -105,16 +105,22 @@ function App() {
                   />
                 }
               />
-             
-              <Route path="/Quiz" element={<Quiz />} className={isFinialCall?"":"d-none"} />
-              <Route path="/TresureHunt" element={<Tresurehunt />} className={isFinialCall?"":"d-none"} />
-              <Route path="/TresureHunt/TresureHunt1" element={<Level_1 />} className={isFinialCall?"":"d-none"} />
-              <Route path="/TresureHunt/TresureHunt2" element={<Level_2 />} className={isFinialCall?"":"d-none"} />
-              <Route path="/TresureHunt/TresureHunt3" element={<Level_3 />} className={isFinialCall?"":"d-none"} />
-              <Route path="/TresureHunt/TresureHunt4" element={<Level_4 />} className={isFinialCall?"":"d-none"} />
-              <Route path="/TresureHunt/TresureHunt5" element={<Level_5 />} className={isFinialCall?"":"d-none"} />
-              <Route exact path="/CodingRound" element={<EditiorHome />} className={isFinialCall?"":"d-none"} />
+             {
+              isFinialCall ? <>
+ <Route path="/Quiz" element={<Quiz />} />
+              <Route path="/TresureHunt" element={<Tresurehunt />}  />
+              <Route path="/TresureHunt/TresureHunt1" element={<Level_1 />}  />
+              <Route path="/TresureHunt/TresureHunt2" element={<Level_2 />}  />
+              <Route path="/TresureHunt/TresureHunt3" element={<Level_3 />} />
+              <Route path="/TresureHunt/TresureHunt4" element={<Level_4 />}  />
+              <Route path="/TresureHunt/TresureHunt5" element={<Level_5 />} />
+              <Route exact path="/CodingRound" element={<EditiorHome />} />
               <Route exact path="/UserDash" element={<UserDash/>} />
+              </>:<>
+              <Route exact path="*" element={<PageNotFound /> }/>
+              </>
+             }
+             
            
             </Routes>
 
@@ -131,7 +137,7 @@ function App() {
             />
 
             <ToastContainer />
-
+            <CookieConsent/>
             {/* Footer */}
             <Footer />
 

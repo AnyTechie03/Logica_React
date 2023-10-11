@@ -92,7 +92,7 @@ const Nav = ({ isProfileClicked, setProfileClicked, setEditProfile, setTeamInfoP
         <div className="menu-button">
           <i className="fa fa-bars" aria-hidden="true" onClick={() => toggleMenu()}></i>
           <div className={isMenuClicked ? "active navbar-items" : "navbar-items"}>
-            <i className="fa-solid fa-xmark" onClick={() => toggleMenu()}></i>
+            <i className="fa-solid fa-xmark" style={{ color: "#fff"}} onClick={() => toggleMenu()}></i>
 
             <Link to="/" className="docs-creator" onClick={() => { scrollToTop(); navbtnToggle() }}>
               Home
@@ -163,7 +163,7 @@ const Nav = ({ isProfileClicked, setProfileClicked, setEditProfile, setTeamInfoP
       <div className="menu-button">
         <i className="fa fa-bars" aria-hidden="true" onClick={() => toggleMenu()}></i>
         <div className={isMenuClicked ? "active navbar-items" : "navbar-items"}>
-          <i className="fa-solid fa-xmark" onClick={() => toggleMenu()}></i>
+          <i className="fa-solid fa-xmark" style={{ color: "#fff"}} onClick={() => toggleMenu()}></i>
           {navItems.map((item) => {
             return (
               <>

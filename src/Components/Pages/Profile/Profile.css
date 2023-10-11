@@ -2,8 +2,8 @@
     top                 : 120px;
     right               : -100px;
     backdrop-filter     : blur(20px);
-    /* background-color : #ffffff99; */
-    color               : #2b2b2b;
+    background-color : #83838399;
+    color               : #ffffff;
     position            : fixed;
     justify-content     : center;
     display             : flex;
@@ -41,7 +41,13 @@
     align-self    : flex-start;
     font-family   : VoyagerHeavy;
 }
-
+.Pxmark .fa-solid{
+    display: contents;
+    font-size: 24px;
+    align-items: left;
+    text-align: left;
+    display: block;
+}
 .profile-left .profile-image {
     object-fit: cover;
     max-width: 100px; /* Updated maximum width */
@@ -266,6 +272,9 @@
     .profile-buttons {
         margin-top: 20px;
     }
+    .Pxmark .fa-solid{
+        font-size: 9px;
+    }
 
 }
 
@@ -273,7 +282,11 @@
     .profile {
         width: 220px;
     }
-
+    .Pxmark .fa-solid{
+       
+        font-size: 9px;
+      
+    }
     .profile-left,
     .profile-right {
         width: 200px;

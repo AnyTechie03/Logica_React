@@ -18,7 +18,7 @@ export default function FetchUsers({isFinialCall, setFinialCall}) {
       .then((data) => {
         setList(data.data);
         if (UserList) {
-          count = UserList.length
+          let count = UserList.length;
           // Count for each level
           const Level_1Count = UserList.filter((user) => user.Level_1).length;
           const Level_2Count = UserList.filter((user) => user.Level_2).length;
