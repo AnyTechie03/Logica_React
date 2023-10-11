@@ -65,9 +65,9 @@ const Nav = ({ isProfileClicked, setProfileClicked, setEditProfile, setTeamInfoP
     case "a": {
       navItems =
         [{ onClickLink: "/ThisisSecrete", title: " DashBoard" },
-        { onClickLink: "/AManageStudents", title: " Manage Students" },
-        { onClickLink: "/AManageResult", title: " Results" },
-        { onClickLink: "/setquiz", title: " SetQuiz" },
+        { onClickLink: "/Quiz", title: " Quiz" },
+        { onClickLink: "/TresureHunt", title: "Hunt Treasure" },
+        { onClickLink: "/CodingRound", title: " Coding Round" },
 
         ];
 

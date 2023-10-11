@@ -121,19 +121,22 @@ export default function Profile({isProfileClicked,setProfileClicked,setEditProfi
        
 <div className="text-left pl-3 pt-3">
 {UserData.Level_1 ? (
-<p className="score">Level 1 :{UserData.Level_1}</p>
- ) : (
-  <p className="score">Game is Going On Soon....</p>
+  <p className="score">Level 1: <span className="text-success">Passed</span> (Level 1 Clear! You're now eligible for Level 2. Happy Hunting! 🔎🙌🥳)</p>
+) : (
+  <></>
 )}
-{UserData.Level_1 ? (
-<p className="score">Level 2 :{UserData.Level_2}</p>
- ) : (
- <></>
-)}{UserData.Level_1 ? (
-  <p className="score">Level 3 :{UserData.Level_3}</p>
-   ) : (
-    <></>
-  )}
+
+{UserData.Level_2 ? (
+  <p className="score">Level 2: <span className="text-success">Passed</span> (Level 2 Clear! You're now eligible for Level 3. Happy Coding! 💻⌨🖱🙌🥳)</p>
+) : (
+  <></>
+)}
+
+{UserData.Level_3 ? (
+  <p className="score">Level 3: <span className="text-success">Passed</span> (Level 3 Clear! Yo Boy You Win The Game 🙌🥳)</p>
+) : (
+  <></>
+)}
 {UserData.Level_1_Score || UserData.Level_2_Score || UserData.Level_3_Score ? (
  <p className="score">Score : <span> {UserData.Level_1_Score + UserData.Level_2_Score + UserData.Level_3_Score}</span> - 500 </p>
    ) : (
@@ -147,7 +150,7 @@ export default function Profile({isProfileClicked,setProfileClicked,setEditProfi
 {UserData.teamMembers ? (
             <ol>
               {UserData.teamMembers.map((item, i) => {
-                return <li className="score">{item.firstName}{item.lastName}</li>;
+                return <li className="score">{item.firstName1}{item.lastName1}</li>;
               })}
             </ol>
           ) : (
