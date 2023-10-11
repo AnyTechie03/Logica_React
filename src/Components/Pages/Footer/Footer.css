@@ -1,0 +1,43 @@
+.copyright {
+    background-color: #000000f3;
+    display         : grid;
+    place-items     : center;
+    width: 100vw;
+    margin-bottom    : 0;
+    margin-left: 0;
+    margin-top: 0;
+    height: 10vh;
+    color: aqua;
+    font-family: SpaceBoards;
+    font-size: 0.8rem;
+}
+.footer {
+    display: grid;
+    align-items: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 10vh;
+    background-color: var(--background);
+   
+  
+}
+
+.footer-container {
+    display: flex;
+    max-width: 1920px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0rem;
+   
+}
+
+
+.copyright {
+
+    color: var(--primary_lightColor);
+    text-align: center;
+    position: relative;
+}
+
+

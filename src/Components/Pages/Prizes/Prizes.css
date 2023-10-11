@@ -1,0 +1,57 @@
+
+#prize--1 svg {
+    height: 20% !important;
+    width: 20% !important
+}
+
+#prize--2 svg {
+    height: 50%!important;
+    width: 50%!important
+}
+
+#prize--3 svg {
+    height: 75%!important;
+    width: 75%!important
+}
+
+#prize--4 svg {
+    height: 55%!important;
+    width: 55%!important
+}
+
+#prize--5 svg {
+    height: 55%!important;
+    width: 55%!important
+}
+
+.prize-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0rem 0
+}
+
+.prize-card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end
+}
+
+.prize-card h1 {
+    font-size: 3rem;
+    color: #fff
+}
+
+.second-prize,.first-prize {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+@media screen and (max-width: 768px) {
+    .prize-card h1 {
+        font-size:15px
+    }
+}

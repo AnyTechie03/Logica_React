@@ -1,0 +1,96 @@
+@font-face {
+  font-family: SpaceBoards;
+  src        : url(./assets/Fonts/Spaceboardsdemo-8MyRB.otf);
+}
+
+@font-face {
+  font-family: FutureWave;
+  src        : url(./assets/Fonts/Futurewave.otf);
+}
+
+@font-face {
+  font-family: NeoFuture;
+  src        : url(./assets/Fonts/neonfuture20demo-l3jp3.otf);
+}
+
+@font-face {
+  font-family: VoyagerHeavy;
+  src        : url(./assets/Fonts/Voyager\ Heavy.otf);
+}
+
+
+@font-face {
+  font-family: VoyagerLight;
+  src        : url(./assets/Fonts/Voyager\ Light.otf);
+}
+
+@font-face {
+  font-family: Outfit;
+  src        : url(./assets/Fonts/Outfit-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: Glitch;
+  src        : url(./assets/Fonts/Hacked-KerX.ttf);
+}
+body {
+  width     : 100vw;
+  height    : 100vh;
+  overflow-x: hidden;
+}
+@import"https://fonts.googleapis.com/css2?family=Inter&family=Mea+Culpa&family=Poppins:wght@100&family=Tektur&display=swap";@import"https://fonts.googleapis.com/css2?family=Inter:wght@200;400&family=Mea+Culpa&family=Poppins:wght@100&family=Tektur&display=swap";:root {
+  --primary_lightColor: #08b2aa;
+  --primary_midGreen: #114a49;
+  --primary_darkBack: #00262f;
+  --primary_whitCyan: #9cf5fd;
+  --primary_black: #101010;
+  --secondary_bluish: #4b5fc0;
+  --secondary_redPink: #cc1e59;
+  --secondary_whiteColor: #ffffff;
+  --font_heading: "Tektur", cursive;
+  --font_paragraph: "Inter", sans-serif;
+  --navbar_black: #101010b5;
+  --vs-color-1: #ff5733;
+  --vs-color-2: #3377ff;
+  --vs-color-3: #4caf50;
+  --vs-color-4: #ffc107;
+  --vs-color-5: #e91e63;
+  --vs-color-6: #9c27b0;
+  --vs-color-7: #00bcd4
+}
+
+html {
+  scroll-behavior: smooth ;
+  width: 100vw;
+  height: 100vh;
+  padding: 0%;
+  margin: 0;
+}
+*,*::after,*::before{
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px ;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary_lightColor);
+  border-radius: 20px
+}
+
+
+
+:root {
+  --card-height: 300px;
+  --card-width : calc(var(--card-height) / 1.5);
+}
+
+* {
+  box-sizing: border-box;
+}

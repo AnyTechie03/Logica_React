@@ -1,0 +1,11 @@
+.Pagination{
+    background: rgb(97,97,97);
+    color:white;    
+}
+
+.ListTitle{
+    margin-top: 6rem;
+    width: fit-content;
+    height: fit-content;
+    margin-left: 40%;
+}

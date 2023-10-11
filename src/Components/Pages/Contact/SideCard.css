@@ -1,0 +1,68 @@
+.contact-side-card{
+    display: flex;
+    margin: 15px;
+    cursor: pointer;
+    transition: all ease 0.2s ;
+}
+
+.contact-side-card:hover {
+    transform: scale(1.05);
+}
+
+.side-card-border {
+    width: 300px;
+}
+
+.side-card-content{
+    margin-left: -300px;
+    display: flex;
+    width: 300px;
+    align-items: center;
+}
+
+.side-card-content img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    margin-right: 25px;
+    margin-left: 25px;
+    margin-top: 3px;
+    object-fit: cover;
+}
+
+.side-card-position {
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+@media (max-width: 400px){
+    .contact-side-card{
+        display: flex;
+        margin: 4vw;
+        cursor: pointer;
+    }
+
+    .side-card-border {
+        width: 75vw;
+    }
+
+    .side-card-content{
+        width: 75vw;
+        margin-left: -75vw;
+    }
+
+    .side-card-content img{
+        margin-left: 10vw;
+        margin-right: 9vw;
+        width: 14vw;
+        height: 14vw;
+    }
+
+    .side-card-position {
+        font-size: 4.5vw;
+    }
+
+}

@@ -1,0 +1,119 @@
+.editprofile {
+    position: fixed;
+    width: 500px;
+    /* height: 80%; */
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(15px);
+    z-index: 1000;
+    display: flex;
+    justify-content: left;
+    padding: 10px 40px 40px;
+    text-align: left;
+    flex-direction: column;
+    /* overflow: scroll; */
+    box-shadow: 0px 0px 5px rgb(89, 89, 89);
+    border-radius: 10px;
+    animation: editprofileanm 0.4s 1;
+}
+
+@keyframes editprofileanm {
+    from {
+        height: 0px;
+        width: 0px;
+        opacity: 0;
+        overflow: hidden;
+    } to {
+        width: clamp(25%, 450px , 80%);
+        height: clamp(100px, max-content , 400px);
+        opacity: 1;
+        overflow: hidden;
+    }
+}
+
+.editprofile {
+    height: 75%;
+    overflow: scroll;
+}
+
+.editprofile h2 {
+    text-align: center;
+    font-size: 21px;
+    font-family: 'SpaceBoards';
+}
+
+.editprofile input{
+    margin-bottom: 20px;
+    margin-top: 10px;
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.2s;
+    font-family: 'Outfit';
+}
+
+.editprofile select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.editprofile option {
+    width: 100%;
+}
+
+input:active {
+    border: none;
+    outline: none;
+    /* box-shadow: 1px 1px 3px #fff; */
+}
+
+.editprofile label {
+    font-size: 20px;
+    font-family: 'Outfit';
+}
+
+.editprofile button{
+    padding: 10px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.3s;
+    background-color: red;
+    color: #ff0000;
+    width: 100%;
+    margin-top: 10px;
+    font-family: 'Outfit';
+
+}
+
+.editprofile button:hover{
+    border: none;
+    background-color: rgb(191, 35, 35);
+
+}
+
+.editprofile .edit-cancel {
+    background-color: transparent;
+    border: 0.2px solid #fff;
+}
+
+.editprofile .edit-cancel:hover {
+    background-color: white;
+    color: #000;
+}
+
+
+input:disabled {
+    color: #fff;
+}
+
+@media screen and (max-width:550px) {
+    .editprofile {
+        max-width: 90%;
+    }
+}

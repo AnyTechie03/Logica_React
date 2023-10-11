@@ -1,0 +1,155 @@
+.links {
+    position: fixed;
+    z-index: 100;
+}
+
+.social-links{
+    position: fixed;
+    bottom: 2%;
+    display: flex;
+    /* left: 2%; */
+    flex-direction: column;
+}
+
+.social-links a, .social-links p {
+    /* background-color: #ffffff99; */
+    /* border-radius: 50px; */
+    margin: 10px;
+    margin-left: 0px;
+    transition: all 0.2s;
+    padding-left: 10px;
+    background-color: blue;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    text-decoration: none;
+    width: max-content;
+    animation: icon-starting-anm 0.4s 1;
+}
+
+@keyframes icon-starting-anm {
+    0% {
+        margin-left: -100px;
+        padding-left: 50px;
+    }
+    80% {
+        margin-left: 0px;
+        padding-left: 30px;
+    } 
+    100% {
+        padding-left: 10px;
+    }
+}
+
+.social-links a:hover, .social-links p:hover {
+    /* background-color: #ffffff; */
+    padding-left: 40px;
+}
+
+.social-links .fa-brands, .fa-location-dot, .fa-arrow-up {
+    font-size: 22px;
+    background-color: #ffffff;
+    padding: 10px;
+    margin: 7px;
+    border-radius: 50px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px; */
+
+}
+
+.social-links .discord{
+    background-color: #5865F2 ;
+    color: #5865F2 ;
+}
+
+.social-links .instagram {
+    background-color: #FD1D1D ;
+    color: #FD1D1D ;
+
+}
+
+.social-links .twitter {
+    background-color: #1DA1F2 ;
+    color: #1DA1F2 ;
+}
+
+  
+.location-link, .arrow-up {
+    position: fixed;
+    bottom: 12px;
+    margin: 10px;
+    right: 20px;
+    color: #822F2B;
+    border-radius: 50px;
+    box-shadow: 0px 0px 5px #fff;
+    transition: all 0.2s;
+    /* text-shadow: 2px 2px #00000099; */
+    animation: location-anm 0.4s 1;
+}
+
+.arrow-up {
+    bottom: 80px;
+    height: auto;
+   
+}
+
+@keyframes location-anm {
+    0% {
+        transform: scale(0);
+    }
+    80% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+    
+}
+
+.location-link a, .arrow-up p {
+    text-decoration: none;
+    animation: location-anm 0.4s 1;
+}
+
+.arrow-up p {
+    
+    margin: 0;
+    color: #000;
+
+}
+
+.location-link a .fa-solid, .arrow-up p .fa-solid {
+    height: 50px;
+    width: 50px;
+    font-size: 30px;
+    transition: all 0.2s;
+    animation: location-anm 0.4s 1;
+}
+
+.location-link a .fa-solid:hover, .arrow-up p .fa-solid:hover {
+    background-color: #ffffff99;
+}
+
+
+
+.location-link:hover{
+    bottom: 16px;
+}
+.arrow-up:hover {
+    bottom: 84px;
+}
+
+.location-link i, .arrow-up i {
+    margin: 4px;
+    animation: location-anm 0.4s 1;
+}
+
+@media screen and (max-width: 500px) {
+    .social-links {
+        display: none;
+    }
+}

@@ -1,0 +1,65 @@
+@import"https://fonts.googleapis.com/css2?family=Inter&family=Mea+Culpa&family=Poppins:wght@100&family=Tektur&display=swap";
+@import"https://fonts.googleapis.com/css2?family=Inter:wght@200;400&family=Mea+Culpa&family=Poppins:wght@100&family=Tektur&display=swap";
+
+:root {
+    --primary_lightColor: #08b2aa;
+    overflow            : hidden;
+    --primary_whitCyan  : #9cf5fd;
+
+}
+
+.lcontainer {
+
+    position        : fixed;
+    background-color: black;
+    top             : 0;
+    left            : 0;
+    width           : 100%;
+    height          : 100%;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    transition      : opacity 0.5s ease-in-out;
+    opacity         : 1;
+    z-index         : 9999;
+}
+
+svg text {
+    text-transform: uppercase;
+    animation     : stroke 3.5s infinite alternate;
+    stroke-width  : 5;
+    stroke        : var(--primary_lightColor);
+    font-size     : 80px;
+    font-family   : SpaceBoards;
+
+}
+
+@keyframes stroke {
+    0% {
+        fill             : #488a1400;
+        stroke           : var(--primary_lightColor);
+        stroke-dashoffset: 25%;
+        stroke-dasharray : 0 50%;
+        stroke-width     : 2
+    }
+
+    70% {
+        fill  : #488a1400;
+        stroke: var(--primary_lightColor)
+    }
+
+    80% {
+        fill        : #488a1400;
+        stroke      : var(--primary_lightColor);
+        stroke-width: 3
+    }
+
+    to {
+        fill             : var(--primary_whitCyan);
+        stroke           : #365fa000;
+        stroke-dashoffset: -25%;
+        stroke-dasharray : 50% 0;
+        stroke-width     : 0;
+        text-shadow      : 0 0 10px var(--primary_lightColor), 0 0 15px var(--primary_lightColor)
+    }
+}

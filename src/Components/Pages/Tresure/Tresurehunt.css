@@ -1,0 +1,23 @@
+.Levels{
+    background-color: cadetblue;
+    width: 150px;
+    height: 150px;
+    border-radius: 30%;
+    align-items: center;
+    justify-content: center;
+}
+
+.TresureContainer{
+    height: 90vh;
+    margin: 0;
+    padding-top: 8%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.Levels p{
+    max-height: max-content;
+    padding: 30%;
+    padding-left: 30%;
+    color: aliceblue ;
+}

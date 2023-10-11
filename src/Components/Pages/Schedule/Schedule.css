@@ -1,0 +1,62 @@
+/* Schedule.css */
+.schedule-container{
+  background-image: linear-gradient(
+    to bottom, /* Gradient direction */
+    rgb(60, 111, 137), /* Start color (adjust as needed) */
+    transparent, /* Transparent color in the middle */
+    rgb(60, 111, 137) /* End color (adjust as needed) */
+  ), url(../../../assets/img/bg2\ \(1\).png);
+        background-size    : cover;
+        width              : 100vw;
+        background-position: center;
+        height             : 100vh;
+        background-repeat  : no-repeat;
+        scroll-snap-align  : start;
+        display            : grid;
+        place-items        : center;
+        font-family        : Glitch;
+        position           : relative;
+}  
+.timer{
+    color: aliceblue;
+    font-size: 4em;
+ text-shadow: 2px 2px 2px #006aff;
+}
+/* Style for the game-start message */
+.game-start {
+    font-size: 2em;
+    text-align: center;
+    padding: 20px;
+    border-radius: 4px;
+    animation: tflicker 1s infinite, colorChange 3s infinite;
+  }
+  
+  /* Keyframes for flickering animation */
+  @keyframes tflicker {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.2;
+    }
+  }
+  
+  /* Keyframes for color change animation */
+  @keyframes colorChange {
+    0% {
+      color: #ff0000; /* Start with red color */
+    }
+    25% {
+      color: #00ff00; /* Change to green */
+    }
+    50% {
+      color: #0000ff; /* Change to blue */
+    }
+    75% {
+      color: #ff00ff; /* Change to magenta */
+    }
+    100% {
+      color: #ff0000; /* Back to red */
+    }
+  }
+  

@@ -1,0 +1,363 @@
+/* Registration Section */
+/* forminput */
+.material-symbols-outlined {
+    align-self: center;
+  
+    font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 48
+  }
+  
+  .formparts-container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+  
+  .signup-container .left {
+    display: flex;
+    justify-self: flex-start;
+    
+    flex-direction: column;
+  }
+  
+  .signup-container .right {
+    display: flex;
+    justify-self: flex-end;
+    flex-direction: column;
+  }
+  
+  /* .formicon{
+    background-color: white;
+  }
+   */
+
+.iconInputContainer {
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
+    padding: 7px 25px 7px 14px;
+    margin: 0.3em 0 0.5em 0;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #a0beff;
+    border: none;
+    outline: none;
+    background: none;
+    
+    font-size: 2vw;
+    color: #ffffff;
+  }
+  
+
+  .Form-input {
+    border: none;
+    width: 100%;
+    height: 30px;
+    text-wrap: initial;
+    margin-left: 0.3em;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    font-weight: normal;
+    font-size: 1rem;
+
+  }
+  ::placeholder {
+    color: #a0beff;
+    opacity: 1; /* Firefox */
+  }
+  
+  ::-ms-input-placeholder { /* Edge 12 -18 */
+    color: rgb(255, 255, 255);
+  }
+ 
+  option {
+
+    -moz-white-space: pre-wrap;
+    -o-white-space: pre-wrap;
+    white-space: pre-wrap;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+border-radius: 15px;
+    border-bottom: 1px solid #DDD;
+    color: #000000;
+  }
+
+  
+.regform{
+    background: url(../../../assets/img/bg1\ \(1\).png);
+    background-size: cover;
+  width: 100vw;
+  background-position: center;
+  height: 90vh;
+  background-repeat: no-repeat;
+  scroll-snap-align: start;
+  display: grid;
+  place-items: center;
+  font-family: VoyagerHeavy;
+  
+  position: relative;
+  }
+  .reg-form {
+   height: 100vh;
+
+  margin: 10%;
+  }
+  .stepButtons{
+    /* display: flex; */
+  justify-content: space-around;
+   
+
+   /* position: relative; */
+  
+  }
+  .button-right {
+    position: absolute;
+    bottom: 10px; 
+    right: 10px;
+  }
+  
+  /* Button at the bottom left */
+  .button-left {
+    position: absolute;
+    bottom: 10px; 
+    left: 10px;
+  }
+  .stepButtons button
+    {
+      
+      border: 0;
+      border-radius: 15px;
+      /* background: linear-gradient(
+        140deg,
+        #42c3ca 0%,
+        #42c3ca 50%,
+        #42c3cac7 75%
+      ) !important; */
+      color: #fff;
+      font-weight: 500;
+      font-size: 1rem;
+      padding: 5px 16px;
+    
+  }
+  
+  .flex{
+    display: flex;
+  }
+  .center{
+    margin:auto auto;
+  }
+  .reg-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    
+  }
+  .flex-row{
+    display: flex;
+    flex-direction: row;
+  }
+  .flex-item{
+    padding:0.5rem 1rem 0 1rem;
+  }
+  input[type="radio"]{
+    background-color: black;
+  }
+  
+  
+  .RegStep{
+    position: fixed;
+    width: 80%;
+    height:75%;
+    top: 50%;
+    left: 50%;
+    background-color: #00000037;
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: left;
+    padding: 10px 40px 40px ;
+    text-align: left;
+    flex-direction: column;
+    overflow: scroll;
+    box-shadow: 0px 0px 5px grey;
+    border-radius: 10px;
+    animation: regleam 0.4s 1;
+}
+
+@keyframes regleam {
+    from {
+        height: 0px;
+        width: 0px;
+        opacity: 0;
+        overflow: hidden;
+    } to {
+        width: clamp(25%, 450px , 80%);
+        height: clamp(100px, max-content , 400px);
+        opacity: 1;
+        overflow: hidden;
+    }
+}
+  .btn:disabled{
+  visibility: hidden;
+    border: none;
+    color: gray;
+    cursor: not-allowed;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  /* custom radio buttons */
+  
+  .tbtn {
+  
+    display: inline-block;
+    padding:5px 10px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+     transition: background-color 100ms step-end, color 100ms ease;
+   }
+  
+  
+  input[type="radio"].toggle:checked+label{ 
+    background-color: rgb(255, 255, 255);
+    color: #a0beff;
+    border: 1px solid #cacaca;
+    transition: border 100ms ease;
+   }
+  .reg-step{
+   
+  box-shadow: -2px 18px 24px 0px rgba(255, 255, 255, 0.75);
+  }
+
+.verification-container {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .vbtn{
+ 
+    gap: 5rem;
+  }
+  .btn-verify {
+  
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+   .btn-verify :hover {
+  
+    color: #00bfff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    /* box-shadow: -2px 18px 24px 0px rgba(255, 255, 255, 0.75); */
+  }
+
+  .secondary{
+    color: #ffffff;
+  }
+.st{
+  color: #00bfff;
+  text-shadow: 0px 1px 4px #cbced1;
+}
+  @media (max-width: 768px) {
+    .Form-input {
+      
+      font-size: 2vw;
+      
+    overflow-wrap: break-word;
+    width: 57vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    
+    }
+  .button-right{
+    bottom: 0;
+  }
+  .button-left{
+    bottom: 0;
+  }
+   
+  .btn-verify {
+  font-size: 2vw;
+  }
+  }
+  @media (max-width: 576px) {
+    .reg-container {
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  
+
+    .iconInputContainer {
+      justify-content: center;
+      text-align: center;
+    }
+  
+
+    .Form-input {
+      width: 100%;
+      
+    overflow-wrap: break-word;
+    width: 10rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }
+    .RegStep{
+       
+        overflow: scroll;
+       
+    }
+    .btn-verify {
+      font-size: 3vw;
+      }
+  }
+  
+ 
+  @media (max-width: 480px) {
+    .Form-input {
+     width: 100%;
+     
+    /* text-wrap: inherit; */
+      font-size: 0.8rem;
+      
+    overflow-wrap: break-word;
+    width: 10rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+     
+    }
+    .RegStep{
+       
+        overflow: scroll;
+       
+    }
+    .btn-verify {
+      font-size: 2vw;
+      }
+  }
+
+  

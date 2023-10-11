@@ -1,0 +1,15 @@
+.Main_Container{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    margin-top: 15vh;
+    overflow: hidden;
+}
+
+.QuestionArea{
+    width: 50vw;
+    
+}
+
+.EditorArea{
+}
