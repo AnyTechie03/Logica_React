@@ -9,7 +9,7 @@ import { UserContext } from "../../../App";
 import "react-toastify/dist/ReactToastify.css";
 import { notifyToast } from '../../Functions/notifyToast';
 
-const Nav = ({ isProfileClicked, setProfileClicked, setEditProfile, setTeamInfoPage, setMenuClicked, isMenuClicked ,isUserVerified,setUserVerified}) => {
+const Nav = ({ isProfileClicked, setProfileClicked, setEditProfile, setTeamInfoPage, setMenuClicked, isMenuClicked, isUserVerified, setUserVerified }) => {
   const [UserType, setUserType] = useState(null);
   let { state, dispatch } = useContext(UserContext);
 
@@ -34,17 +34,17 @@ const Nav = ({ isProfileClicked, setProfileClicked, setEditProfile, setTeamInfoP
       } else {
         // Handle unauthorized access
         const error = new Error("Failed to fetch user type");
-      throw error;
+        throw error;
       }
     } catch (err) {
-     
+
       console.error(err);
 
     }
   };
 
   useEffect(() => {
-    fetchUserType(); 
+    fetchUserType();
   }, [isUserVerified]);
 
   console.log(UserType);
@@ -64,7 +64,7 @@ const Nav = ({ isProfileClicked, setProfileClicked, setEditProfile, setTeamInfoP
     }
     case "a": {
       navItems =
-        [{ onClickLink: "/AdminDash", title: " DashBoard" },
+        [{ onClickLink: "/ThisisSecrete", title: " DashBoard" },
         { onClickLink: "/AManageStudents", title: " Manage Students" },
         { onClickLink: "/AManageResult", title: " Results" },
         { onClickLink: "/setquiz", title: " SetQuiz" },
@@ -88,7 +88,7 @@ const Nav = ({ isProfileClicked, setProfileClicked, setEditProfile, setTeamInfoP
     setEditProfile(false);
     setMenuClicked(!isMenuClicked);
   };
-  const navbtnToggle =()=>{
+  const navbtnToggle = () => {
     setMenuClicked(false);
     setProfileClicked(false);
     setEditProfile(false);
@@ -100,47 +100,47 @@ const Nav = ({ isProfileClicked, setProfileClicked, setEditProfile, setTeamInfoP
     });
   };
   const handleClick = (e) => {
-    
+
     Logout();
-     navigate("/login "); 
-     toggleMenu();
+    navigate("/login ");
+    toggleMenu();
   };
   if (navItems == "INVISIBLE" || state) {
-    console.log(state);
+
     return <>
       <div className="navbar">
-        <Link to="/" style={{ textDecoration: 'none' }} onClick={navbtnToggle}>
+        <Link to="/" style={{ textDecoration: 'none' }} onClick={()=>navbtnToggle()}>
           <div className="navbar-logo">
             <h2>Logica</h2>
             <p>'23</p>
           </div>
         </Link>
         <div className="menu-button">
-      <i className="fa fa-bars" aria-hidden="true" onClick={() => toggleMenu()}></i>
-        <div className={isMenuClicked ? "active navbar-items" : "navbar-items"}>
-          <i className="fa-solid fa-xmark" onClick={() => toggleMenu()}></i>
+          <i className="fa fa-bars" aria-hidden="true" onClick={() => toggleMenu()}></i>
+          <div className={isMenuClicked ? "active navbar-items" : "navbar-items"}>
+            <i className="fa-solid fa-xmark" onClick={() => toggleMenu()}></i>
 
-            <Link to="/" className="docs-creator" onClick={() => {scrollToTop(); navbtnToggle()} }>
+            <Link to="/" className="docs-creator" onClick={() => { scrollToTop(); navbtnToggle() }}>
               Home
 
             </Link>
-            <a href="/#About" className="docs-creator" onClick={()=>{navbtnToggle()}}>
+            <a href="/#About" className="docs-creator" onClick={() => { navbtnToggle() }}>
               About
             </a>
-            <a href="/#Events" className="docs-creator" onClick={()=>{navbtnToggle()}}>
+            <a href="/#Events" className="docs-creator" onClick={() => { navbtnToggle() }}>
               Events
             </a>
-            <a href="/#Schedule" className="docs-creator" onClick={()=>{navbtnToggle()}}>
+            <a href="/#Schedule" className="docs-creator" onClick={() => { navbtnToggle() }}>
               Schedule
             </a>
-            <a href="/#Guidelines" className="docs-creator" onClick={()=>{navbtnToggle()}}>
+            <a href="/#Guidelines" className="docs-creator" onClick={() => { navbtnToggle() }}>
               Guidelines
             </a>
-            <a href="/#Contact" className="docs-creator" onClick={()=>{navbtnToggle()}} >
+            <a href="/#Contact" className="docs-creator" onClick={() => { navbtnToggle() }} >
               Contact
             </a>
 
-            <Link to="/login" className="login-signup-btn docs-creator" onClick={()=>{navbtnToggle()}}>
+            <Link to="/login" className="login-signup-btn docs-creator" onClick={() => { navbtnToggle() }}>
               <div className="d-flex">
                 Login/SignUp
               </div>
@@ -151,22 +151,22 @@ const Nav = ({ isProfileClicked, setProfileClicked, setEditProfile, setTeamInfoP
           <Link to="/" className="docs-creator" onClick={() => scrollToTop()}>
             Home
           </Link>
-          <a href="/#About" className="docs-creator" onClick={()=>navbtnToggle()}>
+          <a href="/#About" className="docs-creator" onClick={() => navbtnToggle()}>
             About
           </a>
-          <a href="/#Events" className="docs-creator" onClick={()=>{navbtnToggle()}}>
+          <a href="/#Events" className="docs-creator" onClick={() => { navbtnToggle() }}>
             Events
           </a>
-          <a href="/#Schedule" className="docs-creator" onClick={()=>{navbtnToggle()}}>
+          <a href="/#Schedule" className="docs-creator" onClick={() => { navbtnToggle() }}>
             Schedule
           </a>
-          <a href="/#Guidelines" className="docs-creator" onClick={()=>{navbtnToggle()}}>
+          <a href="/#Guidelines" className="docs-creator" onClick={() => { navbtnToggle() }}>
             Guidelines
           </a>
-          <a href="/#Contact" className="docs-creator" onClick={()=>{navbtnToggle()}}>
+          <a href="/#Contact" className="docs-creator" onClick={() => { navbtnToggle() }}>
             Contact
           </a>
-          <Link to="/login" className="login-signup-btn docs-creator" onClick={()=>{setMenuClicked(!isMenuClicked)}}>
+          <Link to="/login" className="login-signup-btn docs-creator" onClick={() => { setMenuClicked(!isMenuClicked) }}>
             <div className="d-flex">
               Login/SignUp
             </div>
@@ -181,43 +181,43 @@ const Nav = ({ isProfileClicked, setProfileClicked, setEditProfile, setTeamInfoP
   }
   return (
     <div className="navbar">
-      <Link to="/" style={{ textDecoration: 'none' }} onClick={()=>{navbtnToggle()}}>
+      <Link to="/" style={{ textDecoration: 'none' }} onClick={() => { navbtnToggle() }}>
         <div className="navbar-logo">
           <h2>Logica</h2>
           <p>'23</p>
         </div>
       </Link>
       <div className="menu-button">
-      <i className="fa fa-bars" aria-hidden="true" onClick={() => toggleMenu()}></i>
+        <i className="fa fa-bars" aria-hidden="true" onClick={() => toggleMenu()}></i>
         <div className={isMenuClicked ? "active navbar-items" : "navbar-items"}>
           <i className="fa-solid fa-xmark" onClick={() => toggleMenu()}></i>
           {navItems.map((item) => {
             return (
               <>
-                <Link key={item.title} className="docs-creator " to={item.onClickLink} onClick={()=>{navbtnToggle()}}>
+                <Link key={item.title} className="docs-creator " to={item.onClickLink} onClick={() => { navbtnToggle() }}>
                   {item.title}
                 </Link>
 
               </>
             );
           })}
-          <a href="/#About" className="docs-creator" onClick={()=>{navbtnToggle()}}>
+          <a href="/#About" className="docs-creator" onClick={() => { navbtnToggle() }}>
             About
           </a>
-          <a href="/#Events" className="docs-creator" onClick={()=>{navbtnToggle()}}>
+          <a href="/#Events" className="docs-creator" onClick={() => { navbtnToggle() }}>
             Events
           </a>
-          <a href="/#Schedule" className="docs-creator" onClick={()=>{navbtnToggle()}}>
+          <a href="/#Schedule" className="docs-creator" onClick={() => { navbtnToggle() }}>
             Schedule
           </a>
-          <a href="/#Contact" className="docs-creator" onClick={()=>{navbtnToggle()}}>
+          <a href="/#Contact" className="docs-creator" onClick={() => { navbtnToggle() }}>
             Contact
           </a>
-          <a href="#" className="docs-creator" onClick={() => { toggleProfile()}}>
+          <a href="#" className="docs-creator" onClick={() => { toggleProfile() }}>
             Profile
           </a>
-          
-          <Link className="login-signup-btn docs-creator" onClick={()=>{handleClick();setMenuClicked(!isMenuClicked) }}>
+
+          <Link className="login-signup-btn docs-creator" onClick={() => { handleClick(); setMenuClicked(!isMenuClicked) }}>
             <div className="d-flex">
               Logout
             </div>
@@ -234,28 +234,28 @@ const Nav = ({ isProfileClicked, setProfileClicked, setEditProfile, setTeamInfoP
         {navItems.map((item) => {
           return (
             <>
-              <Link key={item.title} className="docs-creator " to={item.onClickLink} onClick={()=>{navbtnToggle()}}>
+              <Link key={item.title} className="docs-creator " to={item.onClickLink} onClick={() => { navbtnToggle() }}>
                 {item.title}
               </Link>
 
             </>
           );
         })}
-        <a href="/#About" className="docs-creator" onClick={()=>{navbtnToggle()}}>
+        <a href="/#About" className="docs-creator" onClick={() => { navbtnToggle() }}>
           About
         </a>
-        <a href="/#Events" className="docs-creator" onClick={()=>{navbtnToggle()}}>
+        <a href="/#Events" className="docs-creator" onClick={() => { navbtnToggle() }}>
           Events
         </a>
-        <a href="/#Schedule" className="docs-creator" onClick={()=>{navbtnToggle()}}>
+        <a href="/#Schedule" className="docs-creator" onClick={() => { navbtnToggle() }}>
           Schedule
         </a>
-        <a href="/#Contact" className="docs-creator" onClick={()=>{navbtnToggle()}}>
+        <a href="/#Contact" className="docs-creator" onClick={() => { navbtnToggle() }}>
           Contact
         </a>
-        <a href="#" className="docs-creator" onClick={() => { toggleProfile()}}>
-            Profile
-          </a>
+        <a href="#" className="docs-creator" onClick={() => { toggleProfile() }}>
+          Profile
+        </a>
         <Link className="login-signup-btn docs-creator" onClick={handleClick}>
           <div className="d-flex">
             Logout

@@ -12,8 +12,8 @@ const RegStep2 = ({ handleChange, values ,setTeamMembers,isTeamMember}) => {
 <h3 className="h5 text-white col-md-12  text-center">Team Member 1</h3>
 
 
-      <label>
-      <h1>Do You Want To Add Team Member ... ?</h1>
+      <label className="text-center text-white">
+      <h1 >Do You Want To Add Team Member ... ?</h1>
         <input
           type="checkbox"
           checked={isTeamMember}
@@ -48,7 +48,7 @@ const RegStep2 = ({ handleChange, values ,setTeamMembers,isTeamMember}) => {
               handleChange={handleChange}
               />
           </div>
-      </> : <p>You are not a team member.</p>}
+      </> : <p className="text-center h3 text-white">Your Playing Solo 🙌</p>}
   
  </div> 
         </div>

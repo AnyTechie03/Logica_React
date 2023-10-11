@@ -35,10 +35,7 @@ function SignUp2({
     cpassword: "",
     firstName1: "",
     lastName1: "",
-    firstName2: "",
-    lastName2: "",
-    firstName3: "",
-    lastName3: "",
+  
     emailVerificationToken: '',
   });
 
@@ -205,10 +202,6 @@ function SignUp2({
       cpassword: values.cpassword,
       firstName1: values.firstName1,
       lastName1: values.lastName1,
-      firstName2: values.firstName2,
-      lastName2: values.lastName2,
-      firstName3: values.firstName3,
-      lastName3: values.lastName3,
     };
 
     try {
