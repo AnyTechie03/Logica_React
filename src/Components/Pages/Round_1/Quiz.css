@@ -96,7 +96,7 @@
     
     .qcontainer ul li input[type=radio]{
       position: absolute;
-      visibility: visible;
+      visibility: hidden;
     }
     
     .qcontainer ul li label{
