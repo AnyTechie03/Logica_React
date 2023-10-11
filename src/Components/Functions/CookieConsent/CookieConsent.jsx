@@ -1,20 +1,12 @@
-// CookieConsent.js
 import React, { useState, useEffect } from 'react';
-import './CookieConsent.css'
-const CookieConsent = () => {
-  const [isCookieAccepted, setIsCookieAccepted] = useState(
-    localStorage.getItem('cookieConsent') === 'true'
-  );
+import { useCookies } from 'react-cookie';
 
-  useEffect(() => {
-    if (!isCookieAccepted) {
-      // Show the consent banner
-    }
-  }, [isCookieAccepted]);
+const CookieConsent = () => {
+  const [cookies, setCookie] = useCookies(['cookieConsent']);
+  const isCookieAccepted = cookies.cookieConsent === 'true';
 
   const acceptCookies = () => {
-    localStorage.setItem('cookieConsent', 'true');
-    setIsCookieAccepted(true);
+    setCookie('cookieConsent', 'true', { path: '/' });
   };
 
   return (
