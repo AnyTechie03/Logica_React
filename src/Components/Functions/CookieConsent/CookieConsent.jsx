@@ -7,7 +7,7 @@ const CookieConsent = () => {
   const isCookieAccepted = cookies.cookieConsent === 'true';
 
   const acceptCookies = () => {
-    setCookie('cookieConsent', 'true', { path: '/' });
+    setCookie('jwttoken', '', { path: '/' });
   };
 
   return (
