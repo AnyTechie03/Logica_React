@@ -15,16 +15,16 @@ const RegStep1 = ({ isTeamMember, setTeamMembers }) => {
     <h1 ><span style={{ color: "tomato" ,fontFamily:'san-serif'}}> *</span>How Do You Wanna Play ... ? 🤔</h1>
     <div className="row justify-content-center ">
       <div className="col-3">
-        <div className={` c1 ${!isTeamMember ? 'selected' : ''}`}>
+        <div className= 'c1'>
           <div className=" cb" onClick={handleSoloClick}>
-            <h2 className="btn tbutton">Solo 🙌🥳</h2>
+            <h2 className={` btn tbutton ${!isTeamMember ? 'selected' : ''}`}>Solo 🙌🥳</h2>
           </div>
         </div>
       </div>
       <div className="col-3">
-        <div className={`c1 ${isTeamMember ? 'selected' : ''}`}>
+        <div className='c1'>
           <div className="cb" onClick={handleTeamClick}>
-            <h2 className="btn tbutton">Team 😎</h2>
+            <h2 className={` btn tbutton ${!isTeamMember ? '' : 'selected'}`}>Team 😎</h2>
           </div>
         </div>
       </div>
