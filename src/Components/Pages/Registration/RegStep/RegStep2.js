@@ -1,8 +1,10 @@
-import React from "react";
+import React,{useState} from "react";
 import FormInput from "./FormInput";
+
 const RegStep2 = ({ handleChange, values,setTeamMembers,isTeamMember }) => {
  
-  const [cities, setCities] = useState([]);
+  const [cities, setCities] = useState 
+  ([]);
 
   const handleStateChange = (event) => {
     switch (event.target.value) {

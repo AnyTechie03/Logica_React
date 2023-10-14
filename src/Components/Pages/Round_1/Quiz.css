@@ -1,7 +1,5 @@
-<<<<<<< Updated upstream
 
-
-:root{
+z:root{
     --primary-color: #0DFF92;
     --dark-color:#222222;
     --light-color: #131313;
@@ -308,5 +306,3 @@ table {
 .table-header > tr > td{
     border: 1px solid #faff5a;   
 }
-=======
->>>>>>> Stashed changes
