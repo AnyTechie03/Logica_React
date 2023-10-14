@@ -150,7 +150,7 @@ const formatTime = (milliseconds) => {
             <div class="col-md-10 col-lg-10">
                 <div class="d-flex flex-row justify-content-between align-items-center mcq p-3 border-bottom">
                 <h2 className="title">Quiz</h2>
-               {/* <span>({questions[currentQuestionIndex]} of {questions[currentQuestionIndex].length})</span> */}
+                <span>({currentQuestionIndex + 1} of {questions.length})</span>
                 <div className="timer">
                   <p>Time Remaining: {formatTime(timeRemaining)}</p>
                 </div>

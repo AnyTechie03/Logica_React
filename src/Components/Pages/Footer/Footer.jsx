@@ -12,7 +12,7 @@ const Footer = () => {
     fontFamily: "Outfit"
   };
   const toggleTerms=()=>{
-    setShowTerms(true);
+    setShowTerms(!showTerms);
     setContact(false);
     setCancellation(false);
     setPrivacy(false);
