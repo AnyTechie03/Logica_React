@@ -175,7 +175,7 @@ const formatTime = (milliseconds) => {
                       ))}
                     </ul>
                   ) : (
-                    <p>No options available for this question.</p>
+                    <p>No  options available for this question.</p>
                   )}
                    </div>
                 </div>
