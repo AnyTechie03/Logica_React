@@ -145,14 +145,19 @@ const formatTime = (milliseconds) => {
               <h3>Timeout: Quiz Over</h3>
             </div>
           ) : (
-            <div className="QMcontainer">
-              <div className="qcontainer">
+            <div class="container mt-5 qcontainer">
+        <div class="d-flex justify-content-center row">
+            <div class="col-md-10 col-lg-10">
+                <div class="d-flex flex-row justify-content-between align-items-center mcq p-3 border-bottom">
                 <h2 className="title">Quiz</h2>
+               <span>({questions[currentQuestionIndex]} of {questions[currentQuestionIndex].length})</span>
                 <div className="timer">
                   <p>Time Remaining: {formatTime(timeRemaining)}</p>
                 </div>
+                  </div>
                 <h4 className="Question_Container text-light pt-2">{questions[currentQuestionIndex].question}</h4>
                 <div className="Answer_Container">
+               <div class="ans ml-2">
                   {Array.isArray(questions[currentQuestionIndex].options) ? (
                     <ul>
                       {questions[currentQuestionIndex].options.map((option, optionIndex) => (
@@ -172,16 +177,17 @@ const formatTime = (milliseconds) => {
                   ) : (
                     <p>No options available for this question.</p>
                   )}
+                   </div>
                 </div>
                 <div className='grid'>
                   {currentQuestionIndex > 0 ? (
-                    <button className="btn prev" onClick={goToPreviousQuestion} disabled={currentQuestionIndex === 0}>
+                    <button className="btn prev mt-1 mr-1" onClick={goToPreviousQuestion} disabled={currentQuestionIndex === 0}>
                       Previous
                     </button>
                   ) : (
                     <div></div>
                   )}
-                  <button className="btn next" onClick={goToNextQuestion} disabled={currentQuestionIndex === questions.length - 1}>
+                  <button className="btn next ml-2" onClick={goToNextQuestion} disabled={currentQuestionIndex === questions.length - 1}>
                     Next
                   </button>
                   {currentQuestionIndex === questions.length - 1 && (
@@ -189,6 +195,7 @@ const formatTime = (milliseconds) => {
                   )}
                 </div>
               </div>
+            </div>
             </div>
           )}
         </div>
