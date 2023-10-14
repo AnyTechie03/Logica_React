@@ -50,7 +50,7 @@ function App() {
   const [UserData, setUserData] = useState({});
   const [isFinialCall, setFinialCall] = useState(false);
   // const [isLoggedin,setLoggedin] = useState(false)
-  const [isTeamMember, setTeamMembers] = useState(false);
+  const [isTeamMember, setTeamMembers] = useState(null);
   useEffect(() => {
 
     // Simulate app loading with a delay of 4.4 seconds

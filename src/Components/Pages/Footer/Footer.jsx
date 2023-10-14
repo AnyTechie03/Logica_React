@@ -10,10 +10,11 @@ const Footer = () => {
         <div className="row p-0 m-0">
           <div className="copyright col-md-12 p-0 text-center">
             Copyright © 2023 All rights reserved by SIMCA &amp; MCA Department
+            <div className="p-0 text-center">
+            <a onClick={() => setShowTerms(!showTerms)}>Terms & Conditions</a>
           </div>
-          <div className="p-0 text-center">
-            <button onClick={() => setShowTerms(!showTerms)}>Terms & Conditions</button>
           </div>
+          
           {showTerms && (
             <div className="terms-content col-md-12 p-0">
               <h2>Terms & Conditions</h2>

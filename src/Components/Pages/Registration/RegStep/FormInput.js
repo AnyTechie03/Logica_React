@@ -16,7 +16,7 @@ const FormInput = ({
 }) => {
   return (<div className="flex-item p-0 m-0">
     <label className={"secondary" || "secondary "+labelClassName}  htmlFor={name}>
-      {labeltext || name}<span style={{ color: "tomato" }}> *</span>
+      {labeltext || name}<span style={{ color: "tomato" ,fontFamily:'san-serif'}}> *</span>
       <div className="iconInputContainer">
       <span className="material-symbols-outlined formicon">{inputIcon}</span>
       <input

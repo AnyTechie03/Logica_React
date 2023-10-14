@@ -157,15 +157,24 @@ border-radius: 15px;
    /* position: relative; */
   
   }
+  .reg1row .row{
+  margin-top: 12%;
+  }
+  .reg1row{
+
+    height: 100vh;
+    
+    padding: 10px;
+  }
   .button-right {
-    position: absolute;
+    position: relative;
     bottom: 10px; 
     right: 10px;
   }
   
   /* Button at the bottom left */
   .button-left {
-    position: absolute;
+    position: relative;
     bottom: 10px; 
     left: 10px;
   }

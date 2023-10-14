@@ -42,37 +42,24 @@ function SignUp2({
   const validate = () => {
     switch (step) {
       case 1: {
-        if (isTeamMember=== true || false) {
-        
+        if (isTeamMember=== null) {
             notifyToast("Select How Are You Playing Solo or In Team", "error");
             return false;
-        
-        }  
+        } 
         return true;
       }
-      case 2: {
-        if (!isTeamMember) {
-          if (
-            values.firstName1.length < 1 ||
-            values.lastName1.length < 3
-          ) {
-            notifyToast("Team Member Name is invalid", "error");
-            return false;
-          }
-        }   
-        if (isTeamMember=== true || false) {
+      case 2: { 
+        if (isTeamMember=== true && values.teamName.length < 1) {
         
-          if (values.teamName.length < 1) {
             notifyToast("Team Name cannot be empty", "error");
-            return false;
-          } 
+
           return false;
       
-      }        else if (
+      } else if (
           values.firstName.length < 1 ||
           values.lastName.length < 3
         ) {
-          notifyToast("Team Leader Name is invalid", "error");
+          notifyToast("Leader Name is invalid", "error");
           return false;
         } else if (values.phoneNumber.length !== 10) {
           notifyToast("Phone number is invalid", "error");
@@ -101,7 +88,15 @@ function SignUp2({
         } else if (values.state.length < 3) {
           notifyToast("State is too short", "error");
           return false;
-        }
+        }else  if (isTeamMember===true) {
+          if (
+            values.firstName1.length < 1 ||
+            values.lastName1.length < 3
+          ) {
+            notifyToast("Team Member Name is invalid", "error");
+            return false;
+          }
+        } 
         return true;
      
       }
@@ -284,10 +279,8 @@ function SignUp2({
 
             <div className="RegStep"><h3 className="st">Registration</h3>{StepRender()}
 
-              
-            </div>
-            <div className="stepButtons">
-                <div className="row">
+               <div className="stepButtons ">
+                <div className="row justify-content-around reg1in">
 
                   <input
                     value={"<< Back"}
@@ -309,6 +302,8 @@ function SignUp2({
 
 
               </div>
+            </div>
+           
           </form>
 
         </div>

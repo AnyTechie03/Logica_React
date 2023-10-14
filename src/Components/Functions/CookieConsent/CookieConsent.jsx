@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useCookies } from 'react-cookie';
+import './CookieConsent.css'
 
 const CookieConsent = () => {
   const [cookies, setCookie] = useCookies(['cookieConsent']);

@@ -3,8 +3,7 @@ import FormInput from "./FormInput";
 
 const RegStep2 = ({ handleChange, values,setTeamMembers,isTeamMember }) => {
  
-  const [cities, setCities] = useState 
-  ([]);
+  const [cities, setCities] = useState([]);
 
   const handleStateChange = (event) => {
     switch (event.target.value) {
@@ -183,44 +182,14 @@ const RegStep2 = ({ handleChange, values,setTeamMembers,isTeamMember }) => {
             />
           </div>
         </div>
-        <div className="row">
-        <h3 className="h5 text-white col-md-12  text-center">Team Member Detail</h3>
-        {isTeamMember ? <>
-        <div className="col-md-4">
-            <FormInput
-              type="text"
-              pattern="[A-Za-z]+"
-              id="id_team_leader_name"
-              name="firstName1"
-              placeholder="First Name"
-              data-error="Please enter your First name"
-              required="true"
-              value={values.firstName1}
-              handleChange={handleChange}
-            />
-          </div>
-          <div className="col-md-4">
-            <FormInput
-              type="text"
-              pattern="[A-Za-z]+"
-              id="id_team_leader_name"
-              name="lastName1"
-              placeholder="Last Name"
-              data-error="Please enter your Last name"
-              required=""
-              value={values.lastName1}
-              handleChange={handleChange}
-              />
-          </div>
-      </> : <></>}
-      </div>
+       
         <div className="row">
 
 
           <div className="col-md-3">
             <div className="flex-item p-0 m-0">
               <label className="form-heading secondary" htmlFor="id_team_leader_gender">
-                Gender<span style={{ color: "tomato" }}> *</span>
+                Gender<span style={{ color: "tomato" ,fontFamily:'san-serif'}}> *</span>
                 <div className="iconInputContainer">
                   <select
                     className="Form-input name form-select"
@@ -255,7 +224,7 @@ const RegStep2 = ({ handleChange, values,setTeamMembers,isTeamMember }) => {
           <div className="col-md-6">
             <div className="flex-item p-0 m-0">
               <label className="form-heading secondary" htmlFor="id_team_leader_gender">
-                Degree<span style={{ color: "tomato" }}> *</span>
+                Degree<span style={{ color: "tomato" ,fontFamily:'san-serif'}}> *</span>
 
                 <div className="iconInputContainer">
                   <select
@@ -292,7 +261,7 @@ const RegStep2 = ({ handleChange, values,setTeamMembers,isTeamMember }) => {
           <div className="col-md-6">
             <div className="flex-item p-0 m-0">
               <label className="form-heading secondary" htmlFor="">
-                Department<span style={{ color: "tomato" }}> *</span>
+                Department<span style={{ color: "tomato" ,fontFamily:'san-serif'}}> *</span>
 
                 <div className="iconInputContainer">
                   <select
@@ -324,7 +293,7 @@ const RegStep2 = ({ handleChange, values,setTeamMembers,isTeamMember }) => {
           <div className="col-md-6">
             <div className="flex-item p-0 m-0">
               <label className="form-heading secondary" htmlFor="id_team_leader_gender">
-                Academic Year<span style={{ color: "tomato" }}> *</span>
+                Academic Year<span style={{ color: "tomato" ,fontFamily:'san-serif'}}> *</span>
                 <div className="iconInputContainer">
                   <select
                     className="Form-input name form-select "
@@ -393,7 +362,7 @@ const RegStep2 = ({ handleChange, values,setTeamMembers,isTeamMember }) => {
           <div className="col-md-5">
             <div className="flex-item p-0 m-0">
               <label className="secondary" htmlFor="vDesc">
-                State:
+                State:<span style={{ color: "tomato" ,fontFamily:'san-serif'}}> *</span>
                 <div className="iconInputContainer">
                   <select
                     name="state"
@@ -455,7 +424,7 @@ const RegStep2 = ({ handleChange, values,setTeamMembers,isTeamMember }) => {
 
             {cities.length > 0 && (
               <div className="flex-item p-0 m-0 ">
-                <label htmlFor="city">Select City:
+                <label htmlFor="city">Select City:<span style={{ color: "tomato" ,fontFamily:'san-serif'}}> *</span>
                   <div className="iconInputContainer">
                     <select
                       id="addrcity"
@@ -480,7 +449,37 @@ const RegStep2 = ({ handleChange, values,setTeamMembers,isTeamMember }) => {
           </div>
 
         </div>
-
+        <div className="row">
+        {isTeamMember ? <>
+        <h3 className="h5 text-white col-md-12  text-center">Team Member Detail</h3>
+        <div className="col-md-4">
+            <FormInput
+              type="text"
+              pattern="[A-Za-z]+"
+              id="id_team_leader_name"
+              name="firstName1"
+              placeholder="First Name"
+              data-error="Please enter your First name"
+              required="true"
+              value={values.firstName1}
+              handleChange={handleChange}
+            />
+          </div>
+          <div className="col-md-4">
+            <FormInput
+              type="text"
+              pattern="[A-Za-z]+"
+              id="id_team_leader_name"
+              name="lastName1"
+              placeholder="Last Name"
+              data-error="Please enter your Last name"
+              required=""
+              value={values.lastName1}
+              handleChange={handleChange}
+              />
+          </div>
+      </> : <></>}
+      </div>
 
       </div>
 
