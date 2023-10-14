@@ -5,6 +5,27 @@
     --dark-color:#222222;
     --light-color: #131313;
   }
+  .timer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+  }
+  
+  .timer p {
+    margin: 0;
+  }
+  
+  /* Responsive styles for screens smaller than 768px (adjust as needed) */
+  @media (max-width: 768px) {
+    .timer {
+      font-size: 16px;
+      padding: 8px;
+    }
+  }
+  
   
   .qcontainer{
   
@@ -96,9 +117,12 @@
     
     .qcontainer ul li input[type=radio]{
       position: absolute;
+      top: 0; 
+      left: 0;
       visibility: hidden;
+      pointer-events: none;
     }
-    
+  
     .qcontainer ul li label{
       display: block;
       position: relative;
@@ -150,6 +174,7 @@
     
     
     .qcontainer input[type=radio]:checked ~ .check {
+
       border: 5px solid var(--primary-color)
     }
     

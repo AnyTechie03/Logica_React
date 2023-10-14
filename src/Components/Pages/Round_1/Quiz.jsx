@@ -16,7 +16,7 @@ function Quiz() {
       progress: undefined,
       theme: "dark",
     });
-  };
+  }
 
   const successnotify = (message) => {
     toast.success(message, {
@@ -29,24 +29,28 @@ function Quiz() {
       progress: undefined,
       theme: "dark",
     });
-  };
-  const Navigate = useNavigate()
+  }
+
+  const Navigate = useNavigate();
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOptions, setSelectedOptions] = useState(new Array(questions.length).fill(null));
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState(null);
 
-  useEffect(() => {
-    fetch("https://logicabackend.onrender.com/questions",{   
-    method: 'GET',
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json"
-    },
-    withCredntials: true,
-    credentials: "include"
+  const [isTimeout, setIsTimeout] = useState(false);
+  const [quizTimeout, setQuizTimeout] = useState(30 * 60 * 1000); // 30 minutes in milliseconds
+  const [timeRemaining, setTimeRemaining] = useState(quizTimeout);
 
+  useEffect(() => {
+    fetch("https://logicabackend.onrender.com/questions", {
+      method: 'GET',
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      withCredentials: true,
+      credentials: "include"
     })
       .then((response) => {
         console.log(response.status);
@@ -65,9 +69,26 @@ function Quiz() {
               console.error("Error fetching questions:", error);
             });
         }
-      })
+      })  
+  const interval = setInterval(() => {
+    setTimeRemaining((prevTimeRemaining) => prevTimeRemaining - 1000);
+  }, 1000);
 
-  }, []);
+  return () => clearInterval(interval);
+}, []);
+
+useEffect(() => {
+  if (timeRemaining <= 0) {
+    setIsTimeout(true);
+    handleSubmit();
+  }
+}, [timeRemaining]);
+
+const formatTime = (milliseconds) => {
+  const minutes = Math.floor(milliseconds / (60 * 1000));
+  const seconds = ((milliseconds % (60 * 1000)) / 1000).toFixed(0);
+  return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+};
 
   const handleOptionSelect = (optionIndex) => {
     const updatedSelectedOptions = [...selectedOptions];
@@ -103,10 +124,10 @@ function Quiz() {
       headers: {
         "Content-Type": "application/json"
       },
-      withCredntials: true,
+      withCredentials: true,
       credentials: "include",
       body: JSON.stringify({ correctCount })
-    })
+    });
   };
 
   return (
@@ -114,19 +135,24 @@ function Quiz() {
       {questions.length === 0 ? (
         <Gloading />
       ) : (
-        <div  >
+        <div>
           {isSubmitted ? (
             <div>
               <h3>Your Score: {score} out of {questions.length}</h3>
             </div>
+          ) : isTimeout ? (
+            <div>
+              <h3>Timeout: Quiz Over</h3>
+            </div>
           ) : (
-            <div className="QMcontainer" >
-              <div className="qcontainer" >
-            <h2 className="title">Quiz</h2>
-                <h4 className="Question_Container text-light  pt-2">{questions[currentQuestionIndex].question}</h4>
-                <div className="Answer_Container ">
-
-
+            <div className="QMcontainer">
+              <div className="qcontainer">
+                <h2 className="title">Quiz</h2>
+                <div className="timer">
+                  <p>Time Remaining: {formatTime(timeRemaining)}</p>
+                </div>
+                <h4 className="Question_Container text-light pt-2">{questions[currentQuestionIndex].question}</h4>
+                <div className="Answer_Container">
                   {Array.isArray(questions[currentQuestionIndex].options) ? (
                     <ul>
                       {questions[currentQuestionIndex].options.map((option, optionIndex) => (
@@ -138,9 +164,8 @@ function Quiz() {
                             checked={selectedOptions[currentQuestionIndex] === optionIndex}
                             onChange={() => handleOptionSelect(optionIndex)}
                           />
-                         
                           <label className='text-prim' htmlFor={`option${optionIndex}-option`}>{option}</label>
-                          <div className={`check ${selectedOptions[currentQuestionIndex]== optionIndex ? 'checked':''}`}></div>
+                          <div className={`check ${selectedOptions[currentQuestionIndex] == optionIndex ? 'checked text-center' : 'text-center'}`}></div>
                         </li>
                       ))}
                     </ul>
@@ -148,25 +173,23 @@ function Quiz() {
                     <p>No options available for this question.</p>
                   )}
                 </div>
-              <div className='grid'>
-                {currentQuestionIndex > 0 ? (
-                  <button className="btn prev" onClick={goToPreviousQuestion} disabled={currentQuestionIndex === 0}>
-                    Previous
+                <div className='grid'>
+                  {currentQuestionIndex > 0 ? (
+                    <button className="btn prev" onClick={goToPreviousQuestion} disabled={currentQuestionIndex === 0}>
+                      Previous
+                    </button>
+                  ) : (
+                    <div></div>
+                  )}
+                  <button className="btn next" onClick={goToNextQuestion} disabled={currentQuestionIndex === questions.length - 1}>
+                    Next
                   </button>
-                ) : (
-                  <div></div>
-                )}
-
-                <button className="btn next" onClick={goToNextQuestion} disabled={currentQuestionIndex === questions.length - 1}>
-                  Next
-                </button>
-                {currentQuestionIndex === questions.length - 1 && (
-                  <button onClick={handleSubmit}>Submit</button>
-                )}
-              </div>
+                  {currentQuestionIndex === questions.length - 1 && (
+                    <button onClick={handleSubmit}>Submit</button>
+                  )}
+                </div>
               </div>
             </div>
-
           )}
         </div>
       )}

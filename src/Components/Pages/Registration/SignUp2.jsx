@@ -42,12 +42,33 @@ function SignUp2({
   const validate = () => {
     switch (step) {
       case 1: {
-
-
-        if (values.teamName.length < 1) {
-          notifyToast("Team Name cannot be empty", "error");
+        if (isTeamMember=== true || false) {
+        
+            notifyToast("Select How Are You Playing Solo or In Team", "error");
+            return false;
+        
+        }  
+        return true;
+      }
+      case 2: {
+        if (!isTeamMember) {
+          if (
+            values.firstName1.length < 1 ||
+            values.lastName1.length < 3
+          ) {
+            notifyToast("Team Member Name is invalid", "error");
+            return false;
+          }
+        }   
+        if (isTeamMember=== true || false) {
+        
+          if (values.teamName.length < 1) {
+            notifyToast("Team Name cannot be empty", "error");
+            return false;
+          } 
           return false;
-        } else if (
+      
+      }        else if (
           values.firstName.length < 1 ||
           values.lastName.length < 3
         ) {
@@ -82,20 +103,7 @@ function SignUp2({
           return false;
         }
         return true;
-      }
-      case 2: {
-
-        if (values.firstName1.length > 0) {
-          if (
-            values.firstName1.length < 1 ||
-            values.lastName1.length < 3
-          ) {
-            notifyToast("Team Member Name is invalid", "error");
-            return false;
-          }
-        }
-
-        return true;
+     
       }
       case 3: {
         if (!values.email.match(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/)) {
@@ -240,7 +248,8 @@ function SignUp2({
   const StepRender = () => {
     switch (step) {
       case 1:
-        return <RegStep1 values={values} handleChange={handleChange} />;
+        return <RegStep1 values={values} handleChange={handleChange}  isTeamMember={isTeamMember}
+        setTeamMembers={setTeamMembers} />;
 
       case 2:
         return (
@@ -248,7 +257,7 @@ function SignUp2({
             values={values}
             handleChange={handleChange}
             isTeamMember={isTeamMember}
-            setTeamMembers={setTeamMembers}
+        setTeamMembers={setTeamMembers}
           />
         );
 
@@ -273,9 +282,11 @@ function SignUp2({
 
           <form className="reg-form" onSubmit={handleSubmit}>
 
-            <div className="RegStep"><h3 className="st">Team Registration</h3>{StepRender()}
+            <div className="RegStep"><h3 className="st">Registration</h3>{StepRender()}
 
-              <div className="stepButtons">
+              
+            </div>
+            <div className="stepButtons">
                 <div className="row">
 
                   <input
@@ -298,8 +309,6 @@ function SignUp2({
 
 
               </div>
-            </div>
-
           </form>
 
         </div>
