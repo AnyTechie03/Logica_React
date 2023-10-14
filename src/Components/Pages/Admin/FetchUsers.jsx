@@ -3,11 +3,16 @@ import "./FetchUser.css";
 import { Link } from "react-router-dom";
 
 export default function FetchUsers({ isFinialCall, setFinialCall }) {
+  const [registration,setRegistration]=useState('')
+  const [isquiz,setQuiz]=useState('')
+  const [tresurehunt,setTresurehunt]=useState('')
+  const [codinground,setCodinground]=useState('')
   const [UserList, setList] = useState([]);
   const [uCount, setUcount] = useState(0);
   const [isL1Count, setL1count] = useState(0);
   const [isL2Count, setL2count] = useState(0);
   const [isL3Count, setL3count] = useState(0);
+
   useEffect(() => {
     fetch("https://logicabackend.onrender.com/fetchUser", {
       method: "GET",
@@ -33,8 +38,35 @@ export default function FetchUsers({ isFinialCall, setFinialCall }) {
           setL2count(0);
           setL3count(0);
         }
-      });
+      })
+      fetch('https://logicabackend.onrender.com/AdminRounds',{
+        method:"GET"
+      }).then((res) => res.json())
+      .then((data) =>{
+        console.log(data.Current);
+        // console.log(data.Current.registration);
+        setRegistration(data.Current.registration)
+        setQuiz(data.Current.level_1)
+        setTresurehunt(data.Current.level_2)
+        setCodinground(data.Current.level_3)
+      })
   }, []);
+
+  const handleRegistration = (stage,condition)=>{
+
+    fetch('http://localhost:6010/roundSetting',{
+      method:"POST",
+      headers:{
+        "Accept":'*/*',
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify({
+        stage,
+        condition
+      })
+    }).then((res)=>console.log(res.status)) 
+
+  }
 
   return (
     <>
@@ -99,16 +131,56 @@ export default function FetchUsers({ isFinialCall, setFinialCall }) {
               <div className="col-md-6 d2 disabled">
                 <div className="card c2">
                   <div className="card-body">
-                    <h2
+                  <h2
                       className="btn "
-                      onClick={() => setFinialCall(!isFinialCall)}>
-                      {isFinialCall ? (
+                      onClick={() => {setRegistration(!registration);handleRegistration('registration',registration);}}>
+                      {registration ? (
                         <>
-                          <span className="text-success">Start The Game</span>
+                          <span className="text-success">Start Registration</span>
                         </>
                       ) : (
                         <>
-                          <span className="text-danger">Stop The Game</span>
+                          <span className="text-danger">Stop Registration</span>
+                        </>
+                      )}
+                    </h2>
+                    <h2
+                      className="btn "
+                      onClick={() => {setQuiz(!isquiz); handleRegistration('level_1',isquiz);}}>
+                      {isquiz ? (
+                        <>
+                          <span className="text-success">Start Quiz</span>
+                        </>
+                      ) : (
+                        <>
+                          <span className="text-danger">Stop Quiz</span>
+                        </>
+                      )}
+                    </h2>
+                   
+                    <h2
+                      className="btn "
+                      onClick={() => {setTresurehunt(!tresurehunt);handleRegistration('level_2',tresurehunt);}}>
+                      {tresurehunt ? (
+                        <>
+                          <span className="text-success">Start Tresure hunt</span>
+                        </>
+                      ) : (
+                        <>
+                          <span className="text-danger">Stop Tresure Hunt</span>
+                        </>
+                      )}
+                    </h2>
+                    <h2
+                      className="btn "
+                      onClick={() => {setCodinground(!codinground);handleRegistration('level_3',codinground);}}>
+                      {codinground ? (
+                        <>
+                          <span className="text-success">Start Coding Round</span>
+                        </>
+                      ) : (
+                        <>
+                          <span className="text-danger">Stop Coding Round</span>
                         </>
                       )}
                     </h2>

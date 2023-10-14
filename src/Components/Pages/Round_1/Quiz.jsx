@@ -29,14 +29,21 @@ function Quiz() {
       progress: undefined,
       theme: "dark",
     });
+<<<<<<< Updated upstream
   }
 
   const Navigate = useNavigate();
+=======
+  };
+
+  const Navigate = useNavigate()
+>>>>>>> Stashed changes
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOptions, setSelectedOptions] = useState(new Array(questions.length).fill(null));
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState(null);
+  const [isloading,setloading] = useState(true)
 
   const [isTimeout, setIsTimeout] = useState(false);
   const [quizTimeout, setQuizTimeout] = useState(30 * 60 * 1000); // 30 minutes in milliseconds
@@ -53,7 +60,6 @@ function Quiz() {
       credentials: "include"
     })
       .then((response) => {
-        console.log(response.status);
         if (response.status === 401) {
           notify('Login to Play Quiz')
           Navigate('/login')
@@ -69,6 +75,7 @@ function Quiz() {
               console.error("Error fetching questions:", error);
             });
         }
+<<<<<<< Updated upstream
       })  
   const interval = setInterval(() => {
     setTimeRemaining((prevTimeRemaining) => prevTimeRemaining - 1000);
@@ -89,6 +96,18 @@ const formatTime = (milliseconds) => {
   const seconds = ((milliseconds % (60 * 1000)) / 1000).toFixed(0);
   return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
 };
+=======
+      })
+    fetch("https://logicabackend.onrender.com/AdminRounds",{
+        method:"GET"
+      }).then((res) =>res.json()).then((decision)=>{
+        if(decision.Current.level_1){
+          setloading(false)
+          console.log('Admin Rounds for Level 1 decision: ',decision.Current.level_1);
+        }
+      })
+  }, []);
+>>>>>>> Stashed changes
 
   const handleOptionSelect = (optionIndex) => {
     const updatedSelectedOptions = [...selectedOptions];
@@ -130,8 +149,14 @@ const formatTime = (milliseconds) => {
     });
   };
 
-  return (
-    <div className="Container">
+  if(isloading){
+    return(
+      <Gloading/>
+    )
+  }
+  else if(!isloading){
+    return(
+      <div className="Container">
       {questions.length === 0 ? (
         <Gloading />
       ) : (
@@ -201,7 +226,8 @@ const formatTime = (milliseconds) => {
         </div>
       )}
     </div>
-  );
+    )
+  }
 }
 
 export default Quiz;

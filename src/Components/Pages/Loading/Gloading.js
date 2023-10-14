@@ -3,7 +3,6 @@ import React from 'react';
 import './Gloading.css'
 const Gloading = () => {
   
-  
   return (
     <div>
   <div class="scan">

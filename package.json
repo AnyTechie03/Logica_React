@@ -2,8 +2,8 @@
   "name": "logica-app",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://127.0.0.1:5000/",
-  "dependencies": {
+ "dependencies": {
+    "@chakra-ui/react": "^2.8.1",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@monaco-editor/react": "^4.5.2",
@@ -15,6 +15,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "codemirror": "^5.65.15",
+    "framer-motion": "^10.16.4",
     "js-cookie": "^3.0.5",
     "mongoose": "^7.5.1",
     "react": "^18.2.0",

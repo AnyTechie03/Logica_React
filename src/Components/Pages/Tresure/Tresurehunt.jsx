@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./Tresurehunt.css";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-
 export default function Tresurehunt() {
   const [allowclick, setallowclick] = useState(false);
 
@@ -83,7 +82,7 @@ export default function Tresurehunt() {
     return (
       <div className="TresureContainer Container">
         <div className="Levels" onClick={() => navigateLevel("TresureHunt1")}>
-          <p>Level 1</p>
+
         </div>
 
         <div className="Levels" onClick={() => navigateLevel("TresureHunt2")}>
