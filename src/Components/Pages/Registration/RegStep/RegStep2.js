@@ -2,7 +2,6 @@ import React,{useState} from "react";
 import FormInput from "./FormInput";
 
 const RegStep2 = ({ handleChange, values,setTeamMembers,isTeamMember }) => {
- 
   const [cities, setCities] = useState([]);
 
   const handleStateChange = (event) => {
@@ -139,7 +138,9 @@ const RegStep2 = ({ handleChange, values,setTeamMembers,isTeamMember }) => {
             />
 
           </div>
-          </> : <></>}
+          </> : <>
+         
+          </>}
           <div className="col-md-3">
             <FormInput
               type="text"

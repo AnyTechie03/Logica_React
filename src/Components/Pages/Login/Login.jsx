@@ -61,7 +61,7 @@ const Login = ({ isUserVerified,
           formData,
         }),
       });
-  
+      console.log("Login Called");
       if (response.status === 400) {
         notifyToast("Invalid Credentials", "error");
       } else if (response.status === 200) {
@@ -154,6 +154,7 @@ const Login = ({ isUserVerified,
           withCredntials: true,
           credentials: 'include',
         });
+        console.log(res);
 
         if(state){
             notify("User Logged In")

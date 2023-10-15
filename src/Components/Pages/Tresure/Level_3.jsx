@@ -14,7 +14,7 @@ export default function Level_3() {
       },
        withCredntials: true,
       credentials: "include",
-      body:JSON.stringify({levelat:2})
+      body:JSON.stringify({levelat:3})
       
     }).then((res) => {
       switch (res.status) {
@@ -45,7 +45,7 @@ export default function Level_3() {
     });
   };
   if (Loading) {
-    return <></>;
+    return <>Previou Round Not Cleared</>;
   } else {
     return (
       <div className="Level_1 Container">

@@ -8,13 +8,14 @@ const CookieConsent = () => {
 
   const acceptCookies = () => {
     setCookie('jwttoken', '',{domain:'https://logicabackend.onrender.com'}, { path: '/' });
+    
   };
 
   return (
     <div className={`cookie-banner ${isCookieAccepted ? 'hidden' : 'd-none'}`}>
       <div className="cookie-content">
         <p>This website uses third-party cookies to enhance your experience.</p>
-        <button onClick={acceptCookies}>Accept</button>
+        <button onClick={()=>acceptCookies()}>Accept</button>
       </div>
     </div>
   );

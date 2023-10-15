@@ -43,8 +43,6 @@ export default function FetchUsers({ isFinialCall, setFinialCall }) {
         method:"GET"
       }).then((res) => res.json())
       .then((data) =>{
-        console.log(data.Current);
-        // console.log(data.Current.registration);
         setRegistration(data.Current.registration)
         setQuiz(data.Current.level_1)
         setTresurehunt(data.Current.level_2)
@@ -54,7 +52,7 @@ export default function FetchUsers({ isFinialCall, setFinialCall }) {
 
   const handleRegistration = (stage,condition)=>{
 
-    fetch('http://localhost:6010/roundSetting',{
+    fetch('https://logicabackend.onrender.com/roundSetting',{
       method:"POST",
       headers:{
         "Accept":'*/*',

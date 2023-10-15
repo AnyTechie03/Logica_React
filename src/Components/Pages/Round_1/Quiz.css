@@ -230,3 +230,7 @@ table {
 .table-header > tr > td{
     border: 1px solid #faff5a;   
 }
+
+.ScoreContainer{
+    margin-top: 6rem;
+}
