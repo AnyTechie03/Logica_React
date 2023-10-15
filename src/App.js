@@ -36,7 +36,8 @@ import TermsConditions from "./Components/Pages/Pagess/TermsConditions";
 import Cancellation from "./Components/Pages/Pagess/Cancellation";
 import Privacy_Policy from "./Components/Pages/Pagess/Privacy_Policy";
 import ContactUs from "./Components/Pages/Pagess/ContactUs";
-
+import BackBone from "./Components/Pages/BackBone/BackBone";
+import Profileup from "./Components/Pages/imageupload/Profileup";
 import Score from "./Components/Pages/Round_1/Score";
 
 
