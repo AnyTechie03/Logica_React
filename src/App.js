@@ -36,6 +36,8 @@ import TermsConditions from "./Components/Pages/Pagess/TermsConditions";
 import Cancellation from "./Components/Pages/Pagess/Cancellation";
 import Privacy_Policy from "./Components/Pages/Pagess/Privacy_Policy";
 import ContactUs from "./Components/Pages/Pagess/ContactUs";
+import BackBone from "./Components/Pages/BackBone/BackBone";
+import Profileup from "./Components/Pages/imageupload/Profileup";
 
 export const UserContext = createContext();
 
@@ -107,6 +109,8 @@ function App() {
                   />
                 }
               />
+              <Route path="/Backbone" element={<BackBone/>}/>
+              <Route path="/profileup" element={<Profileup/>}/>
               <Route exact path="*" element={<PageNotFound />} />
               <Route exact path="/ThisisSecrete"
                 element={
@@ -154,6 +158,7 @@ function App() {
                   <Route path="/refund" element={<Cancellation/>}/>
                   <Route path="/privacy" element={<Privacy_Policy/>}/>
                   <Route path="/shipping" element={<Shipping/>}/>
+                  
                 </>
             
             </Routes>

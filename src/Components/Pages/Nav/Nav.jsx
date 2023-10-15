@@ -12,9 +12,12 @@ import { notifyToast } from '../../Functions/notifyToast';
 const Nav = ({ isProfileClicked, setProfileClicked, setEditProfile, setTeamInfoPage, setMenuClicked, isMenuClicked, isUserVerified, setUserVerified }) => {
   const [UserType, setUserType] = useState(null);
   let { state, dispatch } = useContext(UserContext);
-
-
-
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => setIsOpen(!isOpen);
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen); // Toggle the dropdown state
+  };
   const navigate = useNavigate();
   const fetchUserType = async () => {
     try {
@@ -49,56 +52,103 @@ const Nav = ({ isProfileClicked, setProfileClicked, setEditProfile, setTeamInfoP
 
   const RenderMenu = () => {
 
-  var navItems;
-  switch (UserType) {
-    case "s": {
-      navItems =
-        [{ onClickLink: "/", title: "Home" },
-          // { onClickLink: "/Profile", title: "Profile" },
-          // { onClickLink: "#Events", title: "  Events" },
-          // { onClickLink: "#Schedule", title: "  Schedule" },
-          // { onClickLink: "#Contact", title: "  ContactUs" },
+    var navItems;
+    switch (UserType) {
+      case "s": {
+        navItems =
+          [{ onClickLink: "/", title: "Home" },
+            // { onClickLink: "/Profile", title: "Profile" },
+            // { onClickLink: "#Events", title: "  Events" },
+            // { onClickLink: "#Schedule", title: "  Schedule" },
+            // { onClickLink: "#Contact", title: "  ContactUs" },
 
-        ];
-      break;
+          ];
+        break;
+      }
+      case "a": {
+        navItems =
+          [{ onClickLink: "/ThisisSecrete", title: " DashBoard" },
+          { onClickLink: "/Quiz", title: " Quiz" },
+          { onClickLink: "/TresureHunt", title: "Hunt Treasure" },
+          { onClickLink: "/CodingRound", title: " Coding Round" },
+
+          ];
+
+        break;
+      }
+
+      default: navItems = "INVISIBLE"
+        break;
+
     }
-    case "a": {
-      navItems =
-        [{ onClickLink: "/ThisisSecrete", title: " DashBoard" },
-        { onClickLink: "/Quiz", title: " Quiz" },
-        { onClickLink: "/TresureHunt", title: "Hunt Treasure" },
-        { onClickLink: "/CodingRound", title: " Coding Round" },
+    const dropdownItems = [
+      { onClickLink: "#DropdownItem1", title: "Dropdown Item 1" },
+      { onClickLink: "#DropdownItem2", title: "Dropdown Item 2" },
+    ];
 
-        ];
+    if (navItems == "INVISIBLE" || state) {
 
-      break;
-    }
+      return <>
+        <div className="navbar">
+          <Link to="/" style={{ textDecoration: 'none' }} onClick={() => navbtnToggle()}>
+            <div className="navbar-logo">
+              <h2>Logica</h2>
+              <p>'23</p>
+            </div>
+          </Link>
+          <div className="menu-button">
+            <i className="fa fa-bars" aria-hidden="true" onClick={() => toggleMenu()}></i>
+            <div className={isMenuClicked ? "active navbar-items" : "navbar-items"}>
+              <i className="fa-solid fa-xmark" style={{ color: "#fff" }} onClick={() => toggleMenu()}></i>
 
-    default: navItems = "INVISIBLE"
-      break;
+              <Link to="/" className="docs-creator" onClick={() => { scrollToTop(); navbtnToggle() }}>
+                Home
 
-  }
+              </Link>
+              <a href="/#About" className="docs-creator" onClick={() => { navbtnToggle() }}>
+                About
+              </a>
+              <a href="/#Events" className="docs-creator" onClick={() => { navbtnToggle() }}>
+                Events
+              </a>
+              <a href="/#Schedule" className="docs-creator" onClick={() => { navbtnToggle() }}>
+                Schedule
+              </a>
+              <a href="/#Guidelines" className="docs-creator" onClick={() => { navbtnToggle() }}>
+                Guidelines
+              </a>
+              <a href="/#Contact" className="docs-creator" onClick={() => { navbtnToggle() }} >
+                Contact
+              </a>
+             
+              {/* <div className="dropdown">
+        <span className="dropdown-icon" onClick={() => toggleDropdown()}>More</span>
+        <div className={isDropdownOpen ? "dropdown-content" : "hidden"}>
+          {dropdownItems.map((item) => (
+            <a
+              key={item.title}
+              className="docs-creator"
+              href={item.onClickLink}
+              onClick={() => { navbtnToggle() }}
+            >
+              {item.title}
+            </a>
+          ))}
+        </div>
+      </div> */}
 
-  if (navItems == "INVISIBLE" || state) {
-
-    return <>
-      <div className="navbar">
-        <Link to="/" style={{ textDecoration: 'none' }} onClick={()=>navbtnToggle()}>
-          <div className="navbar-logo">
-            <h2>Logica</h2>
-            <p>'23</p>
+              <Link to="/login" className="login-signup-btn docs-creator" onClick={() => { navbtnToggle() }}>
+                <div className="d-flex">
+                  Login/SignUp
+                </div>
+              </Link>
+            </div>
           </div>
-        </Link>
-        <div className="menu-button">
-          <i className="fa fa-bars" aria-hidden="true" onClick={() => toggleMenu()}></i>
-          <div className={isMenuClicked ? "active navbar-items" : "navbar-items"}>
-            <i className="fa-solid fa-xmark" style={{ color: "#fff"}} onClick={() => toggleMenu()}></i>
-
-            <Link to="/" className="docs-creator" onClick={() => { scrollToTop(); navbtnToggle() }}>
+          <div className="navbar-items">
+            <Link to="/" className="docs-creator" onClick={() => scrollToTop()}>
               Home
-
             </Link>
-            <a href="/#About" className="docs-creator" onClick={() => { navbtnToggle() }}>
+            <a href="/#About" className="docs-creator" onClick={() => navbtnToggle()}>
               About
             </a>
             <a href="/#Events" className="docs-creator" onClick={() => { navbtnToggle() }}>
@@ -110,60 +160,74 @@ const Nav = ({ isProfileClicked, setProfileClicked, setEditProfile, setTeamInfoP
             <a href="/#Guidelines" className="docs-creator" onClick={() => { navbtnToggle() }}>
               Guidelines
             </a>
-            <a href="/#Contact" className="docs-creator" onClick={() => { navbtnToggle() }} >
+            <a href="/#Contact" className="docs-creator" onClick={() => { navbtnToggle() }}>
               Contact
             </a>
-
-            <Link to="/login" className="login-signup-btn docs-creator" onClick={() => { navbtnToggle() }}>
+           
+            <Link to="/login" className="login-signup-btn docs-creator" onClick={() => { setMenuClicked(!isMenuClicked) }}>
               <div className="d-flex">
                 Login/SignUp
               </div>
             </Link>
           </div>
+          <div className="toast-container-div">
+            <div className="Toastify"></div>
+          </div>
+        </div>
+      </>;
+    }
+    return (
+      <div className="navbar">
+        <Link to="/" style={{ textDecoration: 'none' }} onClick={() => { navbtnToggle() }}>
+          <div className="navbar-logo">
+            <h2>Logica</h2>
+            <p>'23</p>
+          </div>
+        </Link>
+        <div className="menu-button">
+          <i className="fa fa-bars" aria-hidden="true" onClick={() => toggleMenu()}></i>
+          <div className={isMenuClicked ? "active navbar-items" : "navbar-items"}>
+            <i className="fa-solid fa-xmark" style={{ color: "#fff" }} onClick={() => toggleMenu()}></i>
+            {navItems.map((item) => {
+              return (
+                <>
+                  <Link key={item.title} className="docs-creator " to={item.onClickLink} onClick={() => { navbtnToggle() }}>
+                    {item.title}
+                  </Link>
+
+                </>
+              );
+            })}
+            <a href="/#About" className="docs-creator" onClick={() => { navbtnToggle() }}>
+              About
+            </a>
+            <a href="/#Events" className="docs-creator" onClick={() => { navbtnToggle() }}>
+              Events
+            </a>
+            <a href="/#Schedule" className="docs-creator" onClick={() => { navbtnToggle() }}>
+              Schedule
+            </a>
+            <a href="/#Contact" className="docs-creator" onClick={() => { navbtnToggle() }}>
+              Contact
+            </a>
+            <a href="#" className="docs-creator" onClick={() => { toggleProfile() }}>
+              Profile
+            </a>
+
+            <Link className="login-signup-btn docs-creator" onClick={() => { handleClick(); setMenuClicked(!isMenuClicked) }}>
+              <div className="d-flex">
+                Logout
+              </div>
+            </Link>
+
+
+            <div className="toast-container-div">
+              <div className="Toastify"></div>
+            </div>
+          </div>
+
         </div>
         <div className="navbar-items">
-          <Link to="/" className="docs-creator" onClick={() => scrollToTop()}>
-            Home
-          </Link>
-          <a href="/#About" className="docs-creator" onClick={() => navbtnToggle()}>
-            About
-          </a>
-          <a href="/#Events" className="docs-creator" onClick={() => { navbtnToggle() }}>
-            Events
-          </a>
-          <a href="/#Schedule" className="docs-creator" onClick={() => { navbtnToggle() }}>
-            Schedule
-          </a>
-          <a href="/#Guidelines" className="docs-creator" onClick={() => { navbtnToggle() }}>
-            Guidelines
-          </a>
-          <a href="/#Contact" className="docs-creator" onClick={() => { navbtnToggle() }}>
-            Contact
-          </a>
-          <Link to="/login" className="login-signup-btn docs-creator" onClick={() => { setMenuClicked(!isMenuClicked) }}>
-            <div className="d-flex">
-              Login/SignUp
-            </div>
-          </Link>
-        </div>
-        <div className="toast-container-div">
-          <div className="Toastify"></div>
-        </div>
-      </div>
-    </>;
-  }
-  return (
-    <div className="navbar">
-      <Link to="/" style={{ textDecoration: 'none' }} onClick={() => { navbtnToggle() }}>
-        <div className="navbar-logo">
-          <h2>Logica</h2>
-          <p>'23</p>
-        </div>
-      </Link>
-      <div className="menu-button">
-        <i className="fa fa-bars" aria-hidden="true" onClick={() => toggleMenu()}></i>
-        <div className={isMenuClicked ? "active navbar-items" : "navbar-items"}>
-          <i className="fa-solid fa-xmark" style={{ color: "#fff"}} onClick={() => toggleMenu()}></i>
           {navItems.map((item) => {
             return (
               <>
@@ -189,57 +253,17 @@ const Nav = ({ isProfileClicked, setProfileClicked, setEditProfile, setTeamInfoP
           <a href="#" className="docs-creator" onClick={() => { toggleProfile() }}>
             Profile
           </a>
-
-          <Link className="login-signup-btn docs-creator" onClick={() => { handleClick(); setMenuClicked(!isMenuClicked) }}>
+          <Link className="login-signup-btn docs-creator" onClick={handleClick}>
             <div className="d-flex">
               Logout
             </div>
           </Link>
-
-
-          <div className="toast-container-div">
-            <div className="Toastify"></div>
-          </div>
         </div>
 
+
       </div>
-      <div className="navbar-items">
-        {navItems.map((item) => {
-          return (
-            <>
-              <Link key={item.title} className="docs-creator " to={item.onClickLink} onClick={() => { navbtnToggle() }}>
-                {item.title}
-              </Link>
-
-            </>
-          );
-        })}
-        <a href="/#About" className="docs-creator" onClick={() => { navbtnToggle() }}>
-          About
-        </a>
-        <a href="/#Events" className="docs-creator" onClick={() => { navbtnToggle() }}>
-          Events
-        </a>
-        <a href="/#Schedule" className="docs-creator" onClick={() => { navbtnToggle() }}>
-          Schedule
-        </a>
-        <a href="/#Contact" className="docs-creator" onClick={() => { navbtnToggle() }}>
-          Contact
-        </a>
-        <a href="#" className="docs-creator" onClick={() => { toggleProfile() }}>
-          Profile
-        </a>
-        <Link className="login-signup-btn docs-creator" onClick={handleClick}>
-          <div className="d-flex">
-            Logout
-          </div>
-        </Link>
-      </div>
-
-
-    </div>
-  );
-}
+    );
+  }
   const toggleMenu = () => {
     setMenuClicked(!isMenuClicked); // Toggle the menu state
     setEditProfile(false);
@@ -267,12 +291,12 @@ const Nav = ({ isProfileClicked, setProfileClicked, setEditProfile, setTeamInfoP
     navigate("/login ");
     toggleMenu();
   };
- return(
-<>
+  return (
+    <>
 
-<RenderMenu/>
-</>
- );
+      <RenderMenu />
+    </>
+  );
 };
 
 export default Nav;

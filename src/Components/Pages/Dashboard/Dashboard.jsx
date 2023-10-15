@@ -8,6 +8,7 @@ import Schedule from "../Schedule/Schedule";
 import Guidance from "../Guidance/Guidance";
 import EditProfile from "../EditProfile/EditProfile";
 import Profile from "../Profile/Profile";
+import Sponsors from "../Sponsors/Sponsors";
 
 
 const Dashboard = ({
@@ -27,9 +28,11 @@ const Dashboard = ({
       <Home />
       <About />
       <Events />
+      <Sponsors/>
       <Schedule/>
-      <Contact />
       <Guidance/>
+      <Contact />
+
       
       <div className={isEditProfile ? "show" : "d-none"}>
       <EditProfile isProfileClicked={isProfileClicked}
