@@ -3,9 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import './Quiz.css'
 import Gloading from "../Loading/Gloading";
+import Score from "./Score";
 
 function Quiz() {
-  const notify = (message) => {
+  const Notify = (message) => {
     toast.error(message, {
       position: "top-right",
       autoClose: 5000,
@@ -18,7 +19,7 @@ function Quiz() {
     });
   }
 
-  const successnotify = (message) => {
+  const SuccessNotify = (message) => {
     toast.success(message, {
       position: "top-right",
       autoClose: 5000,
@@ -28,10 +29,10 @@ function Quiz() {
       draggable: true,
       progress: undefined,
       theme: "dark",
-    });
+    })
   }
-
   const Navigate = useNavigate();
+
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOptions, setSelectedOptions] = useState(new Array(questions.length).fill(null));
@@ -39,10 +40,48 @@ function Quiz() {
   const [score, setScore] = useState(null);
 
   const [isTimeout, setIsTimeout] = useState(false);
-  const [quizTimeout, setQuizTimeout] = useState(30 * 60 * 1000); // 30 minutes in milliseconds
+  const [quizTimeout] = useState(30 * 60 * 1000);
   const [timeRemaining, setTimeRemaining] = useState(quizTimeout);
 
   useEffect(() => {
+   checkUniversal();
+
+  }, []);
+
+  useEffect(() => {
+    if (timeRemaining <= 0) {
+      setIsTimeout(true);
+      handleSubmit();
+    }
+  }, [timeRemaining]);
+
+  const checkUniversal= ()=>{
+    fetch('https://logicabackend.onrender.com/checkuniversal',{
+      method:"GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      withCredentials: true,
+      credentials: "include"
+    }).then((res)=> res.json()).then((response)=>{
+      if(response.Universal[0].level_1){
+        console.log("Quiz Has Started");
+        if(!response.Data.Level_1_Score){
+          console.log("And as you have not answered the game, you can play it.");
+          fetchQuestions();
+          startTimer();        
+        }
+        else{
+          //Sir handle here what to show user if he has answered the quiz. My suggestion is to show him his score.
+          //His score can be accessed from response.Data.Level_1_Score
+          console.log("But You have Answered the Game So you cannot play it");
+        }
+      }
+    })
+  }
+
+  const fetchQuestions = () => {
     fetch("https://logicabackend.onrender.com/questions", {
       method: 'GET',
       headers: {
@@ -53,13 +92,11 @@ function Quiz() {
       credentials: "include"
     })
       .then((response) => {
-        console.log(response.status);
         if (response.status === 401) {
-          notify('Login to Play Quiz')
+          Notify('Login to Play Quiz')
           Navigate('/login')
-        }
-        else {
-          successnotify(`Let's Quizee it!!`)
+        } else {
+          SuccessNotify(`Let's Quizee it!!`);
           response.json()
             .then((data) => {
               setQuestions(data);
@@ -69,26 +106,15 @@ function Quiz() {
               console.error("Error fetching questions:", error);
             });
         }
-      })  
-const interval = setInterval(() => {
-    setTimeRemaining((prevTimeRemaining) => prevTimeRemaining - 1000);
-  }, 1000);
+      })
+  };
 
-  return () => clearInterval(interval);
-}, []);
-
-useEffect(() => {
-  if (timeRemaining <= 0) {
-    setIsTimeout(true);
-    handleSubmit();
-  }
-}, [timeRemaining]);
-
-const formatTime = (milliseconds) => {
-  const minutes = Math.floor(milliseconds / (60 * 1000));
-  const seconds = ((milliseconds % (60 * 1000)) / 1000).toFixed(0);
-  return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
-};
+  const startTimer = () => {
+    const interval = setInterval(() => {
+      setTimeRemaining((prevTimeRemaining) => prevTimeRemaining - 1000);
+    }, 1000);
+    return () => clearInterval(interval);
+  };
 
   const handleOptionSelect = (optionIndex) => {
     const updatedSelectedOptions = [...selectedOptions];
@@ -96,30 +122,22 @@ const formatTime = (milliseconds) => {
     setSelectedOptions(updatedSelectedOptions);
   };
 
-  const goToPreviousQuestion = () => {
-    if (currentQuestionIndex > 0) {
-      setCurrentQuestionIndex(currentQuestionIndex - 1);
-    }
-  };
-
-  const goToNextQuestion = () => {
-    if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
+  const navigateToQuestion = (index) => {
+    if (index >= 0 && index < questions.length) {
+      setCurrentQuestionIndex(index);
     }
   };
 
   const handleSubmit = () => {
-    let correctCount = 0;
-    questions.forEach((question, index) => {
-      const correctAnswerIndex = question.CorrectAns - 1; // Convert to 0-based index
-      if (selectedOptions[index] === correctAnswerIndex) {
-        correctCount++;
-      }
-    });
+    let correctCount = questions.reduce((count, question, index) => {
+      const correctAnswerIndex = question.CorrectAns - 1;
+      return selectedOptions[index] === correctAnswerIndex ? count + 1 : count;
+    }, 0);
+
     setScore(correctCount);
     setIsSubmitted(true);
-    console.log(correctCount);
-    const res = fetch('https://logicabackend.onrender.com/QuizSubmit', {
+
+    fetch('https://logicabackend.onrender.com/QuizSubmit', {
       method: 'POST',
       headers: {
         "Content-Type": "application/json"
@@ -130,6 +148,12 @@ const formatTime = (milliseconds) => {
     });
   };
 
+  const formatTime = (milliseconds) => {
+    const minutes = Math.floor(milliseconds / (60 * 1000));
+    const seconds = ((milliseconds % (60 * 1000)) / 1000).toFixed(0);
+    return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+  };
+
   return (
     <div className="Container">
       {questions.length === 0 ? (
@@ -138,64 +162,60 @@ const formatTime = (milliseconds) => {
         <div>
           {isSubmitted ? (
             <div>
-              <h3>Your Score: {score} out of {questions.length}</h3>
+              <Score score={score} level={'level_1'}/>
             </div>
           ) : isTimeout ? (
             <div>
               <h3>Timeout: Quiz Over</h3>
             </div>
           ) : (
-            <div class="container mt-5 qcontainer">
-        <div class="d-flex justify-content-center row">
-            <div class="col-md-10 col-lg-10">
-                <div class="d-flex flex-row justify-content-between align-items-center mcq p-3 border-bottom">
-                <h2 className="title">Quiz</h2>
-                <span>({currentQuestionIndex + 1} of {questions.length})</span>
-                <div className="timer">
-                  <p>Time Remaining: {formatTime(timeRemaining)}</p>
-                </div>
+            <div className="container mt-5 qcontainer">
+              <div className="d-flex justify-content-center row">
+                <div className="col-md-10 col-lg-10">
+                  <div className="d-flex flex-row justify-content-between align-items-center mcq p-3 border-bottom">
+                    <h2 className="title">Quiz</h2>
+                    <span>({currentQuestionIndex + 1} of {questions.length})</span>
+                    <div className="timer">
+                      <p>Time Remaining: {formatTime(timeRemaining)}</p>
+                    </div>
                   </div>
-                <h4 className="Question_Container text-light pt-2">{questions[currentQuestionIndex].question}</h4>
-                <div className="Answer_Container">
-               <div class="ans ml-2">
-                  {Array.isArray(questions[currentQuestionIndex].options) ? (
-                    <ul>
-                      {questions[currentQuestionIndex].options.map((option, optionIndex) => (
-                        <li key={optionIndex}>
-                          <input
-                            type="radio"
-                            name={`question${currentQuestionIndex}`}
-                            value={option}
-                            checked={selectedOptions[currentQuestionIndex] === optionIndex}
-                            onChange={() => handleOptionSelect(optionIndex)}
-                          />
-                          <label className='text-prim' htmlFor={`option${optionIndex}-option`}>{option}</label>
-                          <div className={`check ${selectedOptions[currentQuestionIndex] == optionIndex ? 'checked text-center' : 'text-center'}`}></div>
-                        </li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <p>No options available for this question.</p>
-                  )}
-                   </div>
-                </div>
-                <div className='grid'>
-                  {currentQuestionIndex > 0 ? (
-                    <button className="btn prev mt-1 mr-1" onClick={goToPreviousQuestion} disabled={currentQuestionIndex === 0}>
+                  <h4 className="Question_Container text-light pt-2">{questions[currentQuestionIndex].question}</h4>
+                  <div className="Answer_Container">
+                    <div className="ans ml-2">
+                      {Array.isArray(questions[currentQuestionIndex].options) ? (
+                        <ul>
+                          {questions[currentQuestionIndex].options.map((option, optionIndex) => (
+                            <li key={optionIndex}>
+                              <input
+                                type="radio"
+                                name={`question${currentQuestionIndex}`}
+                                value={option}
+                                checked={selectedOptions[currentQuestionIndex] === optionIndex}
+                                onChange={() => handleOptionSelect(optionIndex)}
+                              />
+                              <label className='text-prim' htmlFor={`option${optionIndex}-option`}>{option}</label>
+                              <div className={`check ${selectedOptions[currentQuestionIndex] === optionIndex ? 'checked text-center' : 'text-center'}`}></div>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <p>No options available for this question.</p>
+                      )}
+                    </div>
+                  </div>
+                  <div className='grid'>
+                    <button className="btn prev mt-1 mr-1" onClick={() => navigateToQuestion(currentQuestionIndex - 1)} disabled={currentQuestionIndex === 0}>
                       Previous
                     </button>
-                  ) : (
-                    <div></div>
-                  )}
-                  <button className="btn next ml-2" onClick={goToNextQuestion} disabled={currentQuestionIndex === questions.length - 1}>
-                    Next
-                  </button>
-                  {currentQuestionIndex === questions.length - 1 && (
-                    <button onClick={handleSubmit}>Submit</button>
-                  )}
+                    <button className="btn next ml-2" onClick={() => navigateToQuestion(currentQuestionIndex + 1)} disabled={currentQuestionIndex === questions.length - 1}>
+                      Next
+                    </button>
+                    {currentQuestionIndex === questions.length - 1 && (
+                      <button onClick={handleSubmit}>Submit</button>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
             </div>
           )}
         </div>

@@ -21,13 +21,14 @@ const Nav = ({ isProfileClicked, setProfileClicked, setEditProfile, setTeamInfoP
       const res = await fetch("https://logicabackend.onrender.com/fetchUserType", {
         method: "GET",
         headers: {
-          Accept: "application/json",
+          Accept: "*/*",
           "Content-Type": "application/json"
         },
+
         credentials: 'include',
       });
 
-      if (res.status === 200) {
+      if (res.status === 201) {
         const data = await res.json();
         console.log(data.userType);
         setUserType(data.userType);

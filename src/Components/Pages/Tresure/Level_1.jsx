@@ -5,30 +5,53 @@ import "./Tresurehunt.css";
 
 export default function Level_1() {
   const [Loading, setLoading] = useState(true);
-  
+
   useEffect(() => {
-    fetch("https://logicabackend.onrender.com/TresureHuntValidate", {
-      method: "POST",
+    checkUniversal();
+  },[]);
+
+  const checkUniversal = () => {
+fetch("https://logicabackend.onrender.com/checkuniversal", {
+      method: "GET",
       headers: {
-        Accept: "*/*",
+        Accept: "application/json",
         "Content-Type": "application/json",
       },
+      withCredentials: true,
       credentials: "include",
-      body: JSON.stringify({ levelat: 1 }),
-    }).then((res) => {
-      switch (res.status) {
-        case 201:
-          setLoading(false);
-          break;
-        case 401:
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        if (response.Universal[0].level_2) {
+          console.log("Tresure Hunt Has Started");
+          fetch("https://logicabackend.onrender.com/TresureHuntValidate", {
+            method: "POST",
+            headers: {
+              Accept: "*/*",
+              "Content-Type": "application/json",
+            },
+            credentials: "include",
+            body: JSON.stringify({ levelat: 1 }),
+          }).then((res) => {
+            switch (res.status) {
+              case 201:
+                setLoading(false);
+                break;
+              case 401:
+                setLoading(true);
+                break;
+              default:
+                setLoading(true);
+                break;
+            }
+          });
+        } else {
+          console.log("Tresure Hunt has not started by the Admin");
+          //Sir Add Code to show user that tresure hunt is yet to be started by the Admin
           setLoading(true);
-          break;
-        default:
-          setLoading(true);
-          break;
-      }
-    });
-  });
+        }
+      });
+  };
 
   const [L1input, setinput] = useState("");
 
@@ -66,8 +89,7 @@ export default function Level_1() {
         "Content-Type": "application/json",
       },
       withCredntials: true,
-      credentials:"include"
-      ,
+      credentials: "include",
       body: JSON.stringify({ L1input }),
     });
     res.then((e) => {
@@ -76,7 +98,7 @@ export default function Level_1() {
   };
 
   if (Loading) {
-    return <></>;
+    return <>Previou  Not Cleared</>;
   } else {
     return (
       <div className="Level_1 Container">

@@ -2,18 +2,13 @@ import React, { useState } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { notifyToast } from "../../Functions/notifyToast";
-import { useNavigate } from "react-router-dom";
 import RegStep1 from "./RegStep/RegStep1";
 import RegStep2 from "./RegStep/RegStep2";
 import RegStep3 from "./RegStep/RegStep3";
 import RegStep4 from "./RegStep/RegStep4";
 import RegStep5 from "./RegStep/RegStep5";
 
-function SignUp2({
-  isTeamMember, setTeamMembers
-}) {
-  const navigate = useNavigate();
-
+function SignUp2({ isTeamMember, setTeamMembers }) {
   const [step, setStep] = useState(1);
 
   const [values, setValues] = useState({
@@ -35,30 +30,23 @@ function SignUp2({
     cpassword: "",
     firstName1: "",
     lastName1: "",
-  
-    emailVerificationToken: '',
+    emailVerificationToken: "",
   });
 
   const validate = () => {
     switch (step) {
       case 1: {
-        if (isTeamMember=== null) {
-            notifyToast("Select How Are You Playing Solo or In Team", "error");
-            return false;
-        } 
+        if (isTeamMember === null) {
+          notifyToast("Select How Are You Playing Solo or In Team", "error");
+          return false;
+        }
         return true;
       }
-      case 2: { 
-        if (isTeamMember=== true && values.teamName.length < 1) {
-        
-            notifyToast("Team Name cannot be empty", "error");
-
+      case 2: {
+        if (isTeamMember === true && values.teamName.length < 1) {
+          notifyToast("Team Name cannot be empty", "error");
           return false;
-      
-      } else if (
-          values.firstName.length < 1 ||
-          values.lastName.length < 3
-        ) {
+        } else if (values.firstName.length < 1 || values.lastName.length < 3) {
           notifyToast("Leader Name is invalid", "error");
           return false;
         } else if (values.phoneNumber.length !== 10) {
@@ -88,17 +76,13 @@ function SignUp2({
         } else if (values.state.length < 3) {
           notifyToast("State is too short", "error");
           return false;
-        }else  if (isTeamMember===true) {
-          if (
-            values.firstName1.length < 1 ||
-            values.lastName1.length < 3
-          ) {
+        } else if (isTeamMember === true) {
+          if (values.firstName1.length < 1 || values.lastName1.length < 3) {
             notifyToast("Team Member Name is invalid", "error");
             return false;
           }
-        } 
+        }
         return true;
-     
       }
       case 3: {
         if (!values.email.match(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/)) {
@@ -109,8 +93,6 @@ function SignUp2({
           return false;
         }
         return true;
-
-
       }
       case 4: {
         if (
@@ -165,11 +147,7 @@ function SignUp2({
     }
     if (step === 5) {
       if (validate()) {
-
-
-
       }
-
     }
   };
 
@@ -184,7 +162,6 @@ function SignUp2({
     const value = e.target.value;
     setValues({ ...values, [name]: value });
   };
-
 
   const handleSubmit = async () => {
     const formDataToSend = {
@@ -228,12 +205,11 @@ function SignUp2({
       }
       if (res.ok) {
         // Handle a successful response here
-        console.log('GET request succeeded');
+        console.log("GET request succeeded");
       } else {
-        // Handle errors here
-        console.error('GET request failed');
+        console.error("GET request failed");
       }
-      return res; // Return the response for further handling
+      return res; 
     } catch (error) {
       console.error("Error submitting registration:", error);
       notifyToast("Failed to register", "Error");
@@ -243,8 +219,14 @@ function SignUp2({
   const StepRender = () => {
     switch (step) {
       case 1:
-        return <RegStep1 values={values} handleChange={handleChange}  isTeamMember={isTeamMember}
-        setTeamMembers={setTeamMembers} />;
+        return (
+          <RegStep1
+            values={values}
+            handleChange={handleChange}
+            isTeamMember={isTeamMember}
+            setTeamMembers={setTeamMembers}
+          />
+        );
 
       case 2:
         return (
@@ -252,7 +234,7 @@ function SignUp2({
             values={values}
             handleChange={handleChange}
             isTeamMember={isTeamMember}
-        setTeamMembers={setTeamMembers}
+            setTeamMembers={setTeamMembers}
           />
         );
 
@@ -274,14 +256,13 @@ function SignUp2({
     <div className="auth-background fWhite">
       <div className="signup-container">
         <div className="regform">
-
           <form className="reg-form" onSubmit={handleSubmit}>
+            <div className="RegStep">
+              <h3 className="st">Registration</h3>
+              {StepRender()}
 
-            <div className="RegStep"><h3 className="st">Registration</h3>{StepRender()}
-
-               <div className="stepButtons ">
+              <div className="stepButtons ">
                 <div className="row justify-content-around reg1in">
-
                   <input
                     value={"<< Back"}
                     type="button"
@@ -289,7 +270,6 @@ function SignUp2({
                     disabled={step === 1}
                     onClick={handlePrev}
                   />
-
 
                   <input
                     value={step === 5 ? "Sign Up >>" : "Next >>"}
@@ -299,13 +279,9 @@ function SignUp2({
                     onClick={handleNext}
                   />
                 </div>
-
-
               </div>
             </div>
-           
           </form>
-
         </div>
         <ToastContainer />
       </div>

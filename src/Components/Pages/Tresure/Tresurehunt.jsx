@@ -32,32 +32,62 @@ export default function Tresurehunt() {
   };
 
   let navigate = useNavigate();
-  
-  useEffect(() => {
-    fetch("https://logicabackend.onrender.com/validateRound").then((response) => {
-      console.log(response.status);
-      if (response.status === 401) {
-        setallowclick(false);
-      } 
-      else if(response.status === 500){
-        notify("Internal Server Issue...")
-        setallowclick(false)
-      }
-      else{
-        // successnotify(`Let's Hunt It..`);
-        setallowclick(true);
-      }
-    });
-  },[]);
 
+  useEffect(() => {
+    checkUniversal();
+  }, []);
+
+  const checkUniversal = () => {
+    fetch("https://logicabackend.onrender.com/checkuniversal", {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      withCredentials: true,
+      credentials: "include",
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        if (response.Universal[0].level_2) {
+          console.log("Tresure Hunt Has Started");
+
+          fetch("https://logicabackend.onrender.com/TresureHuntValidate", {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+            withCredentials: true,
+            credentials: "include",
+            body: JSON.stringify({ levelat: 1 }),
+          }).then((response) => {
+            console.log(response.status);
+            if (response.status === 401) {
+              setallowclick(false);
+            } else {
+              // successnotify(`Let's Hunt It..`);
+              setallowclick(true);
+            }
+          });
+        } else {
+          console.log("Tresure Hunt has not started by the Admin");
+          setallowclick(false);
+        }
+      });
+  };
   const navigateLevel = (e) => {
     navigate(e);
   };
 
   if (!allowclick) {
     return (
-      <div className="TresureContainer" onClick={()=>{notify("Round 1 Not cleared")}}>
-        <div className="Levels">
+      <div className="TresureContainer">
+        <div
+          className="Levels"
+          onClick={() => {
+            notify("Quiz Round Not cleared");
+          }}>
           <p>Level 1</p>
         </div>
 
@@ -65,7 +95,7 @@ export default function Tresurehunt() {
           <p>Level 2</p>
         </div>
 
-        <div className="Levels" >
+        <div className="Levels">
           <p>Level 3</p>
         </div>
 
@@ -73,7 +103,7 @@ export default function Tresurehunt() {
           <p>Level 4</p>
         </div>
 
-        <div className="Levels" >
+        <div className="Levels">
           <p>Level 5</p>
         </div>
       </div>
@@ -82,7 +112,7 @@ export default function Tresurehunt() {
     return (
       <div className="TresureContainer Container">
         <div className="Levels" onClick={() => navigateLevel("TresureHunt1")}>
-
+          <p>Level 1</p>
         </div>
 
         <div className="Levels" onClick={() => navigateLevel("TresureHunt2")}>

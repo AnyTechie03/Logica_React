@@ -36,6 +36,7 @@ import TermsConditions from "./Components/Pages/Pagess/TermsConditions";
 import Cancellation from "./Components/Pages/Pagess/Cancellation";
 import Privacy_Policy from "./Components/Pages/Pagess/Privacy_Policy";
 import ContactUs from "./Components/Pages/Pagess/ContactUs";
+import Score from "./Components/Pages/Round_1/Score";
 
 export const UserContext = createContext();
 
@@ -71,9 +72,7 @@ function App() {
         <UserContext.Provider value={{ state, dispatch }}>
           <Router>
             <Routes>
-              <Route
-                exact
-                path="/"
+              <Route exact path="/"
                 element={
                   <Dashboard
                     isProfileClicked={isProfileClicked}
@@ -117,7 +116,8 @@ function App() {
                 }
               />
                 <>
-                  <Route path="/Quiz" element={<Quiz />} />
+                  {/* <Route path="/quiz" element={<Quiz />} /> */}
+                  <Route path="/quiz" element={<Quiz/>} />
                   <Route path="/TresureHunt" element={<Tresurehunt />} />
                   <Route
                     path="/TresureHunt/TresureHunt1"
@@ -171,7 +171,8 @@ function App() {
             />
 
             <ToastContainer />
-            <CookieConsent />
+            {/* Append later once everything is working */}
+            {/* <CookieConsent /> */}  
             {/* Footer */}
             <Footer />
 
