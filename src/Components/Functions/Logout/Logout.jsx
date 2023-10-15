@@ -5,12 +5,11 @@ export const Logout = () => {
 localStorage.clear()
     const response = fetch("https://logicabackend.onrender.com/logout", {
         method: "GET",
-  
         headers: {
           Accept: "*/*",
           "Content-Type": "application/json",
-          "Credentials":"include",
         },
+        withcredentials:true,
         credentials:'include',
 
       });
