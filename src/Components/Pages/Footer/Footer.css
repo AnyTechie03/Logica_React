@@ -97,4 +97,7 @@
     .terms-content {
         max-width: 90%;
     }
+    .tt{
+        font-size: 0.6rem;
+    }
 }

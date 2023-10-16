@@ -39,6 +39,7 @@ import ContactUs from "./Components/Pages/Pagess/ContactUs";
 import BackBone from "./Components/Pages/BackBone/BackBone";
 import Profileup from "./Components/Pages/imageupload/Profileup";
 import Score from "./Components/Pages/Round_1/Score";
+import Space from "./Components/Pages/Loading/Space";
 
 
 export const UserContext = createContext();
@@ -110,6 +111,7 @@ function App() {
                 }
               />
               <Route path="/Backbone" element={<BackBone/>}/>
+              <Route path="/Space" element={<Space/>}/>
               <Route path="/profileup" element={<Profileup/>}/>
               <Route exact path="*" element={<PageNotFound />} />
               <Route exact path="/ThisisSecrete"

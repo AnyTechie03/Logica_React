@@ -41,7 +41,7 @@ const Footer = () => {
         <div className="row p-0 m-0">
           <div className="copyright col-md-12 p-0 text-center">
             Copyright © 2023 All rights reserved by SIMCA &amp; MCA Department
-            <div className="p-0 text-center gap-3" style={{ color: "#fff"}}>
+            <div className="p-0 text-center gap-3 tt" style={{ color: "#fff"}}>
             <a onClick={() => toggleTerms()}  style={subt}>Terms & Conditions   </a>
             <a onClick={() => toggleContact()}  style={subt}>   |   Contact us   |</a>
             <a onClick={() => toggleCancellation()}  style={subt}>  Cancellation & Refund Policy  </a>
