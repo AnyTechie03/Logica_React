@@ -24,22 +24,8 @@ export default function Tresurehunt() {
         star.style.left = Math.floor(Math.random() * 99) + '%';
     });
 
-    // Randomize exhaust fume position
-    const fumes = document.querySelectorAll('.smoke-cloud');
 
-    fumes.forEach((cloud) => {
-        cloud.style.top = Math.floor(Math.random() * 50) + '%';
-        cloud.style.left = Math.floor(Math.random() * 101) + '%';
-    });
-
-    setInterval(function () {
-        fumes.forEach((cloud) => {
-            cloud.style.display = 'none';
-            cloud.style.top = Math.floor(Math.random() * 50) + '%';
-            cloud.style.left = Math.floor(Math.random() * 101) + '%';
-            cloud.style.display = 'block';
-        });
-    }, 2950);
+ 
 
     const $starLayers = document.getElementsByClassName('star-layer');
     const $body = document.getElementsByTagName('body');
