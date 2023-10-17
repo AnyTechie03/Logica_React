@@ -93,7 +93,7 @@ export default function Profile({isProfileClicked,setProfileClicked,setEditProfi
   
       <div className="profile-left">
       <div className="Pxmark row">
-    <i className="fa-solid fa-xmark" style={{ color: "#fff"}} onClick={() => setProfileClicked(!isProfileClicked)}></i>
+    <i className="fa-solid fa-xmark pl-2 pt-2" style={{ color: "#fff"}} onClick={() => setProfileClicked(!isProfileClicked)}></i>
     </div>
         <img
           src={uProfileref}
@@ -147,7 +147,7 @@ export default function Profile({isProfileClicked,setProfileClicked,setEditProfi
 <div className="text-left pl-3">
 <p className="score"> Name Of The Team Mates</p>
 
-{UserData.teamMembers ? (
+{UserData.teamMembers  ? (
             <ol>
               {UserData.teamMembers.map((item, i) => {
                 return <li className="score">{item.firstName1}{item.lastName1}</li>;

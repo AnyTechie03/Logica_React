@@ -44,8 +44,8 @@ export default function Events() {
   return (
     <>
       <div className="event text-center" id="Events">
-        <div className="row p-5 g-5 justify-content-around" ref={targetRef}>
-          <div className="eventsHead">events</div>
+        <div className="row p-5 g-5 justify-content-around text-center" ref={targetRef}>
+          <div className="eventsHead text-center">events</div>
           <div className="Econtainer row">
             <div className="card">
               <div className="face face1">
@@ -55,7 +55,6 @@ export default function Events() {
                   <p className="level-1">
                     <ul style={{ width: "fit-content" }}>
                       <hr />
-
                       <li className="">Time - 1:00 Hr</li>
                       <li className="">60s Per Quistion</li>
                       <li className="">Quiz start's on - 9:00 PM</li>

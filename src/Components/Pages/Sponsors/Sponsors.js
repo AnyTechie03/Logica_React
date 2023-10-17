@@ -7,27 +7,27 @@ import Spbg from '../../../assets/img/box_sponsors.png';
 
 const sponsors_data=[
 	{
-	name:'',
-	imsrc:'https://res.cloudinary.com/dntbu3vhr/image/upload/c_scale,q_auto:eco,w_240/v1675429916/cepheus23_posters/sponsors/State_Bank_of_India.svg_fcglpj.png',
-	web:'https://sbi.co.in/',
+	name:'Rotract',
+	imsrc:'',
+	web:"https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2F0ca55c1a-0fec-416a-a148-b5651e45a0c8?alt=media&token=122d0492-7c0b-47c8-aa79-130c548abbba",
 	role:'TITLE SPONSOR',
 	},
 	{
-	name:'HPCL',
-	imsrc:'https://res.cloudinary.com/dntbu3vhr/image/upload/c_scale,q_auto:eco,w_240/v1675429916/cepheus23_posters/sponsors/Hindustan_Petroleum_Logo.svg_b7mmo6.png',
-	web:'https://www.hindustanpetroleum.com/',
+	name:'',
+	imsrc:'',
+	web:'',
 	role:'CO SPONSOR',
 	},
 	{
-	name:'ATHER ENERGY',
-	imsrc:'https://res.cloudinary.com/dntbu3vhr/image/upload/c_scale,q_auto:eco,w_240/v1675429915/cepheus23_posters/sponsors/ather_svbwai.png',
-	web:'https://www.atherenergy.com/',
+	name:'',
+	imsrc:'',
+	web:'',
 	role:'CO SPONSOR',
 	},
     	{
-	name:'ATHER ENERGY',
-	imsrc:'https://res.cloudinary.com/dntbu3vhr/image/upload/c_scale,q_auto:eco,w_240/v1675429915/cepheus23_posters/sponsors/ather_svbwai.png',
-	web:'https://www.atherenergy.com/',
+	name:' ',
+	imsrc:'',
+	web:'',
 	role:'CO SPONSOR',
 	},
 

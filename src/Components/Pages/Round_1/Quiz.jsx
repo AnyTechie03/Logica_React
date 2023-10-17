@@ -155,7 +155,7 @@ function Quiz() {
   };
 
   return (
-    <div className="Container">
+    <div className="Container qmContainer">
       {questions.length === 0 ? (
         <Gloading />
       ) : (
@@ -193,8 +193,9 @@ function Quiz() {
                                 checked={selectedOptions[currentQuestionIndex] === optionIndex}
                                 onChange={() => handleOptionSelect(optionIndex)}
                               />
+                              <div className={`check ${selectedOptions[currentQuestionIndex] === optionIndex ? 'checked text-center' : 'text-center'}`}>
                               <label className='text-prim' htmlFor={`option${optionIndex}-option`}>{option}</label>
-                              <div className={`check ${selectedOptions[currentQuestionIndex] === optionIndex ? 'checked text-center' : 'text-center'}`}></div>
+                              </div>
                             </li>
                           ))}
                         </ul>
@@ -211,7 +212,7 @@ function Quiz() {
                       Next
                     </button>
                     {currentQuestionIndex === questions.length - 1 && (
-                      <button onClick={handleSubmit}>Submit</button>
+                      <button className="btn next ml-2" onClick={handleSubmit}>Submit</button>
                     )}
                   </div>
                 </div>

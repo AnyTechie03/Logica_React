@@ -25,7 +25,9 @@ z:root{
     }
   }
   
-  
+  .qmContainer{
+    background-color: #000d28;
+  }
   .qcontainer{
     position: fixed;
     width: 80%;
