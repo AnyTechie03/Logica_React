@@ -53,7 +53,7 @@ export default function EditProfile({
     try {
       const { _id, firstName, lastName, phoneNumber, collegeName, gender, degree } = userData;
 
-      const res = await fetch("https://logicabackend.onrender.com/UpUserData", {
+      const res = await fetch("https://angry-moon-10536.pktriot.net/UpUserData", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",

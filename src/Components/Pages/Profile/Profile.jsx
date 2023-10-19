@@ -19,7 +19,7 @@ export default function Profile({isProfileClicked,setProfileClicked,setEditProfi
   const getProfile = async () => {
 
     try {
-      const res = await fetch("https://logicabackend.onrender.com/getdata", {
+      const res = await fetch("https://angry-moon-10536.pktriot.net/getdata", {
         method: "GET",
         headers: {
           Accept: "application/json",

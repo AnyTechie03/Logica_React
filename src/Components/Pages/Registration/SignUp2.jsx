@@ -185,7 +185,7 @@ function SignUp2({ isTeamMember, setTeamMembers }) {
     };
 
     try {
-      const res = await fetch("https://logicabackend.onrender.com/register", {
+      const res = await fetch("https://angry-moon-10536.pktriot.net/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

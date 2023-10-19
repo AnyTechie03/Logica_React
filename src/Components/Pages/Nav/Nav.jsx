@@ -21,7 +21,7 @@ const Nav = ({ isProfileClicked, setProfileClicked, setEditProfile, setTeamInfoP
   const navigate = useNavigate();
   const fetchUserType = async () => {
     try {
-      const res = await fetch("https://logicabackend.onrender.com/fetchUserType", {
+      const res = await fetch("https://angry-moon-10536.pktriot.net/fetchUserType", {
         method: "GET",
         headers: {
           Accept: "*/*",
@@ -122,23 +122,7 @@ const Nav = ({ isProfileClicked, setProfileClicked, setEditProfile, setTeamInfoP
                 Contact
               </a>
              
-              {/* <div className="dropdown">
-        <span className="dropdown-icon" onClick={() => toggleDropdown()}>More</span>
-        <div className={isDropdownOpen ? "dropdown-content" : "hidden"}>
-          {dropdownItems.map((item) => (
-            <a
-              key={item.title}
-              className="docs-creator"
-              href={item.onClickLink}
-              onClick={() => { navbtnToggle() }}
-            >
-              {item.title}
-            </a>
-          ))}
-        </div>
-      </div> */}
-
-              <Link to="/login" className="login-signup-btn docs-creator" onClick={() => { navbtnToggle() }}>
+             <Link to="/login" className="login-signup-btn docs-creator" onClick={() => { navbtnToggle() }}>
                 <div className="d-flex">
                   Login/SignUp
                 </div>

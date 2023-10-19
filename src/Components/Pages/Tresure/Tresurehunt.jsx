@@ -319,24 +319,88 @@ export default function Tresurehunt() {
   } else {
     return (
       <div className="TresureContainer Container">
+        <div id="flash"></div>
+          <ul class="star-layer" id="final-stars">
+                </ul>
+                <div class="shooting-star">
+     <div class="glint1"></div>
+     <div class="glint2"></div>
+   </div> 
+        <div className="col-12 col-sm-6 col-md-6 col-lg-3" >
         <div className="col-3" onClick={() => navigateLevel("TresureHunt1")}>
-          <p>Level 1</p>
+        <div class="planet-wrapper" >
+                            <span class="planet-label">Level 1</span>
+                            <div class="planet planet1">
+                                <div id="planet-clouds1">
+                                    <div class="planet-cloud planet-cloud1"></div>
+                                    <div class="planet-cloud planet-cloud2"></div>
+                                    <div class="planet-cloud planet-cloud3"></div>
+                                    <div class="planet-cloud planet-cloud4"></div>
+                                    <div class="planet-cloud planet-cloud5"></div>
+                                    <div class="planet-cloud planet-cloud6"></div>
+                                    <div class="planet-cloud planet-cloud7"></div>
+                                </div>
+                                <div id="planet-clouds2">
+                                    <div class="planet-cloud planet-cloud5"></div>
+                                    <div class="planet-cloud planet-cloud6"></div>
+                                    <div class="planet-cloud planet-cloud2"></div>
+                                    <div class="planet-cloud planet-cloud7"></div>
+                                    <div class="planet-cloud planet-cloud1"></div>
+                                    <div class="planet-cloud planet-cloud2"></div>
+                                </div>
+                            </div>
+                        </div>
         </div>
-
+        </div>
         <div className="col-4" onClick={() => navigateLevel("TresureHunt2")}>
-          <p>Level 2</p>
+        <div class="planet-wrapper">
+                            <span class="planet-label">Level 2</span>
+                            <div class="planet planet2">
+                                <div class="planet-ring"></div>
+                                <div class="planet-crater planet-crater1"></div>
+                                <div class="planet-crater planet-crater2"></div>
+                                <div class="planet-crater planet-crater3"></div>
+                                <div class="planet-crater planet-crater4"></div>
+                                <div class="planet-crater planet-crater5"></div>
+                            </div>
+                        </div>
         </div>
 
         <div className="col-3" onClick={() => navigateLevel("TresureHunt3")}>
-          <p>Level 3</p>
+        <div class="planet-wrapper" >
+                            <div id="planet-moon"></div>
+                            <span class="planet-label">Level 3</span>
+                            <div class="planet planet3">
+                                <div class="planet-line1"></div>
+                                <div class="planet-line2"></div>
+                                <div class="planet-line3"></div>
+                                <div class="planet-line4"></div>
+                                <div class="planet-line5"></div>
+                                <div id="red-spot"></div>
+                            </div>
+                        </div>
         </div>
 
         <div className="col-3" onClick={() => navigateLevel("TresureHunt4")}>
-          <p>Level 4</p>
+        <div class="planet-wrapper" >
+                            <span class="planet-label">Level 4</span>
+                            <div class="planet planet4">
+                                <div class="planet-ring4"></div>
+                                <div class="planet-crater41 planet-crater6"></div>
+                                <div class="planet-crater41 planet-crater7"></div>
+                                <div class="planet-crater41 planet-crater8"></div>
+                                <div class="planet-crater41 planet-crater9"></div>
+                                <div class="planet-crater41 planet-crater10"></div>
+                            </div>
+                        </div>
         </div>
 
         <div className="col-3" onClick={() => navigateLevel("TresureHunt5")}>
-          <p>Level 5</p>
+        <div class="planet-wrapper" >
+                            <span class="planet-label">Level 5</span>
+                            <div class="planet planet4">
+                            </div>
+                        </div>
         </div>
         <ul class="star-layer star-layer1">
                 </ul>

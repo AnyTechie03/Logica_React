@@ -30,7 +30,7 @@ export default function EditiorHome() {
   function getEditvalue() {
     const UserCode = EditorRef.current.getValue();
     console.log(UserCode);
-    const res = fetch("https://logicabackend.onrender.com/CodingRound", {
+    const res = fetch("https://angry-moon-10536.pktriot.net/CodingRound", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

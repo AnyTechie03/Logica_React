@@ -14,7 +14,7 @@ export default function FetchUsers({ isFinialCall, setFinialCall }) {
   const [isL3Count, setL3count] = useState(0);
 
   useEffect(() => {
-    fetch("https://logicabackend.onrender.com/fetchUser", {
+    fetch("https://angry-moon-10536.pktriot.net/fetchUser", {
       method: "GET",
     })
       .then((res) => res.json())
@@ -39,7 +39,7 @@ export default function FetchUsers({ isFinialCall, setFinialCall }) {
           setL3count(0);
         }
       })
-      fetch('https://logicabackend.onrender.com/AdminRounds',{
+      fetch('https://angry-moon-10536.pktriot.net/AdminRounds',{
         method:"GET"
       }).then((res) => res.json())
       .then((data) =>{
@@ -52,7 +52,7 @@ export default function FetchUsers({ isFinialCall, setFinialCall }) {
 
   const handleRegistration = (stage,condition)=>{
 
-    fetch('https://logicabackend.onrender.com/roundSetting',{
+    fetch('https://angry-moon-10536.pktriot.net/roundSetting',{
       method:"POST",
       headers:{
         "Accept":'*/*',

@@ -1,6 +1,7 @@
 import "react-toastify/dist/ReactToastify.css";
 import { notifyToast } from "../notifyToast";
 import { useEffect } from "react";
+// import {UserContext} from '../app.js'
 
 export const Logout = () => {
   useEffect(() => {
@@ -18,7 +19,7 @@ export const Logout = () => {
         });
 
         // Send a request to the server to logout
-        const response = await fetch("https://logicabackend.onrender.com/logout", {
+        const response = await fetch("https://angry-moon-10536.pktriot.net/logout", {
           method: "GET",
           headers: {
             Accept: "*/*",
@@ -30,8 +31,10 @@ export const Logout = () => {
 
         if (response.status === 201) {
           // Reload the page or perform any other action as needed
+          // dispatchEvent{}
           window.location.reload(false);
           notifyToast("User Logged Out", "success");
+
         } else {
           notifyToast("There was some problem");
         }
