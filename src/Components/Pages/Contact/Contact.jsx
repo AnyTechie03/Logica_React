@@ -13,36 +13,36 @@ import "swiper/css/autoplay";
 
 const contactDetails = [
   {
-    name: "Rajesh Gawali",
+    name: "Amar Shinde",
     role: "Overall Coordinator",
     email: "rajeshgawali@gmail.com",
-    phone: "1234567899",
-    photo: ""
+    phone: "82086 07636",
+    photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2Ffb4f22be-f3ad-4b43-bff5-9fd1be38566f?alt=media&token=d2fce22b-2eb1-4ff3-8337-f732737ba3f0"
   },
   {
     name: "Akash Yerunkar",
-    role: "Coordinator",
+    role: "Overall Coordinator",
     email: "",
-    phone: "9876543212",
+    phone: "9834178825",
     photo: ""
   },
   {
     name: "Prasad Ranjane",
-    role: "Coordinator",
-    email: "",
-    phone: "98754512351",
-    photo: ""
+    role: "Overall Coordinator",
+    email: "prasad.ganpc@sinhgad.edu",
+    phone: "9518751324",
+    photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2Ffd26a6f4-f445-4f60-833f-f22045ae751b?alt=media&token=14fd8f14-49c7-4634-bc8a-44c70e4f1a9b"
   }
 ];
 
 export default function Contact() {
 
   const [displayData, setDisplayData] = useState({
-    name: "Rajesh Gawali",
-    role: "Overall Coordinator",
-    email: "rajeshgawali@gmail.com",
-    phone: "1234567899",
-    photo: ""
+    name: "Amar Shinde",
+    role: "Overall Faculty Coordinator",
+    email: "asinde@gmail.com",
+    phone: "82086 07636",
+    photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2Ffb4f22be-f3ad-4b43-bff5-9fd1be38566f?alt=media&token=d2fce22b-2eb1-4ff3-8337-f732737ba3f0"
   });
   const [animate, setAnimate] = useState(false);
   const [contactClick, setContactClick] = useState(true);

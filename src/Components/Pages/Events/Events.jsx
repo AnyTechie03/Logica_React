@@ -53,13 +53,13 @@ export default function Events() {
                   <span className="stars"></span>
                   <h2 className="level-1">Quizethon</h2>
                   <p className="level-1">
-                    <ul style={{ width: "fit-content" }}>
+                    {/* <ul style={{ width: "fit-content" }}>
                       <hr />
-                      <li className="">Time - 1:00 Hr</li>
+                      <li className="">Time - 0:30 Minute</li>
                       <li className="">60s Per Quistion</li>
                       <li className="">Quiz start's on - 9:00 PM</li>
                       <li className="">Mode - Online</li>
-                    </ul>
+                    </ul> */}
                   </p>
                 </div>
               </div>

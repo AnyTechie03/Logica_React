@@ -7,18 +7,34 @@ const BackBone = () => {
         {
             name: "Manas Lahare",
             role: "Offline Event Handling Head",
-            email: "manaslahare@gmail.com",
-            phone: "1234567899",
-            insta : '',
+            email: "manas.djrwh22@sinhgad.edu",
+            phone: "9406603170",
+            insta : 'manaslahare',
             photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2F05920fa4-241f-418a-9461-17fbf877d715?alt=media&token=5451a11b-eb06-4fd4-9967-da0bc98cbfa9"
+        },
+        {
+            name: "Shrutika Saudagar",
+            role: "Offline Event Handling Head",
+            email: "shrutika.gugah22@sinhgad.edu",
+            phone: "7559439594",
+            insta : '_shruta_2001',
+            photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2Fb4a2f20c-7261-48fb-bc94-9a57982376ce?alt=media&token=039c3c9e-d440-4c06-823e-976111f3da24"
         },
         {
             name: "Amol Patil",
             role: "Media Head",
-            email: "",
-            phone: "9876543212",
-            insta : '',
-            photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2F71291a7e-e0dd-4677-a464-fa1c0e60ac7e?alt=media&token=0e2ed118-364e-46c3-bbec-323c43391200"
+            email: "amol.chymp22@sinhgad.edu",
+            phone: "9527472582",
+            insta : 'amolrpatil96k',
+            photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2F999d8e68-9588-419a-86a5-3ce04067f219?alt=media&token=9c4b6354-ba7b-4638-9029-1171823cc00a"
+        },
+        {
+            name: "Shubham Raundal",
+            role: "Media Head",
+            email: "shubham.hyhyu22@sinhgad.edu",
+            phone: "98501 61963",
+            insta : 'being_shubh_s',
+            photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2F711bc67d-b921-470a-8e47-f169a3bc5cb1?alt=media&token=048ab1b4-a6b1-4249-a17d-923bb1affc03"
         },
         {
             name: "Dhnashree Tulankar",
@@ -29,19 +45,35 @@ const BackBone = () => {
             photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2F4fae969d-0211-4543-bff9-10e5aa7922b5?alt=media&token=32849da3-1d7a-4797-ad3d-5221b39082cb"
         },
         {
+            name: "Trupati Vaidya",
+            role: "PR Head",
+            email: "trupti.jpnjw22@sinhgad.edu",
+            phone: "8080033481",
+            insta : 'trupti._vaidyaa',
+            photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2F4fae969d-0211-4543-bff9-10e5aa7922b5?alt=media&token=32849da3-1d7a-4797-ad3d-5221b39082cb"
+        },
+        {
+            name: "Rutuja Bhilare",
+            role: "Registration Head",
+            email: "Rutuja.nkmya22@sinhgad.edu",
+            phone: "9623676889",
+            insta : 'rutuja_bhilare769',
+            photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2F68a5eab7-b597-419e-90a6-07eba8a4d636?alt=media&token=1e343b11-d8ce-4edd-9f03-4653bb01e799"
+        },
+        {
             name: "Suraj Patil",
             role: "Technical Head",
-            email: "",
+            email: "suraj.wwmyw22@sinhgad.edu",
             phone: "9876543212",
-            insta : '',
+            insta : 'surajsp83',
             photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2F5e384929-9e5f-4798-ad5a-dfe0bb1c005b?alt=media&token=0d2892c1-781c-4b7c-90c1-bc12c8ca110b"
         },
         {
             name: "Atharv Deshpande",
             role: "Moderation Head",
-            email: "",
-            phone: "9876543212",
-            insta : '',
+            email: "atharvadeshpande06.simca.mca@gmail.com",
+            phone: "73875 55262",
+            insta : 'atharavadeshpande2',
             photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2F11b87dfb-7e44-47c2-9db7-d61d8c56b662?alt=media&token=bac3de53-ec42-48a4-be22-2d11f6642d9b"
         },
     ];
