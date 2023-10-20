@@ -7,7 +7,7 @@ const CookieConsent = () => {
   const isCookieAccepted = cookies.cookieConsent === 'false';
 
   const acceptCookies = () => {
-    setCookie('jwttoken', '',{domain:'https://logicabackend.onrender.com'}, { path: '/' });
+    setCookie('jwttoken', '',{domain:'https://angry-moon-10536.pktriot.net/'}, { path: '/' });
     
   };
 
