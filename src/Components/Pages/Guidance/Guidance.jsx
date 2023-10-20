@@ -26,11 +26,13 @@ const Guidance = () => {
                         </div><div className="Toastify">
                         </div><ul className="text-light _ruleList_14ouo_59">
                             <li>NOTE: The order preference of the problem statements is solely for our reference. We do not assure that the topic allocation will be based on your top preferences only.</li>
-                            <li>Last date for submission of Registration is <span className="_hLight_14ouo_49">October 26th, 2023</span>.</li>
-                            <li> The selected teams will get a confirmation after <span className="_hLight_14ouo_49">October 11, 2023</span>.</li>
+                            <li>Last date for submission of Registration is <span className="_hLight_14ouo_49">October 26th, 2023</span> 
+                                </li>
+                            <li>
+                                <span className="_hLight_14ouo_49">Payment Gatway will be available after October 22th, 2023</span>.</li>
                             <li> Payment for the selected teams i.e. ₹100 per head should be made by <span className="_hLight_14ouo_49">October 26th, 2023</span>. Entry fee payment of the entire team (Pair of 2) is ₹150 ,it should be done in a single transaction.</li>
                             
-                            <li> All done, your squad is all set to seize the Unleash The Unreal for SIMCA LOGICA'23 .</li>
+                            <li> All done, Your Participation is all set to seize the Unleash The Unreal for SIMCA LOGICA'23 .</li>
                            
                         </ul>
                         <div>

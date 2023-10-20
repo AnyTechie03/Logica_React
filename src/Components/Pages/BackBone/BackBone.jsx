@@ -76,6 +76,14 @@ const BackBone = () => {
             insta : 'atharavadeshpande2',
             photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2F11b87dfb-7e44-47c2-9db7-d61d8c56b662?alt=media&token=bac3de53-ec42-48a4-be22-2d11f6642d9b"
         },
+        {
+            name: "Aniket Raj",
+            role: "Online Event Head",
+            email: "aniket.wufwh22@sinhga.edu",
+            phone: "87094 45958",
+            insta : 'aniket_raj7246',
+            photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2Faad3a65b-26e3-4681-93a7-4213902c1235?alt=media&token=ccb59912-f932-4c68-b365-ba32a3af04db"
+        },
     ];
 
     return (

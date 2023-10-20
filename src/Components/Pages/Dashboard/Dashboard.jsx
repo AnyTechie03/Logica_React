@@ -28,7 +28,7 @@ const Dashboard = ({
       <Home />
       <About />
       <Events />
-      <Sponsors/>
+      {/* <Sponsors/> */}
       <Schedule/>
       <Guidance/>
       <Contact />

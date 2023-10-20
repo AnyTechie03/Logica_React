@@ -14,17 +14,17 @@ import "swiper/css/autoplay";
 const contactDetails = [
   {
     name: "Amar Shinde",
-    role: "Overall Coordinator",
-    email: "rajeshgawali@gmail.com",
+    role: "Overall Faculty Coordinator",
+    email: "asinde@gmail.com",
     phone: "82086 07636",
     photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2Ffb4f22be-f3ad-4b43-bff5-9fd1be38566f?alt=media&token=d2fce22b-2eb1-4ff3-8337-f732737ba3f0"
   },
   {
     name: "Akash Yerunkar",
     role: "Overall Coordinator",
-    email: "",
+    email: "akashnyerunkar580@gmail.com",
     phone: "9834178825",
-    photo: ""
+    photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2F918d5483-cdfe-488c-9530-39b22edb9591?alt=media&token=a767854a-c523-4f3e-b626-cbd8121159d5"
   },
   {
     name: "Prasad Ranjane",

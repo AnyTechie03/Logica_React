@@ -197,8 +197,8 @@ function SignUp2({ isTeamMember, setTeamMembers }) {
 
       if (res.status === 201) {
         // User data submitted successfully
-        // notifyToast("User data submitted successfully", "success");
-        notifyToast("Registration Will start from 25 Oct 2023", "success");
+        notifyToast("Registered Successfully", "success");
+        notifyToast("Payment Gatway will start from 25 Oct 2023", "success");
         setStep(5); // Move to RegStep5
       } else {
         // Handle other response statuses (e.g., validation errors)

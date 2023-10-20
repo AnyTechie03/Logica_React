@@ -327,7 +327,7 @@ const Footer = () => {
                     if you have previously agreed to us using your personal
                     information for direct marketing purposes, you may change
                     your mind at any time by writing to or emailing us at
-                    logica.simca@gmail.com<br/>Contact No.: 9834178825
+                    logica.simca@gmail.com<br/>Contact No.: 9834178825<br/>Alternate No.: 9518751324
                   </li>
                 </ul>
               </p>

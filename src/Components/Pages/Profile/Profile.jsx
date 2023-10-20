@@ -1,7 +1,6 @@
 import React, { Component, useEffect, useState } from "react";
 import pBorder from '../../../assets/img/profile_name_border.png'
 import uProfileref from '../../../assets/img/uProfileref.webp'
-import { Logout } from "../../Functions/Logout/Logout";
 
 import "./Profile.css";
 import { Link ,useNavigate} from "react-router-dom";
@@ -172,11 +171,11 @@ export default function Profile({isProfileClicked,setProfileClicked,setEditProfi
               </a>
         
              
-              <Link className="log-out login-signup-btn docs-creator" onClick={() => { Logout(); navigate("/login ") }}>
+              {/* <Link className="log-out login-signup-btn docs-creator" onClick={() => { Logout(); navigate("/login ") }}>
           <div className="d-flex">
             Logout
-          </div>
-        </Link>
+          </div> */}
+        {/* </Link> */}
               
             </div>
           </div>
