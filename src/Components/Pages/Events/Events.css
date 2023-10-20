@@ -55,7 +55,7 @@
     background-color: #a9c9ff;
     background-image: linear-gradient(180deg, #a9c9ff 0%, #ffbbec 100%);
   } */
-  .v {
+  .Econtainer {
     min-width: 100vw;
     min-width: 100vw;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
