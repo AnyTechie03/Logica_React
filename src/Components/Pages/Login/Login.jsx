@@ -191,7 +191,7 @@ const Login = ({ isUserVerified,
               onChange={handleChange}
               autoComplete="username"
             />
-            <label>Username</label>
+            <label>Email</label>
           </div>
           <div className="user-box">
             <input
@@ -207,13 +207,17 @@ const Login = ({ isUserVerified,
           </div>
           <div className='lgn-btn'>
              
+            
+            {/* <Link to="/register">
+              resetPassword
+            </Link> */}
+            <Link to="/register">
+              SignUp
+            </Link>
             <button type="submit" onClick={handleSubmit}>
              Login
             </button>
          
-            <Link to="/register">
-              SignUp
-            </Link>
           </div>
         </form>
       </div>

@@ -186,8 +186,8 @@ border-radius: 15px;
   scroll-snap-align: start;
   display: grid;
   place-items: center;
-  font-family: VoyagerHeavy;
-  
+  font-family: Outfit;
+
   position: relative;
   }
   .reg-form {
@@ -370,6 +370,7 @@ border-radius: 15px;
 
   .secondary{
     color: #ffffff;
+    text-transform: uppercase;
   }
 .st{
   color: #00bfff;
