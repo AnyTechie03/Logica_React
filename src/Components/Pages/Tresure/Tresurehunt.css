@@ -17,9 +17,12 @@
     align-items: center;
     background-color: #002b54;
 
+
+
 }
-
-
+.Level_1{
+  z-index: 1000;
+}
 .Levels p{
     max-height: max-content;
     padding: 30%;

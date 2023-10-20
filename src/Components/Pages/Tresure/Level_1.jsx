@@ -11,7 +11,7 @@ export default function Level_1() {
   },[]);
 
   const checkUniversal = () => {
-fetch("https://logicabackend.onrender.com/checkuniversal", {
+fetch("https://angry-moon-10536.pktriot.net/checkuniversal", {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -24,7 +24,7 @@ fetch("https://logicabackend.onrender.com/checkuniversal", {
       .then((response) => {
         if (response.Universal[0].level_2) {
           console.log("Tresure Hunt Has Started");
-          fetch("https://logicabackend.onrender.com/TresureHuntValidate", {
+          fetch("https://angry-moon-10536.pktriot.net/TresureHuntValidate", {
             method: "POST",
             headers: {
               Accept: "*/*",
@@ -55,35 +55,35 @@ fetch("https://logicabackend.onrender.com/checkuniversal", {
 
   const [L1input, setinput] = useState("");
 
-  const alien_to_english = `        '∆': 'A',
-        'ß': 'B',
-        '¢': 'C',
-        '∂': 'D',
-        '£': 'E',
-        'ƒ': 'F',
-        'ª': 'G',
-        '∆': 'H',
-        'ø': 'I',
-        'π': 'J',
-        'ø': 'K',
-        '∑': 'L',
-        'µ': 'M',
-        '´': 'N',
-        'œ': 'O',
-        '®': 'P',
-        '†': 'Q',
-        '¥': 'R',
-        'ø': 'S',
-        '¨': 'T',
-        '©': 'U',
-        '√': 'V',
-        'Ω': 'W',
-        'ø': 'X',
-        'Π': 'Y',
-        '†': 'Z',`;
+  // const alien_to_english = `        '∆': 'A',
+  //       'ß': 'B',
+  //       '¢': 'C',
+  //       '∂': 'D',
+  //       '£': 'E',
+  //       'ƒ': 'F',
+  //       'ª': 'G',
+  //       '∆': 'H',
+  //       'ø': 'I',
+  //       'π': 'J',
+  //       'ø': 'K',
+  //       '∑': 'L',
+  //       'µ': 'M',
+  //       '´': 'N',
+  //       'œ': 'O',
+  //       '®': 'P',
+  //       '†': 'Q',
+  //       '¥': 'R',
+  //       'ø': 'S',
+  //       '¨': 'T',
+  //       '©': 'U',
+  //       '√': 'V',
+  //       'Ω': 'W',
+  //       'ø': 'X',
+  //       'Π': 'Y',
+  //       '†': 'Z',`;
 
   const handlesubmit = () => {
-    const res = fetch("https://logicabackend.onrender.com/TresureHunt1", {
+    const res = fetch("https://angry-moon-10536.pktriot.net/TresureHunt1", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -104,20 +104,12 @@ fetch("https://logicabackend.onrender.com/checkuniversal", {
       <div className="Level_1 Container">
         <div className="TQuestion">
           <p>
-            As you explore the alien archives, you stumble upon a cryptic
-            message etched into an ancient artifact. The message appears to be a
-            mix of lowercase and uppercase letters, but it's not immediately
-            clear how to decipher it. You notice a pattern in the alternating
-            capitalization of letters in the message. Perhaps there's a hidden
-            meaning behind this alternating pattern that can reveal the true
-            message within. Use your coding skills to decrypt the message by
-            understanding the alternate capitalization technique employed by the
-            alien civilization.
+           This is Test 1
           </p>
-          Alien_To_English Might Be Helpful for You
+          {/* Alien_To_English Might Be Helpful for You
           <SyntaxHighlighter language="java" style={docco}>
             {alien_to_english}
-          </SyntaxHighlighter>
+          </SyntaxHighlighter> */}
         </div>
         <div className="Input">
           <input

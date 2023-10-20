@@ -51,11 +51,12 @@ const Login = ({ isUserVerified,
     e.preventDefault();
   
     try {
-      const response = await fetch("https://logicabackend.onrender.com/login", {
+      const response = await fetch("https://angry-moon-10536.pktriot.net/login", {
         method: "POST",
         credentials:'include',
         headers: {
           "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": '*',
         },
         body: JSON.stringify({
           formData,
@@ -95,7 +96,7 @@ const Login = ({ isUserVerified,
   
   const handleSendVerificationEmail = async () => {
     try {
-      const res = await fetch("https://logicabackend.onrender.com/send-verification-email", {
+      const res = await fetch("https://angry-moon-10536.pktriot.net/send-verification-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -119,7 +120,7 @@ const Login = ({ isUserVerified,
 
   const handleVerifyEmail = async () => {
     try {
-      const res = await fetch("https://logicabackend.onrender.com/verify-email", {
+      const res = await fetch("https://angry-moon-10536.pktriot.net/verify-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -145,7 +146,7 @@ const Login = ({ isUserVerified,
  
   useEffect(() => {
     const fetchUserType = async () => {
-        const res = await fetch("https://logicabackend.onrender.com/fetchUserType", {
+        const res = await fetch("https://angry-moon-10536.pktriot.net/fetchUserType", {
           method: "GET",
           headers: {
             Accept: "application/json",

@@ -185,7 +185,7 @@ function SignUp2({ isTeamMember, setTeamMembers }) {
     };
 
     try {
-      const res = await fetch("https://logicabackend.onrender.com/register", {
+      const res = await fetch("https://angry-moon-10536.pktriot.net/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -197,7 +197,8 @@ function SignUp2({ isTeamMember, setTeamMembers }) {
 
       if (res.status === 201) {
         // User data submitted successfully
-        notifyToast("User data submitted successfully", "success");
+        // notifyToast("User data submitted successfully", "success");
+        notifyToast("Registration Will start from 25 Oct 2023", "success");
         setStep(5); // Move to RegStep5
       } else {
         // Handle other response statuses (e.g., validation errors)

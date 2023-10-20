@@ -8,7 +8,7 @@ const RegStep5 = ({ handleChange, values }) => {
   const navigate = useNavigate();
   const handleSendVerificationEmail = async () => {
     try {
-      const res = await fetch("https://logicabackend.onrender.com/send-verification-email", {
+      const res = await fetch("https://angry-moon-10536.pktriot.net/send-verification-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -32,7 +32,7 @@ const RegStep5 = ({ handleChange, values }) => {
 
   const handleVerifyEmail = async () => {
     try {
-      const res = await fetch("https://logicabackend.onrender.com/verify-email", {
+      const res = await fetch("https://angry-moon-10536.pktriot.net/verify-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

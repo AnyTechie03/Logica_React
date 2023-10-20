@@ -5,7 +5,7 @@ export default function Level_2() {
   const [L2input, setinput] = useState("");
   const [Loading, setLoading] = useState(true);
   useEffect(() => {
-    fetch("https://logicabackend.onrender.com/TresureHuntValidate", {
+    fetch("https://angry-moon-10536.pktriot.net/TresureHuntValidate", {
       method: "POST",
       headers: {
         Accept: "*/*",
@@ -31,7 +31,7 @@ export default function Level_2() {
     });
   });
   const handlesubmit = () => {
-    const res = fetch("https://logicabackend.onrender.com/TresureHunt2", {
+    const res = fetch("https://angry-moon-10536.pktriot.net/TresureHunt2", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -51,7 +51,8 @@ export default function Level_2() {
         <h1>Level 2</h1>
         <div className="TQuestion">
           <p>
-            As you explore the alien archives, you stumble upon a cryptic
+            This is Test 2
+            {/* As you explore the alien archives, you stumble upon a cryptic
             message etched into an ancient artifact. The message appears to be a
             mix of lowercase and uppercase letters, but it's not immediately
             clear how to decipher it. You notice a pattern in the alternating
@@ -59,7 +60,7 @@ export default function Level_2() {
             meaning behind this alternating pattern that can reveal the true
             message within. Use your coding skills to decrypt the message by
             understanding the alternate capitalization technique employed by the
-            alien civilization.
+            alien civilization. */}
           </p>
         </div>
         <div className="Input">

@@ -56,7 +56,7 @@ function Quiz() {
   }, [timeRemaining]);
 
   const checkUniversal= ()=>{
-    fetch('https://logicabackend.onrender.com/checkuniversal',{
+    fetch('https://angry-moon-10536.pktriot.net/checkuniversal',{
       method:"GET",
       headers: {
         Accept: "application/json",
@@ -82,7 +82,7 @@ function Quiz() {
   }
 
   const fetchQuestions = () => {
-    fetch("https://logicabackend.onrender.com/questions", {
+    fetch("https://angry-moon-10536.pktriot.net/questions", {
       method: 'GET',
       headers: {
         Accept: "application/json",
@@ -137,7 +137,7 @@ function Quiz() {
     setScore(correctCount);
     setIsSubmitted(true);
 
-    fetch('https://logicabackend.onrender.com/QuizSubmit', {
+    fetch('https://angry-moon-10536.pktriot.net/QuizSubmit', {
       method: 'POST',
       headers: {
         "Content-Type": "application/json"

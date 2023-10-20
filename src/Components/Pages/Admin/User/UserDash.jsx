@@ -48,7 +48,7 @@ const UserDash = ({ isFinialCall, setFinialCall }) => {
     };
   
     useEffect(() => {
-      fetch("https://logicabackend.onrender.com/fetchUser", {
+      fetch("https://angry-moon-10536.pktriot.net/fetchUser", {
         method: "GET",
       })
         .then((res) => res.json())

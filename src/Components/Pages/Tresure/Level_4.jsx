@@ -6,7 +6,7 @@ export default function Level_3() {
   const [Loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://logicabackend.onrender.com/TresureHuntValidate", {
+    fetch("https://angry-moon-10536.pktriot.net/TresureHuntValidate", {
       method: "POST",
       headers: {
         Accept: "*/*",
@@ -32,7 +32,7 @@ export default function Level_3() {
   });
 
   const handlesubmit = () => {
-    const res = fetch("https://logicabackend.onrender.com/TresureHunt1", {
+    const res = fetch("https://angry-moon-10536.pktriot.net/TresureHunt1", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -52,7 +52,8 @@ export default function Level_3() {
       <div className="Level_1 Container">
         <div className="TQuestion">
           <p>
-            As you continue your journey through the digital labyrinth, you
+            This is Test 4
+            {/* As you continue your journey through the digital labyrinth, you
             stumble upon a series of seemingly random bits. These bits are part
             of an encoded message, and it appears that there might be errors
             lurking within. Remembering your coding skills, you realize that
@@ -62,7 +63,7 @@ export default function Level_3() {
             have decoded the message, the keyword you uncover will be the key to
             unlocking the next phase of your quest. Type the decoded keyword
             into the input box below to continue your mission and unveil the
-            digital secrets that await you!
+            digital secrets that await you! */}
           </p>
         </div>
         <div className="Input">
