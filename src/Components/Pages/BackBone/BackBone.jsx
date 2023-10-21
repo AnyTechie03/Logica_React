@@ -9,72 +9,16 @@ const BackBone = () => {
             role: "Offline Event Handling Head",
             email: "manas.djrwh22@sinhgad.edu",
             phone: "9406603170",
-            insta : 'manaslahare',
-            photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2F05920fa4-241f-418a-9461-17fbf877d715?alt=media&token=5451a11b-eb06-4fd4-9967-da0bc98cbfa9"
+            insta : 'https://www.instagram.com/manaslahare/',
+            photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2FIMG_3826.JPG?alt=media&token=0cc6e2fa-ee7f-4f9f-b05f-e83d531f7658"
         },
         {
             name: "Shrutika Saudagar",
             role: "Offline Event Handling Head",
             email: "shrutika.gugah22@sinhgad.edu",
             phone: "7559439594",
-            insta : '_shruta_2001',
-            photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2Fb4a2f20c-7261-48fb-bc94-9a57982376ce?alt=media&token=039c3c9e-d440-4c06-823e-976111f3da24"
-        },
-        {
-            name: "Amol Patil",
-            role: "Media Head",
-            email: "amol.chymp22@sinhgad.edu",
-            phone: "9527472582",
-            insta : 'amolrpatil96k',
-            photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2F999d8e68-9588-419a-86a5-3ce04067f219?alt=media&token=9c4b6354-ba7b-4638-9029-1171823cc00a"
-        },
-        {
-            name: "Shubham Raundal",
-            role: "Media Head",
-            email: "shubham.hyhyu22@sinhgad.edu",
-            phone: "98501 61963",
-            insta : 'being_shubh_s',
-            photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2F711bc67d-b921-470a-8e47-f169a3bc5cb1?alt=media&token=048ab1b4-a6b1-4249-a17d-923bb1affc03"
-        },
-        {
-            name: "Dhnashree Tulankar",
-            role: "Decoration Head",
-            email: "",
-            phone: "9876543212",
-            insta : '',
-            photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2F4fae969d-0211-4543-bff9-10e5aa7922b5?alt=media&token=32849da3-1d7a-4797-ad3d-5221b39082cb"
-        },
-        {
-            name: "Trupati Vaidya",
-            role: "PR Head",
-            email: "trupti.jpnjw22@sinhgad.edu",
-            phone: "8080033481",
-            insta : 'trupti._vaidyaa',
-            photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2F4fae969d-0211-4543-bff9-10e5aa7922b5?alt=media&token=32849da3-1d7a-4797-ad3d-5221b39082cb"
-        },
-        {
-            name: "Rutuja Bhilare",
-            role: "Registration Head",
-            email: "Rutuja.nkmya22@sinhgad.edu",
-            phone: "9623676889",
-            insta : 'rutuja_bhilare769',
-            photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2F68a5eab7-b597-419e-90a6-07eba8a4d636?alt=media&token=1e343b11-d8ce-4edd-9f03-4653bb01e799"
-        },
-        {
-            name: "Suraj Patil",
-            role: "Technical Head",
-            email: "suraj.wwmyw22@sinhgad.edu",
-            phone: "9876543212",
-            insta : 'surajsp83',
-            photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2F5e384929-9e5f-4798-ad5a-dfe0bb1c005b?alt=media&token=0d2892c1-781c-4b7c-90c1-bc12c8ca110b"
-        },
-        {
-            name: "Atharv Deshpande",
-            role: "Moderation Head",
-            email: "atharvadeshpande06.simca.mca@gmail.com",
-            phone: "73875 55262",
-            insta : 'atharavadeshpande2',
-            photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2F11b87dfb-7e44-47c2-9db7-d61d8c56b662?alt=media&token=bac3de53-ec42-48a4-be22-2d11f6642d9b"
+            insta : 'https://www.instagram.com/_shruta_2001/',
+            photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2FIMG_2222.png?alt=media&token=3edfe736-0ee7-4d5e-b9b2-b06cbf25d9c2"
         },
         {
             name: "Aniket Raj",
@@ -82,8 +26,65 @@ const BackBone = () => {
             email: "aniket.wufwh22@sinhga.edu",
             phone: "87094 45958",
             insta : 'aniket_raj7246',
-            photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2Faad3a65b-26e3-4681-93a7-4213902c1235?alt=media&token=ccb59912-f932-4c68-b365-ba32a3af04db"
+            photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2F1697785830894.jpg?alt=media&token=9399ce19-7903-4dca-9a2c-f1ca1a03bb0d"
         },
+        {
+            name: "Amol Patil",
+            role: "Media Head",
+            email: "amol.chymp22@sinhgad.edu",
+            phone: "9527472582",
+            insta : 'https://www.instagram.com/amolrpatil96k/',
+            photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2FIMG_20231002_033224.jpg?alt=media&token=3568d474-f717-41b2-97c5-c11496f3d1e9"
+        },
+        {
+            name: "Shubham Raundal",
+            role: "Media Head",
+            email: "shubham.hyhyu22@sinhgad.edu",
+            phone: "98501 61963",
+            insta : 'https://www.instagram.com/being_shubh_s/',
+            photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2F1694687757749.jpg?alt=media&token=dd5e0966-4fb5-406e-bb4e-6dca0cb987d5"
+        },
+        {
+            name: "Dhnashree Tulankar",
+            role: "Decoration Head",
+            email: "dhanshri.fawkj22@sinhgad.edu",
+            phone: "9876543212",
+            insta : 'https://www.instagram.com/dhanshri___11/',
+            photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2FIMG_20231015_130127.jpg?alt=media&token=e6cfdb0e-c0b5-4bc9-8121-58a28cd4a0c9"
+        },
+        {
+            name: "Trupati Vaidya",
+            role: "PR Head",
+            email: "trupti.jpnjw22@sinhgad.edu",
+            phone: "8080033481",
+            insta : 'https://www.instagram.com/trupti._vaidyaa',
+            photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2FIMG_6258.png?alt=media&token=5f2ef867-0260-4b36-86b2-09e54bcfda54"
+        },
+        {
+            name: "Rutuja Bhilare",
+            role: "Registration Head",
+            email: "Rutuja.nkmya22@sinhgad.edu",
+            phone: "9623676889",
+            insta : 'https://www.instagram.com/rutuja_bhilare769/',
+            photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2F1686931217398%20(2).jpg?alt=media&token=ace3a9b4-6bcf-4e20-838f-8ebfaee2b28e"
+        },
+        {
+            name: "Suraj Patil",
+            role: "Technical Head",
+            email: "suraj.wwmyw22@sinhgad.edu",
+            phone: "9876543212",
+            insta : 'https://www.instagram.com/surajsp83/',
+            photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2FIMG_6856.png?alt=media&token=88f84c5f-7e85-4273-aad2-f8e7eef9633b"
+        },
+        {
+            name: "Atharv Deshpande",
+            role: "Moderation Head",
+            email: "atharvadeshpande06.simca.mca@gmail.com",
+            phone: "73875 55262",
+            insta : 'https://www.instagram.com/atharavadeshpande2/',
+            photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2FIMG20231012131207.jpg?alt=media&token=b514297e-bb03-4a22-820e-377da2473912"
+        },
+        
     ];
 
     return (

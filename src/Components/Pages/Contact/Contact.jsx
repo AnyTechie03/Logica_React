@@ -32,7 +32,16 @@ const contactDetails = [
     email: "prasad.ganpc@sinhgad.edu",
     phone: "9518751324",
     photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2Ffd26a6f4-f445-4f60-833f-f22045ae751b?alt=media&token=14fd8f14-49c7-4634-bc8a-44c70e4f1a9b"
-  }
+  },
+  {
+   
+    role: "Back Bone Of the Event",
+    topage: "/backbone",
+    photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2FLogica%20SIMCA%20(1).png?alt=media&token=839c96f1-319f-4560-872d-89ba2993be25"
+
+  },
+ 
+
 ];
 
 export default function Contact() {
@@ -87,7 +96,11 @@ export default function Contact() {
       <div className={animate ? "contact-carousal animate" : "contact-carousal"}>
         {contactDetails.map((item, i) => {
           return (
-            <SideCard key={i} id={i} role={item.role} handleClick={handleClick} photo ={item.photo}/>
+            <>
+            <SideCard key={i} id={i} role={item.role} handleClick={handleClick} photo ={item.photo} topage={item.topage}/>
+            
+            </>
+            
           )
         })}
       </div>

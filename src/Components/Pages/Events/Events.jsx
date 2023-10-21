@@ -103,7 +103,7 @@ export default function Events() {
           <div className="row mt-5 dbtn">
             <a
               className="col-12 btn justify-content-around"
-              href="https://drive.google.com/file/d/1Mc3eTQiMUGQBx3qiaRhoFZoaYa0zQQBp/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1IJpD5N12aRgOkj0ds_aJqkYaYEKWpqWp/view?usp=sharing"
               role="button"
               target="_blank">
               <svg
