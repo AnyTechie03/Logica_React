@@ -283,6 +283,7 @@ function SignUp2({ isTeamMember, setTeamMembers }) {
               </div>
             </div>
           </form>
+          
         </div>
         <ToastContainer />
       </div>

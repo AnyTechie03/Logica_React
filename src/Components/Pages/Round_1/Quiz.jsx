@@ -85,7 +85,7 @@ function Quiz() {
     fetch("https://angry-moon-10536.pktriot.net/questions", {
       method: 'GET',
       headers: {
-        Accept: "application/json",
+        Accept: "*/*",
         "Content-Type": "application/json"
       },
       withCredentials: true,
@@ -117,9 +117,40 @@ function Quiz() {
   };
 
   const handleOptionSelect = (optionIndex) => {
-    const updatedSelectedOptions = [...selectedOptions];
-    updatedSelectedOptions[currentQuestionIndex] = optionIndex;
-    setSelectedOptions(updatedSelectedOptions);
+    //
+      const data = {
+        selectedOptions: selectedOptions,
+      };
+    
+      fetch('https://angry-moon-10536.pktriot.net/submit-quiz', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        withCredentials: true,
+        credentials: 'include',
+        body: JSON.stringify(data),
+      })
+        .then((response) => {
+          if (response.status === 200) {
+            return response.json();
+          } else {
+            throw new Error('Quiz submission failed.');
+          }
+        })
+        .then((data) => {
+          // Update the state with the received score
+          setScore(data.score);
+          setIsSubmitted(true);
+          console.log('Your Score is',data.score);
+        })
+        .catch((error) => {
+          console.error('Error submitting quiz:', error);
+        });
+    
+    
+    //
+    
   };
 
   const navigateToQuestion = (index) => {

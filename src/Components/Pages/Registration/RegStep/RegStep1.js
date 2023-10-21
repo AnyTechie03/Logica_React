@@ -29,6 +29,9 @@ const RegStep1 = ({ isTeamMember, setTeamMembers }) => {
         </div>
       </div>
       </div>
+      <p className="event-guidelines-instruction">
+          Before proceeding with your registration, please read the event guidelines carefully. They are available on the homepage of the website.
+        </p>
     </div>
   );
 };

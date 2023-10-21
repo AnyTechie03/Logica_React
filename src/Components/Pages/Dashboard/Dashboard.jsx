@@ -10,54 +10,50 @@ import EditProfile from "../EditProfile/EditProfile";
 import Profile from "../Profile/Profile";
 import Sponsors from "../Sponsors/Sponsors";
 
-
 const Dashboard = ({
   isProfileClicked,
-            isEditProfile,
-        setProfileClicked,
-        setEditProfile,
-        setTeamInfoPage ,
-        setMenuClicked,
-        isMenuClicked,
-        UserData,
-        setUserData
+  isEditProfile,
+  setProfileClicked,
+  setEditProfile,
+  setTeamInfoPage,
+  setMenuClicked,
+  isMenuClicked,
+  UserData,
+  setUserData,
 }) => {
-  
   return (
     <>
       <Home />
       <About />
       <Events />
       {/* <Sponsors/> */}
-      <Schedule/>
-      <Guidance/>
+      <Schedule />
+      <Guidance />
       <Contact />
 
-      
       <div className={isEditProfile ? "show" : "d-none"}>
-      <EditProfile isProfileClicked={isProfileClicked}
-            isEditProfile={isEditProfile}
-        setProfileClicked={setProfileClicked} 
-        setEditProfile={setEditProfile}
-        setTeamInfoPage = {setTeamInfoPage}
-        setMenuClicked={setMenuClicked}
-        isMenuClicked={isMenuClicked}
-        UserData={UserData}
-        />
-        </div>
-        <div className={isProfileClicked ? "show" : "d-none"}>
-      
-
-          <Profile isProfileClicked={isProfileClicked}
+        <EditProfile
+          isProfileClicked={isProfileClicked}
           isEditProfile={isEditProfile}
-            setProfileClicked={setProfileClicked}
-            setEditProfile={setEditProfile}
-            setTeamInfoPage={setTeamInfoPage}
-            UserData={UserData}
-            setUserData={setUserData}
-          />
-          
-          </div>
+          setProfileClicked={setProfileClicked}
+          setEditProfile={setEditProfile}
+          setTeamInfoPage={setTeamInfoPage}
+          setMenuClicked={setMenuClicked}
+          isMenuClicked={isMenuClicked}
+          UserData={UserData}
+        />
+      </div>
+      <div className={isProfileClicked ? "show" : "d-none"}>
+        <Profile
+          isProfileClicked={isProfileClicked}
+          isEditProfile={isEditProfile}
+          setProfileClicked={setProfileClicked}
+          setEditProfile={setEditProfile}
+          setTeamInfoPage={setTeamInfoPage}
+          UserData={UserData}
+          setUserData={setUserData}
+        />
+      </div>
     </>
   );
 };

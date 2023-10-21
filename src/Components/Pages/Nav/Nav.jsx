@@ -22,7 +22,7 @@ const Nav = ({
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
   const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen); // Toggle the dropdown state
+    setIsDropdownOpen(!isDropdownOpen);
   };
   const navigate = useNavigate();
   const fetchUserType = async () => {
@@ -42,7 +42,6 @@ const Nav = ({
 
       if (res.status === 201) {
         const data = await res.json();
-        console.log(data.userType);
         setUserType(data.userType);
       } else {
         // Handle unauthorized access
@@ -425,9 +424,7 @@ const Nav = ({
             "Access-Control-Allow-Origin": '*',
           },
         }).then(res=>{
-          console.log(res)
           if(res.status ===201){
-            console.log("User Logged Out");
             window.location.reload(true)
             navigate('/')
           }

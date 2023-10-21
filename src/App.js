@@ -39,7 +39,7 @@ import Privacy_Policy from "./Components/Pages/Pagess/Privacy_Policy";
 import ContactUs from "./Components/Pages/Pagess/ContactUs";
 import BackBone from "./Components/Pages/BackBone/BackBone";
 import Profileup from "./Components/Pages/imageupload/Profileup";
-import Score from "./Components/Pages/Round_1/Score";
+import Resetpass from "./Components/Pages/Registration/Resetpass";
 import Space from "./Components/Pages/Loading/Space";
 
 
@@ -62,7 +62,7 @@ function App() {
     // Simulate app loading with a delay of 4.4 seconds
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 6990);
+    }, 500);
 
     return () => {
       clearTimeout(timer);
@@ -124,9 +124,8 @@ function App() {
                 }
               />
                 <>
-                  {/* <Route path="/quiz" element={<Quiz />} /> */}
                   <Route path="/quiz" element={<Quiz/>} />
-                  <Route path="/TresureHunt" element={<Tresurehunt />} />
+                  {/* <Route path="/TresureHunt" element={<Tresurehunt />} />
                   <Route
                     path="/TresureHunt/TresureHunt1"
                     element={<Level_1 />}
@@ -146,9 +145,10 @@ function App() {
                   <Route
                     path="/TresureHunt/TresureHunt5"
                     element={<Level_5 />}
-                  />
-                  <Route exact path="/CodingRound" element={<EditiorHome />} />
+                  /> */}
+                  {/* <Route exact path="/CodingRound" element={<EditiorHome />} /> */}
                   <Route exact path="/UserDash" element={<UserDash />} />
+                  <Route exact path="/resetPassword" element={<Resetpass />} />
                 </>
             
                 <>

@@ -24,7 +24,7 @@ const contactDetails = [
     role: "Overall Coordinator",
     email: "akashnyerunkar580@gmail.com",
     phone: "9834178825",
-    photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2F918d5483-cdfe-488c-9530-39b22edb9591?alt=media&token=a767854a-c523-4f3e-b626-cbd8121159d5"
+    photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2FAK2.png?alt=media&token=e5407255-5d98-44c0-9bc3-1a430e2d8bea"
   },
   {
     name: "Prasad Ranjane",

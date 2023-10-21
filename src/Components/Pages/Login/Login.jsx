@@ -214,9 +214,9 @@ const Login = ({ isUserVerified,
                     </button>
                   </div>
                   <div className='text-white text-center mt-4 m-0 p-0'>
-                    <p>Forget Password...?
-                      <Link className='h5' style={{ fontSize: '16px',textDecoration: 'none' }} to="/register">
-                        resetPassword
+                    <p>Forget Password?
+                      <Link className='h5' style={{ fontSize: '16px',textDecoration: 'none' }} to="/resetPassword">
+                        Reset Password
                       </Link>
                     </p>
                   </div>
