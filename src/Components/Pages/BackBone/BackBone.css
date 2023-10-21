@@ -24,9 +24,11 @@ font-family: futurewave;
   border-radius: 20px;
   overflow: hidden;
   max-width: 280px;
+  /* min-height: 340px; */
   max-height: 340px;
   cursor: pointer;
   border: none;
+ /* background-color: rgb(0, 58, 72); */
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
 
 }
@@ -42,6 +44,7 @@ font-family: futurewave;
   max-height: 340px;
   object-fit: cover;
   object-fit       : cover;
+
 mix-blend-mode: multiply;
   display          : block;
   margin           : 0 auto;
@@ -54,7 +57,7 @@ mix-blend-mode: multiply;
 .card .card-content {
   position: absolute;
   bottom: -180px;
-  color: #fff;
+  color: #ffffff;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(15px);
   min-height: 140px;
@@ -113,7 +116,7 @@ mix-blend-mode: multiply;
 }
 
 .card .card-content .social-icons li a {
-  color: #fff;
+  color: #ffffff;
 }
 
 .card .card-content .social-icons li a span {

@@ -21,6 +21,14 @@ const BackBone = () => {
             photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2FIMG_2222.png?alt=media&token=3edfe736-0ee7-4d5e-b9b2-b06cbf25d9c2"
         },
         {
+            name: "Aniket Raj",
+            role: "Online Event Head",
+            email: "aniket.wufwh22@sinhga.edu",
+            phone: "87094 45958",
+            insta : 'aniket_raj7246',
+            photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2F1697785830894.jpg?alt=media&token=9399ce19-7903-4dca-9a2c-f1ca1a03bb0d"
+        },
+        {
             name: "Amol Patil",
             role: "Media Head",
             email: "amol.chymp22@sinhgad.edu",
@@ -76,14 +84,7 @@ const BackBone = () => {
             insta : 'atharavadeshpande2',
             photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2FIMG20231012131207.jpg?alt=media&token=b514297e-bb03-4a22-820e-377da2473912"
         },
-        {
-            name: "Aniket Raj",
-            role: "Online Event Head",
-            email: "aniket.wufwh22@sinhga.edu",
-            phone: "87094 45958",
-            insta : 'aniket_raj7246',
-            photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2F1697785830894.jpg?alt=media&token=9399ce19-7903-4dca-9a2c-f1ca1a03bb0d"
-        },
+        
     ];
 
     return (
