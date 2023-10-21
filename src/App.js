@@ -55,7 +55,7 @@ function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [UserData, setUserData] = useState({});
   const [isFinialCall, setFinialCall] = useState(false);
-  // const [isLoggedin,setLoggedin] = useState(false)
+  const [isUserType,setUserType] = useState(false)
   const [isTeamMember, setTeamMembers] = useState(null);
   useEffect(() => {
 

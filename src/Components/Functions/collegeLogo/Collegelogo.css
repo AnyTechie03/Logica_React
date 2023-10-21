@@ -1,0 +1,42 @@
+.clglogolinks {
+    /* position: fixed; */
+    position: sticky;
+    z-index: 100;
+}
+
+.clglogo{
+    position: fixed;
+    top: 14%;
+    display: flex;
+    left: 2%;
+    flex-direction: column;
+}
+.clglogo2{
+    position: fixed;
+    top: 14%;
+    display: flex;
+    right: 3%;
+    flex-direction: column;
+}
+
+
+
+
+
+
+.clglogolinks   .fa-locationin {
+    font-size: 22px;
+    background-color: #5d5d5d00;
+    padding: 2px;
+    /* margin: 7px; */
+    border-radius: 10px;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px; */
+    position: relative;
+
+}
