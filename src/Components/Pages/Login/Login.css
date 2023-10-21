@@ -87,7 +87,7 @@
     color        : #001213;
     border-radius: 5px;
 }
-.login-box form a {
+.login-box  form .lgn-btn a ,Link {
     position       : relative;
     background   : #001213;
     border-radius: 5px;
@@ -103,7 +103,7 @@
     letter-spacing : 4px;
 }
 
-.login-box a:hover,.lgn-btn button:hover{
+.login-box .lgn-btn a:hover,.lgn-btn button:hover{
     background   : #03e9f4;
     color        : #fff;
     border-radius: 5px;
