@@ -71,6 +71,10 @@ export default function Resetpass() {
 
   return (
     <div className="resetpass-container">
+      <div className="login">
+        <div className="row">
+          <div className="col-4">
+              <div className="login-box form-group">
       <input
         type="text"
         className="input-field"
@@ -106,6 +110,10 @@ export default function Resetpass() {
           {otpSent ? "Verify" : "Send OTP"}
         </button>
       )}
+      </div>
+    </div>
+    </div>
+    </div>
     </div>
   );
 }
