@@ -1,0 +1,62 @@
+/* Style for the file input container */
+.file-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border: 2px dashed #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f7f7f7;
+    transition: border-color 0.3s;
+  }
+  
+  /* Style for the file input label */
+  .file-input-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+  }
+  
+  /* Hide the default file input element */
+  .file-input {
+    display: none;
+  }
+  
+  /* Style for the file input icon or text */
+  .file-input-icon {
+    font-size: 24px;
+    color: #888;
+  }
+  
+  /* Change the border color on hover */
+  .file-input-container:hover {
+    border-color: #666;
+  }
+  
+  /* Style for selected file name */
+  .selected-file {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+  }
+
+  /* styles.css */
+.custom-input {
+    border: 1px solid #333; /* Add your border styles */
+    border-radius: 4px; /* Customize the border radius */
+    padding: 10px; /* Adjust padding */
+    font-size: 16px; /* Customize font size */
+    color: #333; /* Text color */
+    background-color: #f7f7f7; /* Background color */
+  }
+  
+  .custom-input:focus {
+    outline: none; /* Remove focus outline if desired */
+    border-color: #007bff; /* Adjust border color on focus */
+  }
+  
+  /* You can adjust the styles to match your design preferences */
+  

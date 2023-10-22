@@ -3,8 +3,10 @@ import { Box, Image, Text,Center,Input,Button,FormControl } from "@chakra-ui/rea
 import { useNavigate } from "react-router-dom";
 import { imageDb } from '../Functions/firebase/firebase';
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import './PaymentButton.css'
 import { v4 } from "uuid";
 import { toast } from "react-toastify";
+import Loading from "../Pages/Loading/Loading";
 
 export default function PaymentButtuon() {
   const [UserPart, setUserPart] = useState("");
@@ -13,6 +15,8 @@ export default function PaymentButtuon() {
   const [transactionImage, setTransactionImage] = useState(null); 
   const navigate = useNavigate();
   const [imgUrl,setImgUrl] =useState([])
+  const [selectedFileName, setSelectedFileName] = useState('No file selected');
+
 
   const notify = (message) => {
     toast.error(message, {
@@ -114,6 +118,7 @@ export default function PaymentButtuon() {
 
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
+    setSelectedFileName(file.name);
     setTransactionImage(file);
   };
 
@@ -157,19 +162,66 @@ export default function PaymentButtuon() {
   if (loading == true) {
     return (
       <>
-        <h2>Loading</h2>
+        <Loading/>
       </>
     );
   } else {
     return (
-      <Center h="100vh" bg="#0c243b" color="white" >
-      <Box maxW="md" borderWidth="1px" borderRadius="lg" paddingTop="65px">
-        {UserPart === "Solo" && (
+      <div className="login ">
+        <div className="row">
+          <div className="col-4">
+         
+              <div className="login-box form-group text-center text-white mt-5 m-0 p-1">
+              {UserPart === "Solo" && (
+  <Box textAlign="center" py={4}>
+    <Text fontWeight="semibold" className="h1 st">
+      Solo Payment
+    </Text>
+    <Image
+      src="https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2FQR100.jpeg?alt=media&token=3af1af47-7009-42ae-aaac-2f509bdd3947"
+      alt="Solo Payment Image"
+      boxSize="250px"
+      border="2px solid #007BFF"  // Add a border
+      boxShadow="md"              // Add a box shadow
+      borderRadius="lg"           // Add a rounded corner
+      
+      _hover={{
+        transform: "scale(1.05)", // Add a scale effect on hover
+        transition: "transform 0.3s ease-in-out",
+      }}
+      htmlProps={{ draggable: "false" }}
+    />
+  </Box>
+)}
+
+{UserPart === "Team" && (
+  <Box textAlign="center" py={4}>
+    <Text fontSize={{ base: "20px", md: "30px" }} fontWeight="semibold">
+      Team Payment
+    </Text>
+    <Image
+      src="https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2FQR150.jpeg?alt=media&token=30ac2e85-6a8a-496e-a86a-b01ca711f1a1"
+      alt="Team Payment Image"
+      boxSize="250px"
+      border="2px solid #FF5733"  // Add a border
+      boxShadow="md"              // Add a box shadow
+      borderRadius="lg"           // Add a rounded corner
+      _hover={{
+        transform: "scale(1.05)", // Add a scale effect on hover
+        transition: "transform 0.3s ease-in-out",
+      }}
+      htmlProps={{ draggable: "false" }}
+    />
+  </Box>
+)}
+
+    
+        {/* {UserPart === "Solo" && (
           <>
             <Text fontSize="30px" fontWeight="semibold" p="4">
-              Solo Payment
+              <h2 className="st">Solo Payment </h2>
             </Text>
-            <Image src="https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2Fec7fd901-3c61-4322-ab41-b6b2c899f41f?alt=media&token=8b91258c-b76f-437a-a4df-09362910b4a9" alt="Solo Payment Image" boxSize="500px" />
+            <Image src="https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2FQR100.jpeg?alt=media&token=3af1af47-7009-42ae-aaac-2f509bdd3947" alt="Solo Payment Image" boxSize="250px" />
           </>
         )}
         {UserPart === "Team" && (
@@ -177,30 +229,67 @@ export default function PaymentButtuon() {
             <Text fontSize="30px" fontWeight="semibold" p="4">
               Team Payment
             </Text>
-            <Image src="https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2F224ade06-03df-419e-b87d-7f4ca89aeada?alt=media&token=033382a9-ccd0-4431-a7f0-1526d24d52ed" alt="Team Payment Image" boxSize="500px" />
+            <Image src="https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2FQR150.jpeg?alt=media&token=30ac2e85-6a8a-496e-a86a-b01ca711f1a1" alt="Team Payment Image" boxSize="250px" />
           </>
-        )}
+        )} */}
         <FormControl>
-          <Input
+        <Input
+  type="text"
+  placeholder="Enter Transaction ID"
+  value={transactionId}
+  variant="flushed"
+  required
+  onChange={(e) => setTransactionId(e.target.value)}
+className="custom-input"
+  _placeholder={{
+    sm: { fontSize: "12px" },
+    md: { fontSize: "16px" },
+    lg: { fontSize: "18px" },
+  }}
+  _focus={{
+    sm: { borderColor: "blue.200" },
+    md: { borderColor: "blue.300" },
+    lg: { borderColor: "blue.400" },
+  }}
+/>
+
+          {/* <Input
             type="text"
+            className="custom-input"
             placeholder="Enter Transaction ID"
             value={transactionId}
             variant='flushed' 
             required
             onChange={(e) => setTransactionId(e.target.value)}
-          />
-           <Input
+          /> */}
+           {/* <Input
             type="file" // This input type allows users to select a file (image)
             accept="image/*" // Specify accepted file types (images in this case)
             onChange={handleImageUpload} // Handle file selection
-          />
-          <Button colorScheme="blue" onClick={handleTransactionSubmit}>
+          /> */}
+          <div className="file-input-container m-1 mt-0">
+  <label className="file-input-label" htmlFor="imageInput">
+    <span className="file-input-icon">+</span> Upload Image
+  </label>
+  <input
+    type="file"
+    id="imageInput"
+    className="file-input"
+    accept="image/*"
+    onChange={handleImageUpload}
+  />
+</div>
+<div className="selected-file text-white">Selected File: {selectedFileName}</div>
+          <Button className="btn" colorScheme="blue" onClick={handleTransactionSubmit}>
             Submit
           </Button>
         </FormControl>
-        <p>Scan the Qr Above and make payment. After payment fill in necessary details and submit the form.</p>
-      </Box>
-      </Center>
+        <p className="text-center text-white">Scan the Qr Above and make payment. After payment fill in necessary details and submit the form.</p>
+
+      </div>
+      </div>
+      </div>
+      </div>
     );
   }
 }
