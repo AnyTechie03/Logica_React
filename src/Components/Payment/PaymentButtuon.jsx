@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, Image, Text,Center,Input,Button,FormControl } from "@chakra-ui/react";
+import { Box, Image, Text,Input,Button,FormControl } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { imageDb } from '../Functions/firebase/firebase';
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";

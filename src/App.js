@@ -27,7 +27,7 @@ import Quiz from "./Components/Pages/Round_1/Quiz";
 // import Level_5 from "./Components/Pages/Tresure/Level_5";
 import SocialLinks from "./Components/Pages/SocialLinks/SocialLinks";
 import SignUp2 from "./Components/Pages/Registration/SignUp2";
-import EditiorHome from "./Components/Pages/Editior/EditiorHome";
+// import EditiorHome from "./Components/Pages/Editior/EditiorHome";
 import PaymentButtuon from "./Components/Payment/PaymentButtuon";
 import UserDash from "./Components/Pages/Admin/User/UserDash";
 import TermsConditions from "./Components/Pages/Pagess/TermsConditions";
@@ -37,7 +37,7 @@ import ContactUs from "./Components/Pages/Pagess/ContactUs";
 import BackBone from "./Components/Pages/BackBone/BackBone";
 import Profileup from "./Components/Pages/imageupload/Profileup";
 import Resetpass from "./Components/Pages/Registration/Resetpass";
-import Space from "./Components/Pages/Loading/Space";
+// import Space from "./Components/Pages/Loading/Space";
 
 
 export const UserContext = createContext();
@@ -52,7 +52,7 @@ function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [UserData, setUserData] = useState({});
   const [isFinialCall, setFinialCall] = useState(false);
-  const [isUserType,setUserType] = useState(false)
+  // const [isUserType,setUserType] = useState(false)
   const [isTeamMember, setTeamMembers] = useState(null);
   useEffect(() => {
 
@@ -109,7 +109,7 @@ function App() {
                 }
               />
               <Route path="/Backbone" element={<BackBone/>}/>
-              <Route path="/Space" element={<Space/>}/>
+              {/* <Route path="/Space" element={<Space/>}/> */}
               <Route path="/profileup" element={<Profileup/>}/>
               <Route exact path="*" element={<PageNotFound />} />
               <Route exact path="/ThisisSecrete"
