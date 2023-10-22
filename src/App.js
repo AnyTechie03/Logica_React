@@ -1,7 +1,7 @@
 import "./App.css";
 
 //Importing Libraries
-import { BrowserRouter as Router, Route, Routes, useNavigate } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
 
@@ -14,25 +14,22 @@ import { initialState, reducer } from "./Components/Functions/useReducer";
 import Nav from "./Components/Pages/Nav/Nav";
 import Footer from "./Components/Pages/Footer/Footer";
 import PageNotFound from "./Components/Pages/404/PageNotFound";
-import CookieConsent from "./Components/Functions/CookieConsent/CookieConsent";
 import Dashboard from "./Components/Pages/Dashboard/Dashboard";
 import Loading from "./Components/Pages/Loading/Loading";
 import Login from "./Components/Pages/Login/Login";
 import FetchUsers from "./Components/Pages/Admin/FetchUsers";
 import Quiz from "./Components/Pages/Round_1/Quiz";
-import Tresurehunt from "./Components/Pages/Tresure/Tresurehunt";
-import Level_1 from "./Components/Pages/Tresure/Level_1";
-import Level_2 from "./Components/Pages/Tresure/Level_2";
-import Level_3 from "./Components/Pages/Tresure/Level_3";
-import Level_4 from "./Components/Pages/Tresure/Level_4";
-import Level_5 from "./Components/Pages/Tresure/Level_5";
+// import Tresurehunt from "./Components/Pages/Tresure/Tresurehunt";
+// import Level_1 from "./Components/Pages/Tresure/Level_1";
+// import Level_2 from "./Components/Pages/Tresure/Level_2";
+// import Level_3 from "./Components/Pages/Tresure/Level_3";
+// import Level_4 from "./Components/Pages/Tresure/Level_4";
+// import Level_5 from "./Components/Pages/Tresure/Level_5";
 import SocialLinks from "./Components/Pages/SocialLinks/SocialLinks";
 import SignUp2 from "./Components/Pages/Registration/SignUp2";
 import EditiorHome from "./Components/Pages/Editior/EditiorHome";
-import UserDash from "./Components/Pages/Admin/User/UserDash";
 import PaymentButtuon from "./Components/Payment/PaymentButtuon";
-import PaymentSuccessful from "./Components/Payment/PaymentSuccessful";
-import Shipping from "./Components/Pages/Pagess/Shipping";
+import UserDash from "./Components/Pages/Admin/User/UserDash";
 import TermsConditions from "./Components/Pages/Pagess/TermsConditions";
 import Cancellation from "./Components/Pages/Pagess/Cancellation";
 import Privacy_Policy from "./Components/Pages/Pagess/Privacy_Policy";
@@ -149,19 +146,16 @@ function App() {
                   {/* <Route exact path="/CodingRound" element={<EditiorHome />} /> */}
                   <Route exact path="/UserDash" element={<UserDash />} />
                   <Route exact path="/resetPassword" element={<Resetpass />} />
+                  <Route exact path="/payment" element={<PaymentButtuon />} />
+
                 </>
             
                 <>
-                  <Route path="/Pay" element={<PaymentButtuon />} />
-                  <Route
-                    path="/PaymentSuccessful"
-                    element={<PaymentSuccessful />}
-                  />
+                 
                   <Route path="/terms" element={<TermsConditions/>}/>
                   <Route path="/contact_us" element={<ContactUs/>}/>
                   <Route path="/refund" element={<Cancellation/>}/>
                   <Route path="/privacy" element={<Privacy_Policy/>}/>
-                  <Route path="/shipping" element={<Shipping/>}/>
                   
                 </>
             
@@ -185,7 +179,7 @@ function App() {
             {/* Footer */}
             <Footer />
 
-            {/* <SocialLinks /> */}
+            <SocialLinks />
           </Router>
         </UserContext.Provider>
       )}

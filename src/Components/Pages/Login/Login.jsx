@@ -62,7 +62,7 @@ const Login = ({ isUserVerified,
           formData,
         }),
       });
-      console.log("Login Called");
+      // console.log("Login Called");
       if (response.status === 400) {
         notifyToast("Invalid Credentials", "error");
       } else if (response.status === 200) {
@@ -85,7 +85,15 @@ const Login = ({ isUserVerified,
         successnotify("Admin Logged In Successfully");
         localStorage.setItem("user", "Logged");
         navigate('/');
-      } else {
+      } else if(response.status === 203){
+        setUserVerified(true);
+        dispatch({ type: "USER", payload: true });
+        successnotify("User Logged In Successfully");
+        successnotify("Coders, fuel your spacecraft up 🚀");
+        localStorage.setItem("user", "Logged");
+        navigate('/payment');
+      }
+      else {
         setUserVerified(false);
         notify("Invalid Credentials");
       }

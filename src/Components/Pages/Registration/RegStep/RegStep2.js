@@ -204,6 +204,8 @@ const RegStep2 = ({ handleChange, values,setTeamMembers,isTeamMember }) => {
                     </option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
+                    <option value="female">Other</option>
+                    <option value="female">Prefer Not Say</option>
                   </select>
                 </div>
               </label>

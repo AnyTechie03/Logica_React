@@ -60,7 +60,7 @@ const RegStep5 = ({ handleChange, values }) => {
     <>
       <div className="verification-container row">
         <h3>Verify Your Email</h3>
-        <p>Enter the verification token sent to your email:</p>
+        {/* <p>Enter the verification token sent to your email:</p> */}
         <input
           type="text"
           className="form-control col-12"

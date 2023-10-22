@@ -198,18 +198,20 @@ function SignUp2({ isTeamMember, setTeamMembers }) {
       if (res.status === 201) {
         // User data submitted successfully
         notifyToast("Registered Successfully", "success");
-        notifyToast("Payment Gatway will start from 25 Oct 2023", "success");
         setStep(5); // Move to RegStep5
-      } else {
+      }else if(res.status === 422){
+          notifyToast("Email already registered",'Error')
+      } 
+      else {
         // Handle other response statuses (e.g., validation errors)
         notifyToast("Failed to submit user data", "Error");
       }
-      if (res.ok) {
-        // Handle a successful response here
-        console.log("GET request succeeded");
-      } else {
-        console.error("GET request failed");
-      }
+      // if (res.ok) {
+      //   // Handle a successful response here
+      //   console.log("GET request succeeded");
+      // } else {
+      //   console.error("GET request failed");
+      // }
       return res; 
     } catch (error) {
       console.error("Error submitting registration:", error);
