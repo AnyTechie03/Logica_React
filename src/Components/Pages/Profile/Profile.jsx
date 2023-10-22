@@ -91,8 +91,8 @@ export default function Profile({isProfileClicked,setProfileClicked,setEditProfi
 <div className={isProfileClicked ? "profile profile-active" : "profile"}>
   
       <div className="profile-left">
+    <i className="fa-solid fa-xmark pl-2 pt-1 mt-0 " style={{ color: "tomato",fontSize:'25px',top:'0'}} onClick={() => setProfileClicked(!isProfileClicked)}></i>
       <div className="Pxmark row">
-    <i className="fa-solid fa-xmark pl-2 pt-2" style={{ color: "#fff"}} onClick={() => setProfileClicked(!isProfileClicked)}></i>
     </div>
         <img
           src={uProfileref}
@@ -144,14 +144,23 @@ export default function Profile({isProfileClicked,setProfileClicked,setEditProfi
 </div>
 <hr/>
 <div className="text-left pl-3">
-<p className="score"> Name Of The Team Mates</p>
-
 {UserData.teamMembers  ? (
+  <>
+
             <ol>
               {UserData.teamMembers.map((item, i) => {
-                return <li className="score">{item.firstName1}{item.lastName1}</li>;
+                if(item.firstName==null){
+return ''
+                }else{
+
+                  return <>
+<p className="score"> Name Of The Team Mates</p>
+                <li className="score">{item.firstName1}{item.lastName1}</li>
+                </>
+                }
               })}
             </ol>
+            </>
           ) : (
             <p></p>
           )}

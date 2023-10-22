@@ -85,7 +85,7 @@
     ), url(../../../assets/img/75378177846\ \(1\).png);
     background-size: cover;
     border-radius: 15px;
-    box-shadow: 0 15px 60px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 15px 60px #00000080;
   }
   .Econtainer .card .face {
     position: absolute;
