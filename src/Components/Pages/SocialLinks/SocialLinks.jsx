@@ -32,9 +32,9 @@ export default function SocialLinks(){
     return (
         <div className="links">
             <div className="social-links">
-                <a className="discord" target="_blank" href="" title="Cepheus Discord"><i className="fa-brands fa-discord"></i></a>
-                <a className="instagram" href="" target="_blank"  title="Cepheus Instagram"><i className="fa-brands fa-instagram"></i></a>
-                <a className="twitter" href="" target="_blank"  title="Cepheus Twitter"><i className="fa-brands fa-twitter"></i></a>
+                {/* <a className="discord" target="_blank" href="" title="Cepheus Discord"><i className="fa-brands fa-discord"></i></a> */}
+                <a className="instagram" href="https://www.instagram.com/logica.simca/" target="_blank"  title="Cepheus Instagram"><i className="fa-brands fa-instagram"></i></a>
+                {/* <a className="twitter" href="" target="_blank"  title="Cepheus Twitter"><i className="fa-brands fa-twitter"></i></a> */}
             </div>
             <div className="location-link">
                 <a className="location" href="https://maps.app.goo.gl/yozbya8gUFNouYgaA" target="_blank" title="College Map"><i className="fa-solid fa-location-dot"></i></a>
