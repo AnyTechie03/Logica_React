@@ -1,6 +1,5 @@
 import React from 'react';
 import './BackBone.css';
-import pbg from '../../../assets/img/LogicaSh (2).png'
 
 const BackBone = () => {
     const headsDetails = [
