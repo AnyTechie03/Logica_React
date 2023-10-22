@@ -8,7 +8,7 @@ const BackBone = () => {
             role: "Offline Event Handling Head",
             email: "manas.djrwh22@sinhgad.edu",
             phone: "9406603170",
-            insta : 'manaslahare',
+            insta : 'https://www.instagram.com/manaslahare/',
             photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2FIMG_3826.JPG?alt=media&token=0cc6e2fa-ee7f-4f9f-b05f-e83d531f7658"
         },
         {
@@ -16,7 +16,7 @@ const BackBone = () => {
             role: "Offline Event Handling Head",
             email: "shrutika.gugah22@sinhgad.edu",
             phone: "7559439594",
-            insta : '_shruta_2001',
+            insta : 'https://www.instagram.com/_shruta_2001/',
             photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2FIMG_2222.png?alt=media&token=3edfe736-0ee7-4d5e-b9b2-b06cbf25d9c2"
         },
         {
@@ -24,7 +24,7 @@ const BackBone = () => {
             role: "Online Event Head",
             email: "aniket.wufwh22@sinhga.edu",
             phone: "87094 45958",
-            insta : 'aniket_raj7246',
+            insta : 'https://www.instagram.com/aniket_raj7246/',
             photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2F1697785830894.jpg?alt=media&token=9399ce19-7903-4dca-9a2c-f1ca1a03bb0d"
         },
         {
@@ -32,7 +32,7 @@ const BackBone = () => {
             role: "Media Head",
             email: "amol.chymp22@sinhgad.edu",
             phone: "9527472582",
-            insta : 'amolrpatil96k',
+            insta : 'https://www.instagram.com/amolrpatil96k/',
             photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2FIMG_20231002_033224.jpg?alt=media&token=3568d474-f717-41b2-97c5-c11496f3d1e9"
         },
         {
@@ -40,15 +40,15 @@ const BackBone = () => {
             role: "Media Head",
             email: "shubham.hyhyu22@sinhgad.edu",
             phone: "98501 61963",
-            insta : 'being_shubh_s',
+            insta : 'https://www.instagram.com/being_shubh_s/',
             photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2F1694687757749.jpg?alt=media&token=dd5e0966-4fb5-406e-bb4e-6dca0cb987d5"
         },
         {
             name: "Dhnashree Tulankar",
             role: "Decoration Head",
-            email: "",
+            email: "dhanshri.fawkj22@sinhgad.edu",
             phone: "9876543212",
-            insta : '',
+            insta : 'https://www.instagram.com/dhanshri___11/',
             photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2FIMG_20231015_130127.jpg?alt=media&token=e6cfdb0e-c0b5-4bc9-8121-58a28cd4a0c9"
         },
         {
@@ -56,7 +56,7 @@ const BackBone = () => {
             role: "PR Head",
             email: "trupti.jpnjw22@sinhgad.edu",
             phone: "8080033481",
-            insta : 'trupti._vaidyaa',
+            insta : 'https://www.instagram.com/trupti._vaidyaa/',
             photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2FIMG_6258.png?alt=media&token=5f2ef867-0260-4b36-86b2-09e54bcfda54"
         },
         {
@@ -64,7 +64,7 @@ const BackBone = () => {
             role: "Registration Head",
             email: "Rutuja.nkmya22@sinhgad.edu",
             phone: "9623676889",
-            insta : 'rutuja_bhilare769',
+            insta : 'https://www.instagram.com/rutuja_bhilare769/',
             photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2F1686931217398%20(2).jpg?alt=media&token=ace3a9b4-6bcf-4e20-838f-8ebfaee2b28e"
         },
         {
@@ -72,7 +72,7 @@ const BackBone = () => {
             role: "Technical Head",
             email: "suraj.wwmyw22@sinhgad.edu",
             phone: "9876543212",
-            insta : 'surajsp83',
+            insta : 'https://www.instagram.com/surajsp83/',
             photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2FIMG_6856.png?alt=media&token=88f84c5f-7e85-4273-aad2-f8e7eef9633b"
         },
         {
@@ -80,7 +80,7 @@ const BackBone = () => {
             role: "Moderation Head",
             email: "atharvadeshpande06.simca.mca@gmail.com",
             phone: "73875 55262",
-            insta : 'atharavadeshpande2',
+            insta : 'https://www.instagram.com/atharavadeshpande2/',
             photo: "https://firebasestorage.googleapis.com/v0/b/imageuploaddb-75eba.appspot.com/o/files%2FIMG20231012131207.jpg?alt=media&token=b514297e-bb03-4a22-820e-377da2473912"
         },
         
