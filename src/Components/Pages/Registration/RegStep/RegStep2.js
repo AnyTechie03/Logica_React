@@ -7,26 +7,163 @@ const RegStep2 = ({ handleChange, values,setTeamMembers,isTeamMember }) => {
   const handleStateChange = (event) => {
     switch (event.target.value) {
       case "Andhra Pradesh":
-        setCities(["Hyderabad", "Visakhapatnam", "Vijayawada", "Guntur"]);
-        break;
-      case "Arunachal Pradesh":
-        setCities(["Itanagar", "Tawang", "Namsai", "Changlang"]);
-        break;
-      case "Assam":
-        setCities(["Guwahati", "Dispur", "Tezpur", "Jorhat"]);
-        break;
-      case "Bihar":
-        setCities(["Patna", "Gaya", "Bhagalpur", "Muzaffarpur"]);
-        break;
-      case "Chhattisgarh":
-        setCities(["Raipur", "Bhilai", "Bilaspur", "Korba"]);
-        break;
+        setCities([
+          "Anantapur",
+          "Chittoor",
+          "East Godavari",
+          "Guntur",
+          "Krishna",
+          "Kurnool",
+          "Nellore",
+          "Prakasam",
+          "Srikakulam",
+          "Visakhapatnam",
+          "Vizianagaram",
+          "West Godavari",
+          "Y.S.R. Kadapa",
+        ]);
+        break;      
+        case "Arunachal Pradesh":
+          setCities([
+            "Tawang",
+            "West Kameng",
+            "East Kameng",
+            "Papum Pare",
+            "Kurung Kumey",
+            "Kra Daadi",
+            "Lower Subansiri",
+            "Upper Subansiri",
+            "West Siang",
+            "East Siang",
+            "Siang",
+            "Upper Siang",
+            "Dibang Valley",
+            "Lower Dibang Valley",
+            "Lohit",
+            "Anjaw",
+            "Changlang",
+            "Tirap",
+            "Longding",
+          ]);
+          break;
+        
+          case "Assam":
+            setCities([
+              "Baksa",
+              "Barpeta",
+              "Biswanath",
+              "Bongaigaon",
+              "Cachar",
+              "Charaideo",
+              "Chirang",
+              "Darrang",
+              "Dhemaji",
+              "Dhubri",
+              "Dibrugarh",
+              "Dima Hasao",
+              "Goalpara",
+              "Golaghat",
+              "Hailakandi",
+              "Hojai",
+              "Jorhat",
+              "Kamrup",
+              "Kamrup Metropolitan",
+              "Karbi Anglong",
+              "Karimganj",
+              "Kokrajhar",
+              "Lakhimpur",
+              "Majuli",
+              "Morigaon",
+              "Nagaon",
+              "Nalbari",
+              "Sivasagar",
+              "Sonitpur",
+              "South Salmara-Mankachar",
+              "Tinsukia",
+              "Udalguri",
+              "West Karbi Anglong",
+            ]);
+            break;
+          
+            case "Bihar":
+              setCities([
+                "Araria",
+                "Arwal",
+                "Aurangabad",
+                "Banka",
+                "Begusarai",
+                "Bhagalpur",
+                "Bhojpur",
+                "Buxar",
+                "Darbhanga",
+                "East Champaran",
+                "Gaya",
+                "Gopalganj",
+                "Jamui",
+                "Jehanabad",
+                "Kaimur",
+                "Katihar",
+                "Khagaria",
+                "Kishanganj",
+                "Lakhisarai",
+                "Madhepura",
+                "Madhubani",
+                "Munger",
+                "Muzaffarpur",
+                "Nalanda",
+                "Nawada",
+                "Patna",
+                "Purnia",
+                "Rohtas",
+                "Saharsa",
+                "Samastipur",
+                "Saran",
+                "Sheikhpura",
+                "Sheohar",
+                "Sitamarhi",
+                "Siwan",
+                "Supaul",
+                "Vaishali",
+                "West Champaran",
+              ]);
+              break;            
+              case "Chhattisgarh":
+                setCities([
+                  "Balod",
+                  "Baloda Bazar",
+                  "Balrampur",
+                  "Bastar",
+                  "Bemetara",
+                  "Bijapur",
+                  "Bilaspur",
+                  "Dantewada",
+                  "Dhamtari",
+                  "Durg",
+                  "Gariaband",
+                  "Janjgir-Champa",
+                  "Jashpur",
+                  "Kabirdham",
+                  "Kanker",
+                  "Kondagaon",
+                  "Korba",
+                  "Koriya",
+                  "Mahasamund",
+                  "Mungeli",
+                  "Narayanpur",
+                  "Raigarh",
+                  "Raipur",
+                  "Rajnandgaon",
+                  "Sukma",
+                  "Surajpur",
+                  "Surguja",
+                ]);
+                break;              
       case "Goa":
         setCities(["Panaji", "Margao", "Vasco da Gama", "Mapusa"]);
         break;
-      case "Gujarat":
-        setCities(["Ahmedabad", "Surat", "Vadodara", "Rajkot"]);
-        break;
+        case "Gujarat":
+          setCities(["Ahmedabad", "Surat", "Vadodara", "Rajkot", "Bhavnagar", "Jamnagar", "Junagadh", "Anand", "Nadiad", "Gandhinagar", "Bharuch", "Mehsana", "Patan", "Porbandar", "Navsari", "Valsad", "Dahod", "Amreli", "Botad", "Morbi"]);
+          break;        
       case "Haryana":
         setCities(["Chandigarh", "Faridabad", "Gurgaon", "Hisar"]);
         break;
@@ -42,9 +179,46 @@ const RegStep2 = ({ handleChange, values,setTeamMembers,isTeamMember }) => {
       case "Kerala":
         setCities(["Thiruvananthapuram", "Kochi", "Kozhikode", "Kollam"]);
         break;
-      case "Maharashtra":
-        setCities(["Mumbai", "Pune", "Nagpur", "Thane"]);
-        break;
+        case "Maharashtra":
+          setCities([
+            "Ahmednagar",
+            "Akola",
+            "Amravati",
+            "Aurangabad",
+            "Beed",
+            "Bhandara",
+            "Buldhana",
+            "Chandrapur",
+            "Dhule",
+            "Gadchiroli",
+            "Gondia",
+            "Hingoli",
+            "Jalgaon",
+            "Jalna",
+            "Kolhapur",
+            "Latur",
+            "Mumbai",
+            "Nagpur",
+            "Nanded",
+            "Nandurbar",
+            "Nashik",
+            "Osmanabad",
+            "Palghar",
+            "Parbhani",
+            "Pune",
+            "Raigad",
+            "Ratnagiri",
+            "Sangli",
+            "Satara",
+            "Sindhudurg",
+            "Solapur",
+            "Thane",
+            "Wardha",
+            "Washim",
+            "Yavatmal"
+          ]);
+          break;
+        
       case "Madhya Pradesh":
         setCities(["Indore", "Bhopal", "Jabalpur", "Gwalior"]);
         break;
@@ -162,7 +336,7 @@ const RegStep2 = ({ handleChange, values,setTeamMembers,isTeamMember }) => {
               name="lastName"
               placeholder="Last Name"
               data-error="Please enter your Last name"
-              required=""
+              required="true"
               value={values.lastName}
               handleChange={handleChange}
             />
@@ -204,8 +378,8 @@ const RegStep2 = ({ handleChange, values,setTeamMembers,isTeamMember }) => {
                     </option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
-                    <option value="female">Other</option>
-                    <option value="female">Prefer Not Say</option>
+                    <option value="Other">Other</option>
+                    <option value="Prefer_Not_Say">Prefer Not Say</option>
                   </select>
                 </div>
               </label>
