@@ -269,7 +269,7 @@ className="custom-input"
           /> */}
           <div className="file-input-container m-1 mt-0">
   <label className="file-input-label" htmlFor="imageInput">
-    <span className="file-input-icon">+</span> Upload Image
+    <span className="file-input-icon">+</span> Upload Image<span style={{ color: "tomato" ,fontFamily:'san-serif'}}> *</span>
   </label>
   <input
     type="file"
