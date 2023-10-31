@@ -52,8 +52,7 @@ export default function Level_3() {
         <h2>Level 3</h2>
         <div className="TQuestion">
           <p>
-            This is Test 3
-            {/* As you delve deeper into the mysterious alien forest, you encounter
+            As you delve deeper into the mysterious alien forest, you encounter
             a gigantic ancient tree with peculiar symbols etched onto its bark.
             The symbols seem to form a complex pattern. Nearby, you find a
             guidebook from a previous explorer, mentioning the importance of
@@ -63,7 +62,7 @@ export default function Level_3() {
             tree's branches and the best order fashion and record the symbols
             you encounter. Once you've completed the traversal, the collected
             symbols will reveal the keyword you need to type in the input box
-            below. The tree's secrets await your deciphering! */}
+            below. The tree's secrets await your deciphering!
           </p>
         </div>
         <div className="Input">

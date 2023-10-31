@@ -55,32 +55,32 @@ fetch("https://angry-moon-10536.pktriot.net/checkuniversal", {
 
   const [L1input, setinput] = useState("");
 
-  // const alien_to_english = `        '∆': 'A',
-  //       'ß': 'B',
-  //       '¢': 'C',
-  //       '∂': 'D',
-  //       '£': 'E',
-  //       'ƒ': 'F',
-  //       'ª': 'G',
-  //       '∆': 'H',
-  //       'ø': 'I',
-  //       'π': 'J',
-  //       'ø': 'K',
-  //       '∑': 'L',
-  //       'µ': 'M',
-  //       '´': 'N',
-  //       'œ': 'O',
-  //       '®': 'P',
-  //       '†': 'Q',
-  //       '¥': 'R',
-  //       'ø': 'S',
-  //       '¨': 'T',
-  //       '©': 'U',
-  //       '√': 'V',
-  //       'Ω': 'W',
-  //       'ø': 'X',
-  //       'Π': 'Y',
-  //       '†': 'Z',`;
+  const alien_to_english = `        '∆': 'A',
+        'ß': 'B',
+        '¢': 'C',
+        '∂': 'D',
+        '£': 'E',
+        'ƒ': 'F',
+        'ª': 'G',
+        '∆': 'H',
+        'ø': 'I',
+        'π': 'J',
+        'ø': 'K',
+        '∑': 'L',
+        'µ': 'M',
+        '´': 'N',
+        'œ': 'O',
+        '®': 'P',
+        '†': 'Q',
+        '¥': 'R',
+        'ø': 'S',
+        '¨': 'T',
+        '©': 'U',
+        '√': 'V',
+        'Ω': 'W',
+        'ø': 'X',
+        'Π': 'Y',
+        '†': 'Z',`;
 
   const handlesubmit = () => {
     const res = fetch("https://angry-moon-10536.pktriot.net/TresureHunt1", {
@@ -103,13 +103,10 @@ fetch("https://angry-moon-10536.pktriot.net/checkuniversal", {
     return (
       <div className="Level_1 Container">
         <div className="TQuestion">
-          <p>
-           This is Test 1
-          </p>
-          {/* Alien_To_English Might Be Helpful for You
+          Alien_To_English Might Be Helpful for You
           <SyntaxHighlighter language="java" style={docco}>
             {alien_to_english}
-          </SyntaxHighlighter> */}
+          </SyntaxHighlighter>
         </div>
         <div className="Input">
           <input

@@ -291,6 +291,7 @@ function SignUp2({ isTeamMember, setTeamMembers }) {
       </div>
     </div>
   );
+  // return(<><p>Registration Closed!!</p></>)
 }
 
 export default SignUp2;

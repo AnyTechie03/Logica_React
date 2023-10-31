@@ -247,7 +247,7 @@ const Login = ({ isUserVerified,
                     <label>Password</label>
                   </div>
                   <div className="lgn-btn">
-                    <Link to="/register">SignUp</Link>
+                    {/* <Link to="/register">SignUp</Link> */}
                     <button type="submit" onClick={handleSubmit}>
                       Login
                     </button>

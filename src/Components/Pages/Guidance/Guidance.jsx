@@ -59,12 +59,7 @@ const Guidance = () => {
                 </li>
                 <li>
                   Last date for submission of Registration is{" "}
-                  <span className="_hLight_14ouo_49">October 26th, 2023</span>
-                </li>
-                <li>
-                  <span className="_hLight_14ouo_49">
-                    Payment Gatway will be available after October 22th, 2023
-                  </span>
+                  <span className="_hLight_14ouo_49">October 29th, 2023</span>
                 </li>
 
                 <li>

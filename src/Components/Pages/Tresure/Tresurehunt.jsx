@@ -177,10 +177,11 @@ export default function Tresurehunt() {
   }, []);
 
   const checkUniversal = () => {
-    fetch("https://logicabackend.onrender.com/checkuniversal", {
+    fetch("https://angry-moon-10536.pktriot.net/checkuniversal", {
       method: "GET",
       headers: {
-        Accept: "application/json",
+        "Accept": "application/json",
+        
         "Content-Type": "application/json",
       },
       withCredentials: true,
@@ -191,10 +192,9 @@ export default function Tresurehunt() {
         if (response.Universal[0].level_2) {
           console.log("Tresure Hunt Has Started");
 
-          fetch("https://logicabackend.onrender.com/TresureHuntValidate", {
+          fetch("https://angry-moon-10536.pktriot.net/TresureHuntValidate", {
             method: "POST",
             headers: {
-              Accept: "application/json",
               "Content-Type": "application/json",
             },
             withCredentials: true,

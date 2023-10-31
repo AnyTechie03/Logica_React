@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import './Quiz.css'
+import "./Quiz.css";
 import Gloading from "../Loading/Gloading";
 import Score from "./Score";
 
@@ -17,7 +17,7 @@ function Quiz() {
       progress: undefined,
       theme: "dark",
     });
-  }
+  };
 
   const SuccessNotify = (message) => {
     toast.success(message, {
@@ -29,13 +29,15 @@ function Quiz() {
       draggable: true,
       progress: undefined,
       theme: "dark",
-    })
-  }
+    });
+  };
   const Navigate = useNavigate();
 
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [selectedOptions, setSelectedOptions] = useState(new Array(questions.length).fill(null));
+  const [selectedOptions, setSelectedOptions] = useState(
+    new Array(questions.length).fill(null)
+  );
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState(null);
 
@@ -44,8 +46,7 @@ function Quiz() {
   const [timeRemaining, setTimeRemaining] = useState(quizTimeout);
 
   useEffect(() => {
-   checkUniversal();
-
+    checkUniversal();
   }, []);
 
   useEffect(() => {
@@ -55,58 +56,62 @@ function Quiz() {
     }
   }, [timeRemaining]);
 
-  const checkUniversal= ()=>{
-    fetch('https://angry-moon-10536.pktriot.net/checkuniversal',{
-      method:"GET",
+  const checkUniversal = () => {
+    fetch("https://angry-moon-10536.pktriot.net/checkuniversal", {
+      method: "GET",
       headers: {
         Accept: "application/json",
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       withCredentials: true,
-      credentials: "include"
-    }).then((res)=> res.json()).then((response)=>{
-      if(response.Universal[0].level_1){
-        console.log("Quiz Has Started");
-        if(!response.Data.Level_1_Score){
-          console.log("And as you have not answered the game, you can play it.");
-          fetchQuestions();
-          startTimer();        
-        }
-        else{
-          //Sir handle here what to show user if he has answered the quiz. My suggestion is to show him his score.
-          //His score can be accessed from response.Data.Level_1_Score
-          console.log("But You have Answered the Game So you cannot play it");
-        }
-      }
+      credentials: "include",
     })
-  }
+      .then((res) => res.json())
+      .then((response) => {
+        if (response.Universal[0].level_1) {
+          console.log("Quiz Has Started");
+          if (!response.Data.Level_1_Score) {
+            // console.log(
+            //   "And as you have not answered the game, you can play it."
+            // );
+            fetchQuestions();
+            startTimer();
+          } else {
+            //Sir handle here what to show user if he has answered the quiz. My suggestion is to show him his score.
+            //His score can be accessed from response.Data.Level_1_Score
+            console.log("But You have Answered the Game So you cannot play it");
+          }
+        }
+      });
+  };
 
   const fetchQuestions = () => {
     fetch("https://angry-moon-10536.pktriot.net/questions", {
-      method: 'GET',
+      method: "GET",
       headers: {
         Accept: "*/*",
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       withCredentials: true,
-      credentials: "include"
-    })
-      .then((response) => {
-        if (response.status === 401) {
-          Notify('Login to Play Quiz')
-          Navigate('/login')
-        } else {
-          SuccessNotify(`Let's Quizee it!!`);
-          response.json()
-            .then((data) => {
-              setQuestions(data);
-              setSelectedOptions(new Array(data.length).fill(null));
-            })
-            .catch((error) => {
-              console.error("Error fetching questions:", error);
-            });
-        }
-      })
+      credentials: "include",
+    }).then((response) => {
+      if (response.status === 401) {
+        Notify("Login to Play Quiz");
+        Navigate("/login");
+      } else {
+        SuccessNotify(`Let's Quizee it!!`);
+        response
+          .json()
+          .then((data) => {
+            setQuestions(data);
+            setSelectedOptions(new Array(data.length).fill(null));
+            console.log("Question Fetch are: ", questions);
+          })
+          .catch((error) => {
+            console.error("Error fetching questions:", error);
+          });
+      }
+    });
   };
 
   const startTimer = () => {
@@ -117,40 +122,9 @@ function Quiz() {
   };
 
   const handleOptionSelect = (optionIndex) => {
-    //
-      const data = {
-        selectedOptions: selectedOptions,
-      };
-    
-      fetch('https://angry-moon-10536.pktriot.net/submit-quiz', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        withCredentials: true,
-        credentials: 'include',
-        body: JSON.stringify(data),
-      })
-        .then((response) => {
-          if (response.status === 200) {
-            return response.json();
-          } else {
-            throw new Error('Quiz submission failed.');
-          }
-        })
-        .then((data) => {
-          // Update the state with the received score
-          setScore(data.score);
-          setIsSubmitted(true);
-          console.log('Your Score is',data.score);
-        })
-        .catch((error) => {
-          console.error('Error submitting quiz:', error);
-        });
-    
-    
-    //
-    
+    const newSelectedOptions = [...selectedOptions];
+    newSelectedOptions[currentQuestionIndex] = optionIndex;
+    setSelectedOptions(newSelectedOptions);
   };
 
   const navigateToQuestion = (index) => {
@@ -160,22 +134,19 @@ function Quiz() {
   };
 
   const handleSubmit = () => {
-    let correctCount = questions.reduce((count, question, index) => {
-      const correctAnswerIndex = question.CorrectAns - 1;
-      return selectedOptions[index] === correctAnswerIndex ? count + 1 : count;
-    }, 0);
+    // setScore(correctCount);
+    // setIsSubmitted(true);
+    console.log("Options: ", selectedOptions);
+    const submitTime = (quizTimeout - timeRemaining)/60000 
 
-    setScore(correctCount);
-    setIsSubmitted(true);
-
-    fetch('https://angry-moon-10536.pktriot.net/QuizSubmit', {
-      method: 'POST',
+    fetch("https://angry-moon-10536.pktriot.net/QuizSubmit", {
+      method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       withCredentials: true,
       credentials: "include",
-      body: JSON.stringify({ correctCount })
+      body: JSON.stringify({selectedOptions,submitTime,questions})
     });
   };
 
@@ -193,7 +164,7 @@ function Quiz() {
         <div>
           {isSubmitted ? (
             <div>
-              <Score score={score} level={'level_1'}/>
+              <Score score={score} level={"level_1"} />
             </div>
           ) : isTimeout ? (
             <div>
@@ -205,45 +176,78 @@ function Quiz() {
                 <div className="col-md-10 col-lg-10">
                   <div className="d-flex flex-row justify-content-between align-items-center mcq p-3 border-bottom">
                     <h2 className="title">Quiz</h2>
-                    <span>({currentQuestionIndex + 1} of {questions.length})</span>
+                    <span>
+                      ({currentQuestionIndex + 1} of {questions.length})
+                    </span>
                     <div className="timer">
                       <p>Time Remaining: {formatTime(timeRemaining)}</p>
                     </div>
                   </div>
-                  <h4 className="Question_Container text-light pt-2">{questions[currentQuestionIndex].question}</h4>
+                  <h4 className="Question_Container text-light pt-2">
+                    {questions[currentQuestionIndex].question}
+                  </h4>
                   <div className="Answer_Container">
                     <div className="ans ml-2">
-                      {Array.isArray(questions[currentQuestionIndex].options) ? (
+                      {Array.isArray(
+                        questions[currentQuestionIndex].options
+                      ) ? (
                         <ul>
-                          {questions[currentQuestionIndex].options.map((option, optionIndex) => (
-                            <li key={optionIndex}>
-                              <input
-                                type="radio"
-                                name={`question${currentQuestionIndex}`}
-                                value={option}
-                                checked={selectedOptions[currentQuestionIndex] === optionIndex}
-                                onChange={() => handleOptionSelect(optionIndex)}
-                              />
-                              <div className={`check ${selectedOptions[currentQuestionIndex] === optionIndex ? 'checked text-center' : 'text-center'}`}>
-                              <label className='text-prim' htmlFor={`option${optionIndex}-option`}>{option}</label>
-                              </div>
-                            </li>
-                          ))}
+                          {questions[currentQuestionIndex].options.map(
+                            (option, optionIndex) => (
+                              <li key={optionIndex}>
+                                <input
+                                  type="radio"
+                                  name={`question${currentQuestionIndex}`}
+                                  value={option}
+                                  checked={
+                                    selectedOptions[currentQuestionIndex] ===
+                                    optionIndex
+                                  }
+                                  onChange={() =>handleOptionSelect(optionIndex)}
+                                />
+                                <div
+                                  className={`check ${
+                                    selectedOptions[currentQuestionIndex] ===
+                                    optionIndex
+                                      ? "checked text-center"
+                                      : "text-center"
+                                  }`}>
+                                  <label
+                                    className="text-prim"
+                                    htmlFor={`option${optionIndex}-option`}>
+                                    {option}
+                                  </label>
+                                </div>
+                              </li>
+                            )
+                          )}
                         </ul>
                       ) : (
                         <p>No options available for this question.</p>
                       )}
                     </div>
                   </div>
-                  <div className='grid'>
-                    <button className="btn prev mt-1 mr-1" onClick={() => navigateToQuestion(currentQuestionIndex - 1)} disabled={currentQuestionIndex === 0}>
+                  <div className="grid">
+                    <button
+                      className="btn prev mt-1 mr-1"
+                      onClick={() =>
+                        navigateToQuestion(currentQuestionIndex - 1)
+                      }
+                      disabled={currentQuestionIndex === 0}>
                       Previous
                     </button>
-                    <button className="btn next ml-2" onClick={() => navigateToQuestion(currentQuestionIndex + 1)} disabled={currentQuestionIndex === questions.length - 1}>
+                    <button
+                      className="btn next ml-2"
+                      onClick={() =>
+                        navigateToQuestion(currentQuestionIndex + 1)
+                      }
+                      disabled={currentQuestionIndex === questions.length - 1}>
                       Next
                     </button>
                     {currentQuestionIndex === questions.length - 1 && (
-                      <button className="btn next ml-2" onClick={handleSubmit}>Submit</button>
+                      <button className="btn next ml-2" onClick={handleSubmit}>
+                        Submit
+                      </button>
                     )}
                   </div>
                 </div>

@@ -1,0 +1,15 @@
+.UserListContainer{
+    height: 100vh;
+    width: 100vw;
+    
+}
+
+body {
+    background: linear-gradient(
+      to bottom right,
+      #78009cdb,
+      #3a0ca3,
+      #4361ee,
+      #d08aff
+    );
+  }

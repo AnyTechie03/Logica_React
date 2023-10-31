@@ -19,15 +19,15 @@ import Loading from "./Components/Pages/Loading/Loading";
 import Login from "./Components/Pages/Login/Login";
 import FetchUsers from "./Components/Pages/Admin/FetchUsers";
 import Quiz from "./Components/Pages/Round_1/Quiz";
-// import Tresurehunt from "./Components/Pages/Tresure/Tresurehunt";
-// import Level_1 from "./Components/Pages/Tresure/Level_1";
-// import Level_2 from "./Components/Pages/Tresure/Level_2";
-// import Level_3 from "./Components/Pages/Tresure/Level_3";
-// import Level_4 from "./Components/Pages/Tresure/Level_4";
-// import Level_5 from "./Components/Pages/Tresure/Level_5";
+import Tresurehunt from "./Components/Pages/Tresure/Tresurehunt";
+import Level_1 from "./Components/Pages/Tresure/Level_1";
+import Level_2 from "./Components/Pages/Tresure/Level_2";
+import Level_3 from "./Components/Pages/Tresure/Level_3";
+import Level_4 from "./Components/Pages/Tresure/Level_4";
+import Level_5 from "./Components/Pages/Tresure/Level_5";
 import SocialLinks from "./Components/Pages/SocialLinks/SocialLinks";
 import SignUp2 from "./Components/Pages/Registration/SignUp2";
-// import EditiorHome from "./Components/Pages/Editior/EditiorHome";
+import EditiorHome from "./Components/Pages/Editior/EditiorHome";
 import PaymentButtuon from "./Components/Payment/PaymentButtuon";
 import UserDash from "./Components/Pages/Admin/User/UserDash";
 import TermsConditions from "./Components/Pages/Pagess/TermsConditions";
@@ -106,8 +106,8 @@ function App() {
                     isTeamMember={isTeamMember}
                     setTeamMembers={setTeamMembers}
                   />
-                }
-              />
+                 }
+              /> 
               <Route path="/Backbone" element={<BackBone/>}/>
               {/* <Route path="/Space" element={<Space/>}/> */}
               <Route path="/profileup" element={<Profileup/>}/>
@@ -122,7 +122,7 @@ function App() {
               />
                 <>
                   <Route path="/quiz" element={<Quiz/>} />
-                  {/* <Route path="/TresureHunt" element={<Tresurehunt />} />
+                  <Route path="/TresureHunt" element={<Tresurehunt />} />
                   <Route
                     path="/TresureHunt/TresureHunt1"
                     element={<Level_1 />}
@@ -142,8 +142,8 @@ function App() {
                   <Route
                     path="/TresureHunt/TresureHunt5"
                     element={<Level_5 />}
-                  /> */}
-                  {/* <Route exact path="/CodingRound" element={<EditiorHome />} /> */}
+                  />
+                  <Route exact path="/CodingRound" element={<EditiorHome />} />
                   <Route exact path="/UserDash" element={<UserDash />} />
                   <Route exact path="/resetPassword" element={<Resetpass />} />
                   <Route exact path="/payment" element={<PaymentButtuon />} />

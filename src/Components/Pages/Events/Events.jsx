@@ -65,14 +65,16 @@ export default function Events() {
               </div>
               <div
                 className="face face2"
-                onClick={() => handlenavigate("level_1")}>
+                onClick={() => handlenavigate("level_1")}
+                >
                 <h2 className="lsubtitle text-center">Level 1 Quizethon</h2>
               </div>
             </div>
             <div className="card">
               <div
                 className="face face1"
-                onClick={() => handlenavigate("level_2")}>
+                onClick={() => handlenavigate("level_2")}
+                >
                 <div className="content">
                   <span className="stars"></span>
                   <h2 className="level-2">Treasure Hunt</h2>
@@ -94,7 +96,8 @@ export default function Events() {
               <div className="face face2">
                 <h2
                   className="lsubtitle text-center"
-                  onClick={() => handlenavigate("level_3")}>
+                  // onClick={() => handlenavigate("level_3")}
+                  >
                   Level 03 CodeVersa
                 </h2>
               </div>
