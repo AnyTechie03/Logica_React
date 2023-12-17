@@ -4,7 +4,7 @@ import "./EditiorHome.css";
 import "codemirror/lib/codemirror.css";
 import "codemirror/theme/material.css";
 
-export default function EditiorHome() {
+export default function EditiorHome1() {
   const EditorRef = useRef(null);
   const [selectedLanguage, setSelectedLanguage] = useState("C"); // Default language is "java"
 
@@ -56,43 +56,36 @@ export default function EditiorHome() {
        <div className="QuestionArea">
        <div dangerouslySetInnerHTML={{ __html: `
           <p>
-            Question: Given an input string 's' and a pattern 'p', implement
-            regular expression matching with support for the following special
-            characters:
-          </p>
-          <ul>
-            <li>'.' Matches any single character.</li>
-            <li>'*' Matches zero or more occurrences of the preceding element.</li>
-          </ul>
-          You need to determine whether the pattern 'p' matches the entire input
-          string 's'. If it matches completely, return 'true'; otherwise, return
-          'false'. Examples:
-          <ol>
-            <li>For 's = "aa"' and 'p = "a"', the output should be 'false'.</li>
-            <li>
-              For 's = "aa"' and 'p = "a*"', the output should be 'true'.
-            </li>
-            <li>
-              For 's = "ab"' and 'p = ".*"', the output should be 'true'.
-            </li>
-          </ol>
-          Constraints:
-          <ul>
-            <li>1 <= |s| <= 20, where |s| is the length of string 's'.</li>
-            <li>1 <= |p| <= 20, where |p| is the length of pattern 'p'.</li>
-            <li>String 's' contains only lowercase English letters.</li>
-            <li>
-              Pattern 'p' contains only lowercase English letters, '.', and '*'.
-            </li>
-            <li>
-              It is guaranteed that for each appearance of the character '*',
-              there will be a previous valid character to match.
-            </li>
-            <li>
-              The algorithm's time complexity should be O(|s| * |p|) or better.
-            </li>
-          </ul>
-          
+          Given head which is a reference node to a singly-linked list. The value of each node in the linked list is either 0 or 1. The linked list holds the binary representation of a number.
+<br/>
+Return the decimal value of the number in the linked list.
+<br/>
+
+The most significant bit is at the head of the linked list.
+<br/>
+ 
+
+Example 1:
+<br/>
+
+Input: head = [1,0,1]
+<br/>
+Output: 5
+<br/>
+Explanation: (101) in base 2 = (5) in base 10
+<br/>
+Example 2:
+<br/><br/>
+Input: head = [0]<br/>
+Output: 0<br/>
+<br/><br/>
+
+Constraints:<br/>
+<br/>
+The Linked List is not empty.<br/>
+Number of nodes will not exceed 30.<br/>
+Each node's value is either 0 or 1.<br/>
+<p/>
         `}} />
         <iframe title="output" sandbox="allow-scripts" frameBorder="0" />
       </div>

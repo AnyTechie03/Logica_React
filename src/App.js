@@ -28,6 +28,7 @@ import Level_5 from "./Components/Pages/Tresure/Level_5";
 import SocialLinks from "./Components/Pages/SocialLinks/SocialLinks";
 import SignUp2 from "./Components/Pages/Registration/SignUp2";
 import EditiorHome from "./Components/Pages/Editior/EditiorHome";
+import EditiorHome1 from "./Components/Pages/Editior/EditiorHome1";
 import PaymentButtuon from "./Components/Payment/PaymentButtuon";
 import UserDash from "./Components/Pages/Admin/User/UserDash";
 import TermsConditions from "./Components/Pages/Pagess/TermsConditions";
@@ -37,6 +38,7 @@ import ContactUs from "./Components/Pages/Pagess/ContactUs";
 import BackBone from "./Components/Pages/BackBone/BackBone";
 import Profileup from "./Components/Pages/imageupload/Profileup";
 import Resetpass from "./Components/Pages/Registration/Resetpass";
+// import ThankYou from "./ThankYou";
 // import Space from "./Components/Pages/Loading/Space";
 
 
@@ -74,6 +76,10 @@ function App() {
         <UserContext.Provider value={{ state, dispatch }}>
           <Router>
             <Routes>
+              {/* <Route path="/" element={<ThankYou/>}/>
+              <Route path="/login" element={<ThankYou/>}/> */}
+              <Route exact path="*" element={<PageNotFound />} />
+
               <Route exact path="/"
                 element={
                   <Dashboard
@@ -144,22 +150,25 @@ function App() {
                     element={<Level_5 />}
                   />
                   <Route exact path="/CodingRound" element={<EditiorHome />} />
+                  <Route exact path="/CodingRoundE" element={<EditiorHome1 />} />
                   <Route exact path="/UserDash" element={<UserDash />} />
                   <Route exact path="/resetPassword" element={<Resetpass />} />
                   <Route exact path="/payment" element={<PaymentButtuon />} />
+                  <Route exact path="/Team" element={<PaymentButtuon />} />
 
                 </>
             
-                <>
+                {/* <>
                  
                   <Route path="/terms" element={<TermsConditions/>}/>
                   <Route path="/contact_us" element={<ContactUs/>}/>
                   <Route path="/refund" element={<Cancellation/>}/>
                   <Route path="/privacy" element={<Privacy_Policy/>}/>
                   
-                </>
+                </> */}
             
-            </Routes>
+             
+            </Routes> 
 
             {/* NavigationBar */}
             <Nav

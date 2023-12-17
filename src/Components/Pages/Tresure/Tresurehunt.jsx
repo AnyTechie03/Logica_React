@@ -171,13 +171,14 @@ export default function Tresurehunt() {
   };
 
   let navigate = useNavigate();
+  const Server_Host = 'http://localhost:6010';
 
   useEffect(() => {
     checkUniversal();
   }, []);
 
   const checkUniversal = () => {
-    fetch("https://angry-moon-10536.pktriot.net/checkuniversal", {
+    fetch(Server_Host+"/checkuniversal", {
       method: "GET",
       headers: {
         "Accept": "application/json",
@@ -192,7 +193,7 @@ export default function Tresurehunt() {
         if (response.Universal[0].level_2) {
           console.log("Tresure Hunt Has Started");
 
-          fetch("https://angry-moon-10536.pktriot.net/TresureHuntValidate", {
+          fetch(Server_Host+"/TresureHuntValidate", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -318,7 +319,7 @@ export default function Tresurehunt() {
     );
   } else {
     return (
-      <div className="TresureContainer Container">
+      <div className="TresureContainer  row justify-content-around">
         <div id="flash"></div>
           <ul class="star-layer" id="final-stars">
                 </ul>

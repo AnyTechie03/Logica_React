@@ -21,6 +21,8 @@ const Nav = ({
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
+  const Server_Host = 'http://localhost:6010';
+
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
@@ -28,7 +30,7 @@ const Nav = ({
   const fetchUserType = async () => {
     try {
       const res = await fetch(
-        "https://angry-moon-10536.pktriot.net/fetchUserType",
+        Server_Host+"/fetchUserType",
         {
           method: "GET",
           headers: {
@@ -63,10 +65,10 @@ const Nav = ({
       case "s": {
         navItems = [
           { onClickLink: "/", title: "Home" },
-          // { onClickLink: "/Profile", title: "Profile" },
-          // { onClickLink: "#Events", title: "  Events" },
-          // { onClickLink: "#Schedule", title: "  Schedule" },
-          // { onClickLink: "#Contact", title: "  ContactUs" },
+          { onClickLink: "/Profile", title: "Profile" },
+          { onClickLink: "#Events", title: "  Events" },
+          { onClickLink: "#Schedule", title: "  Schedule" },
+          { onClickLink: "#Contact", title: "  ContactUs" },
         ];
         break;
       }
@@ -416,7 +418,7 @@ const Nav = ({
   const handleClick = async (e) => {
 
       try {
-        await fetch("https://angry-moon-10536.pktriot.net/logout", {
+        await fetch(Server_Host+"/logout", {
           method: "POST",
           credentials:'include',
           headers: {

@@ -7,7 +7,6 @@ import "react-toastify/dist/ReactToastify.css";
 import { notifyToast } from '../../Functions/notifyToast';
 import { UserContext } from '../../../App'
 
-
 const Login = ({ isUserVerified,
   setUserVerified, setVeryPage, VeryPage }) => {
   const { state, dispatch } = useContext(UserContext);
@@ -37,6 +36,7 @@ const Login = ({ isUserVerified,
       theme: "dark",
     });
   };
+  const Server_Host = 'http://localhost:6010';
 
   const [formData, setFormData] = useState({
     username: '',
@@ -49,9 +49,9 @@ const Login = ({ isUserVerified,
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    // const Server_Host = 'https://angry-moon-10536.pktriot.net';
     try {
-      const response = await fetch("https://angry-moon-10536.pktriot.net/login", {
+      const response = await fetch(Server_Host+"/login", {
         method: "POST",
         credentials: 'include',
         headers: {
@@ -135,7 +135,7 @@ const Login = ({ isUserVerified,
   const handleSendVerificationEmail = async () => {
     if (!verificationButtonDisabled) {
       try {
-        const res = await fetch('https://angry-moon-10536.pktriot.net/send-verification-email', {
+        const res = await fetch(Server_Host+'/send-verification-email', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -165,7 +165,7 @@ const Login = ({ isUserVerified,
 
   const handleVerifyEmail = async () => {
     try {
-      const res = await fetch('https://angry-moon-10536.pktriot.net/verify-email', {
+      const res = await fetch(Server_Host+'/verify-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -190,7 +190,7 @@ const Login = ({ isUserVerified,
 
   useEffect(() => {
     const fetchUserType = async () => {
-      const res = await fetch('https://angry-moon-10536.pktriot.net/fetchUserType', {
+      const res = await fetch(Server_Host+'/fetchUserType', {
         method: 'GET',
         headers: {
           Accept: 'application/json',

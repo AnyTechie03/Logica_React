@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
 import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import "./Level.css"
 import "./Tresurehunt.css";
+import Gloading from "../Loading/Gloading";
 
 export default function Level_1() {
   const [Loading, setLoading] = useState(true);
@@ -21,8 +25,8 @@ fetch("https://angry-moon-10536.pktriot.net/checkuniversal", {
       credentials: "include",
     })
       .then((res) => res.json())
-      .then((response) => {
-        if (response.Universal[0].level_2) {
+      .then((res) => {
+        if (res.Universal[0].level_2) {
           console.log("Tresure Hunt Has Started");
           fetch("https://angry-moon-10536.pktriot.net/TresureHuntValidate", {
             method: "POST",
@@ -52,62 +56,99 @@ fetch("https://angry-moon-10536.pktriot.net/checkuniversal", {
         }
       });
   };
-
+  const navigate = useNavigate()
   const [L1input, setinput] = useState("");
 
-  const alien_to_english = `        '∆': 'A',
-        'ß': 'B',
-        '¢': 'C',
-        '∂': 'D',
-        '£': 'E',
-        'ƒ': 'F',
-        'ª': 'G',
-        '∆': 'H',
-        'ø': 'I',
-        'π': 'J',
-        'ø': 'K',
-        '∑': 'L',
-        'µ': 'M',
-        '´': 'N',
-        'œ': 'O',
-        '®': 'P',
-        '†': 'Q',
-        '¥': 'R',
-        'ø': 'S',
-        '¨': 'T',
-        '©': 'U',
-        '√': 'V',
-        'Ω': 'W',
-        'ø': 'X',
-        'Π': 'Y',
-        '†': 'Z',`;
-
+  const alien_to_english = `        ∆/: 'A',
+  'ß': 'B',
+  '¢': 'C',
+  '∂': 'D',
+  '£': 'E',
+  'ƒ': 'F',
+  'ª': 'G',
+  '∆': 'H',
+  'ø.': 'I',
+  'π': 'J',
+  'ø': 'K',
+  '∑': 'L',
+  'µ': 'M',
+  '´': 'N',
+  'œ': 'O',
+  '®': 'P',
+  '†': 'Q',
+  '¥': 'R',
+  'ø': 'S',
+  '¨': 'T',
+  '©': 'U',
+  '√': 'V',
+  'Ω': 'W',
+  'ø?': 'X',
+  'Π': 'Y',
+  '†': 'Z',,`;
+        const notify = (message) => {
+          toast.error(message, {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+          });
+        };
+      
+        const successnotify = (message) => {
+          toast.success(message, {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+          });
+        };
   const handlesubmit = () => {
     const res = fetch("https://angry-moon-10536.pktriot.net/TresureHunt1", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      withCredntials: true,
       credentials: "include",
       body: JSON.stringify({ L1input }),
     });
     res.then((e) => {
-      console.log(e);
+      if (e.status === 201) {
+        successnotify("Level 1 Cleared Successfully");
+        navigate('/TresureHunt');
+      } else if(e.status === 401){
+       
+        notify("Sorry the Answer Is Wrong 😥");
+       
+      }else {
+  
+        notify("Invalid Answer");
+      }
     });
+
   };
 
   if (Loading) {
-    return <>Previou  Not Cleared</>;
+    return <><Gloading/></>
   } else {
     return (
-      <div className="Level_1 Container">
+      <div className="Level_1 Container text-center">
         <div className="TQuestion">
-          Alien_To_English Might Be Helpful for You
+         
+          <h3>
+            Alien_To_English Might Be Helpful for You
+            </h3>
+          <h2>alien_message = '¨∆£ ª∆/ ∑∆/ø?Π  ø.ø ƒ©∑∑ œƒ Ωœ´∂£¥'</h2>
           <SyntaxHighlighter language="java" style={docco}>
             {alien_to_english}
           </SyntaxHighlighter>
-        </div>
         <div className="Input">
           <input
             type="text"
@@ -116,6 +157,7 @@ fetch("https://angry-moon-10536.pktriot.net/checkuniversal", {
             onChange={(e) => setinput(e.target.value)}
           />
           <button onClick={() => handlesubmit()}>Submit</button>
+        </div>
         </div>
       </div>
     );

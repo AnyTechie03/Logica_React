@@ -46,6 +46,7 @@ export default function EditProfile({
     const value = e.target.value;
     setUserData({ ...userData, [name]: value });
   };
+  const Server_Host = 'http://localhost:6010';
 
   const HandleEditProfile = async (e) => {
     e.preventDefault();
@@ -53,7 +54,7 @@ export default function EditProfile({
     try {
       const { _id, firstName, lastName, phoneNumber, collegeName, gender, degree } = userData;
 
-      const res = await fetch("https://angry-moon-10536.pktriot.net/UpUserData", {
+      const res = await fetch(Server_Host+"/UpUserData", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",

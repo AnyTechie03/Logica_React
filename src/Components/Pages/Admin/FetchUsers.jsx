@@ -14,7 +14,7 @@ export default function FetchUsers({ isFinialCall, setFinialCall }) {
   const [isL3Count, setL3count] = useState(0);
 
   useEffect(() => {
-    fetch("https://angry-moon-10536.pktriot.net/fetchUser", {
+    fetch("http://localhost:6010/fetchUser", {
       method: "GET",
     })
       .then((res) => res.json())

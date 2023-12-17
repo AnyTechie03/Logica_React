@@ -6,6 +6,8 @@ import Gloading from "../Loading/Gloading";
 import Score from "./Score";
 
 function Quiz() {
+  const Server_Host = 'http://localhost:6010';
+
   const Notify = (message) => {
     toast.error(message, {
       position: "top-right",
@@ -57,7 +59,7 @@ function Quiz() {
   }, [timeRemaining]);
 
   const checkUniversal = () => {
-    fetch("https://angry-moon-10536.pktriot.net/checkuniversal", {
+    fetch(Server_Host+"/checkuniversal", {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -86,7 +88,7 @@ function Quiz() {
   };
 
   const fetchQuestions = () => {
-    fetch("https://angry-moon-10536.pktriot.net/questions", {
+    fetch(Server_Host+"/questions", {
       method: "GET",
       headers: {
         Accept: "*/*",
@@ -139,7 +141,7 @@ function Quiz() {
     console.log("Options: ", selectedOptions);
     const submitTime = (quizTimeout - timeRemaining)/60000 
 
-    fetch("https://angry-moon-10536.pktriot.net/QuizSubmit", {
+    fetch(Server_Host+"/QuizSubmit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

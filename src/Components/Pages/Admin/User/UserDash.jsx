@@ -21,12 +21,25 @@ const UserDash = ({ isFinialCall, setFinialCall }) => {
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
   let serialNumber = page * rowsPerPage;
 
+  const flattenedData = UserList.map(user => ({
+    "Sr. No.": user.serialNumber,
+    "Team Name": user.teamName || "",
+    "Team Email": user.email,
+    "First Name": user.firstName,
+    "Last Name": user.lastName,
+    "First Name 1": user.teamMembers[0].firstName1,
+    "Last Name 1": user.teamMembers[0].lastName1,
+    "Payment Status": user.PaymentStatus,
+    // Include other fields as needed
+  }));
+  
+
   const downloadExcel = () => {
-    const ws = XLSX.utils.json_to_sheet(UserList);
+    const ws = XLSX.utils.json_to_sheet(flattenedData);
     const wb = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, "Participants Details");
     XLSX.writeFile(wb, "participants_details.xlsx");
-  };
+      };
 
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -59,7 +72,7 @@ const UserDash = ({ isFinialCall, setFinialCall }) => {
   };
 
   useEffect(() => {
-    fetch("https://angry-moon-10536.pktriot.net/fetchUser", {
+    fetch("http://localhost:6010/fetchUser", {
       method: "POST",
       credentials: 'include',
       headers: {

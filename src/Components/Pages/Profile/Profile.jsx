@@ -11,14 +11,15 @@ import { Link ,useNavigate} from "react-router-dom";
 
 
 export default function Profile({isProfileClicked,setProfileClicked,setEditProfile,isEditProfile,setTeamInfoPage,UserData,setUserData}) {
-   
+  const Server_Host = 'http://localhost:6010';
+
 
 
 
   const getProfile = async () => {
 
     try {
-      const res = await fetch("https://angry-moon-10536.pktriot.net/getdata", {
+      const res = await fetch(Server_Host+"/getdata", {
         method: "GET",
         headers: {
           Accept: "application/json",
@@ -119,22 +120,24 @@ export default function Profile({isProfileClicked,setProfileClicked,setEditProfi
           <h2>Participated Level</h2>
        
 <div className="text-left pl-3 pt-3">
-{UserData.Level_1 ? (
+{UserData.Tresure_round_1 ? (
   <p className="score">Level 1: <span className="text-success">Passed</span> (Level 1 Clear! You're now eligible for Level 2. Happy Hunting! 🔎🙌🥳)</p>
 ) : (
-  <></>
+  <>  <p className="score">Level 1: <span className="textdanger">Failed</span> (Level 1 not Clear! Thank Your For You Participation)</p></>
 )}
 
 {UserData.Level_2 ? (
   <p className="score">Level 2: <span className="text-success">Passed</span> (Level 2 Clear! You're now eligible for Level 3. Happy Coding! 💻⌨🖱🙌🥳)</p>
 ) : (
-  <></>
+  <>  <p className="score">Level 2: <span className="textdanger">Failed</span> (Level 2 not Clear! Thank Your For You Participation)</p></>
+
 )}
 
 {UserData.Level_3 ? (
   <p className="score">Level 3: <span className="text-success">Passed</span> (Level 3 Clear! Yo Boy You Win The Game 🙌🥳)</p>
 ) : (
-  <></>
+  <>  <p className="score">Level 3: <span className="textdanger">Failed</span> (Level 3 not Clear! Thank Your For You Participation)</p></>
+
 )}
 {UserData.Level_1_Score || UserData.Level_2_Score || UserData.Level_3_Score ? (
  <p className="score">Score : <span> {UserData.Level_1_Score + UserData.Level_2_Score + UserData.Level_3_Score}</span> - 500 </p>
