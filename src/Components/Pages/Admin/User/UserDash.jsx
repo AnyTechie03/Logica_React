@@ -70,9 +70,9 @@ const UserDash = ({ isFinialCall, setFinialCall }) => {
   const handledisqualify = (e) => {
     console.log(e);
   };
-
+  const Server_host= 'https://logica-server.onrender.com'
   useEffect(() => {
-    fetch("http://localhost:6010/fetchUser", {
+    fetch(Server_host+"/fetchUser", {
       method: "POST",
       credentials: 'include',
       headers: {

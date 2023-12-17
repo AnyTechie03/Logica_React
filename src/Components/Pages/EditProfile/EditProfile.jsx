@@ -46,7 +46,8 @@ export default function EditProfile({
     const value = e.target.value;
     setUserData({ ...userData, [name]: value });
   };
-  const Server_Host = 'http://localhost:6010';
+  // const Server_Host = 'http://localhost:6010';
+  const Server_Host = 'https://logica-server.onrender.com'
 
   const HandleEditProfile = async (e) => {
     e.preventDefault();

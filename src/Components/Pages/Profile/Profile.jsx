@@ -11,7 +11,8 @@ import { Link ,useNavigate} from "react-router-dom";
 
 
 export default function Profile({isProfileClicked,setProfileClicked,setEditProfile,isEditProfile,setTeamInfoPage,UserData,setUserData}) {
-  const Server_Host = 'http://localhost:6010';
+  // const Server_Host = 'http://localhost:6010';
+  const Server_Host = 'https://logica-server.onrender.com'
 
 
 

@@ -24,9 +24,10 @@ export default function Resetpass() {
   });
   const [passwordinput, setpasswordinput] = useState(false);
   const [otpSent, setOtpSent] = useState(false);
+  const Server_Host = 'https://logica-server.onrender.com'
 
   const handleClick = async () => {
-    await fetch("https://angry-moon-10536.pktriot.net/reset-password", {
+    await fetch(Server_Host+"/reset-password", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -52,7 +53,7 @@ export default function Resetpass() {
 
   const handleOTP = () => {
     const email = formData.email;
-    fetch("https://angry-moon-10536.pktriot.net/reset-passwordv", {
+    fetch(Server_Host+"/reset-passwordv", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

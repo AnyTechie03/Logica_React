@@ -171,7 +171,8 @@ export default function Tresurehunt() {
   };
 
   let navigate = useNavigate();
-  const Server_Host = 'http://localhost:6010';
+  // const Server_Host = 'http://localhost:6010';
+  const Server_Host = 'https://logica-server.onrender.com'
 
   useEffect(() => {
     checkUniversal();

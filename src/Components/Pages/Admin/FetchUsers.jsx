@@ -12,9 +12,9 @@ export default function FetchUsers({ isFinialCall, setFinialCall }) {
   const [isL1Count, setL1count] = useState(0);
   const [isL2Count, setL2count] = useState(0);
   const [isL3Count, setL3count] = useState(0);
-
+const Server_host = 'https://logica-server.onrender.com'
   useEffect(() => {
-    fetch("http://localhost:6010/fetchUser", {
+    fetch(Server_host+"/fetchUser", {
       method: "GET",
     })
       .then((res) => res.json())
@@ -39,7 +39,7 @@ export default function FetchUsers({ isFinialCall, setFinialCall }) {
           setL3count(0);
         }
       })
-      fetch('https://angry-moon-10536.pktriot.net/AdminRounds',{
+      fetch(Server_host+'/AdminRounds',{
         method:"GET"
       }).then((res) => res.json())
       .then((data) =>{
@@ -52,7 +52,7 @@ export default function FetchUsers({ isFinialCall, setFinialCall }) {
 
   const handleRegistration = (stage,condition)=>{
 
-    fetch('https://angry-moon-10536.pktriot.net/roundSetting',{
+    fetch(Server_host+'/roundSetting',{
       method:"POST",
       headers:{
         "Accept":'*/*',

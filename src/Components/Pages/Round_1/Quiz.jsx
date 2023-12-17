@@ -6,7 +6,8 @@ import Gloading from "../Loading/Gloading";
 import Score from "./Score";
 
 function Quiz() {
-  const Server_Host = 'http://localhost:6010';
+  // const Server_Host = 'http://localhost:6010';
+  const Server_Host = 'https://logica-server.onrender.com'
 
   const Notify = (message) => {
     toast.error(message, {

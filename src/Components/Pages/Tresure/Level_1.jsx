@@ -9,13 +9,14 @@ import Gloading from "../Loading/Gloading";
 
 export default function Level_1() {
   const [Loading, setLoading] = useState(true);
+  const Server_Host = 'https://logica-server.onrender.com'
 
   useEffect(() => {
     checkUniversal();
   },[]);
 
   const checkUniversal = () => {
-fetch("https://angry-moon-10536.pktriot.net/checkuniversal", {
+fetch(Server_Host+"/checkuniversal", {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -28,7 +29,7 @@ fetch("https://angry-moon-10536.pktriot.net/checkuniversal", {
       .then((res) => {
         if (res.Universal[0].level_2) {
           console.log("Tresure Hunt Has Started");
-          fetch("https://angry-moon-10536.pktriot.net/TresureHuntValidate", {
+          fetch(Server_Host+"/TresureHuntValidate", {
             method: "POST",
             headers: {
               Accept: "*/*",
@@ -111,7 +112,7 @@ fetch("https://angry-moon-10536.pktriot.net/checkuniversal", {
           });
         };
   const handlesubmit = () => {
-    const res = fetch("https://angry-moon-10536.pktriot.net/TresureHunt1", {
+    const res = fetch(Server_Host+"/TresureHunt1", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

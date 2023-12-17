@@ -21,7 +21,8 @@ const Nav = ({
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
-  const Server_Host = 'http://localhost:6010';
+  // const Server_Host = 'http://localhost:6010';
+  const Server_Host = 'https://logica-server.onrender.com'
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);

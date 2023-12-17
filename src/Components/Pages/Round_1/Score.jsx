@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react'
 import './Quiz.css'
 export default function Score({score,outof,level}) {
+    const Server_Host = 'https://logica-server.onrender.com'
+
     useEffect(()=>{
-        fetch('https://angry-moon-10536.pktriot.net/SubmitScore',{
+        fetch(Server_Host+'/SubmitScore',{
             method:"POST",
             headers:{
                 'Accept':"*/*",

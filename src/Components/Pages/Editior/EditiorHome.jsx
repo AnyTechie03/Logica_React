@@ -26,11 +26,12 @@ export default function EditiorHome() {
   useEffect(() => {
     // Validate is user has cleared tresure hunt
   }, []);
+  const Server_host = 'https://logica-server.onrender.com'
 
   function getEditvalue() {
     const UserCode = EditorRef.current.getValue();
     console.log(UserCode);
-    const res = fetch("https://angry-moon-10536.pktriot.net/CodingRound", {
+    const res = fetch(Server_host+"/CodingRound", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

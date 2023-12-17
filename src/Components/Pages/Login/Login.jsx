@@ -36,7 +36,8 @@ const Login = ({ isUserVerified,
       theme: "dark",
     });
   };
-  const Server_Host = 'http://localhost:6010';
+  // const Server_Host = 'http://localhost:6010';
+  const Server_Host = 'https://logica-server.onrender.com'
 
   const [formData, setFormData] = useState({
     username: '',

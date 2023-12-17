@@ -10,7 +10,7 @@ export default function Level_3() {
   const [Loading, setLoading] = useState(true);
   const navigate = useNavigate()
   useEffect(() => {
-    fetch("https://angry-moon-10536.pktriot.net/TresureHuntValidate", {
+    fetch(Server_Host+"/TresureHuntValidate", {
             method: "POST",
             headers: {
               Accept: "*/*",
@@ -58,8 +58,10 @@ export default function Level_3() {
       theme: "dark",
     });
   };
+  const Server_Host = 'https://logica-server.onrender.com'
+
   const handlesubmit = () => {
-    const res = fetch("https://angry-moon-10536.pktriot.net/TresureHunt4", {
+    const res = fetch(Server_Host+"/TresureHunt4", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

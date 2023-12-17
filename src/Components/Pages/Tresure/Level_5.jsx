@@ -9,8 +9,10 @@ export default function Level_5() {
   const [L5input, setinput] = useState("");
   const [Loading, setLoading] = useState(true);
   const navigate = useNavigate()
+  const Server_Host = 'https://logica-server.onrender.com'
+
   useEffect(() => {
-    fetch("https://angry-moon-10536.pktriot.net/TresureHuntValidate", {
+    fetch(Server_Host+"/TresureHuntValidate", {
       method: "POST",
       headers: {
         Accept: "*/*",
@@ -61,7 +63,7 @@ export default function Level_5() {
     });
   };
   const handlesubmit = () => {
-    const res = fetch("https://angry-moon-10536.pktriot.net/TresureHunt5", {
+    const res = fetch(Server_Host+"/TresureHunt5", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
