@@ -1,4 +1,6 @@
 
+<img src="https://firebasestorage.googleapis.com/v0/b/logica-76254.appspot.com/o/1.png?alt=media&token=232ed273-55c4-44c0-90be-a25cef2e182d" width="350">
+
 # Logica
 
 A brief description of what this project does and who it's for
